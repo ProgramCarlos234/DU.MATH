@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://b2uw4bnrsme8l"]
+
+[ext_resource type="Texture2D" uid="uid://b5vm2fliuayuu" path="res://Flappy2_Logo.png" id="1_lraos"]
+
+[node name="Flappy2Logo" type="Sprite2D"]
+position = Vector2(545, 220)
+scale = Vector2(0.24334, 0.24334)
+texture = ExtResource("1_lraos")
