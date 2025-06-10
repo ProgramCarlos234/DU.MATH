@@ -1,0 +1,53 @@
+[gd_scene load_steps=3 format=3 uid="uid://wviylniace0n"]
+
+[ext_resource type="Script" uid="uid://2bjumpguymlt" path="res://SCRIPTS/derrota.gd" id="1_qb2gb"]
+[ext_resource type="Texture2D" uid="uid://dt118bmpyejxl" path="res://IMAGENES/istockphoto-1403514917-612x612.jpg" id="2_uoc8l"]
+
+[node name="Derrota" type="Node2D"]
+script = ExtResource("1_qb2gb")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0.147672, 0.147672, 0.147672, 1)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 1151.0
+offset_bottom = 647.0
+texture = ExtResource("2_uoc8l")
+expand_mode = 1
+
+[node name="lbGAMEOVER" type="Label" parent="."]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 355.0
+offset_top = 147.0
+offset_right = 844.0
+offset_bottom = 257.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.324976, 0.112017, 0.718935, 1)
+theme_override_font_sizes/font_size = 80
+text = "GAME OVER"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+offset_left = 469.0
+offset_top = 264.0
+offset_right = 622.0
+offset_bottom = 349.0
+
+[node name="Greiniciar" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "REINICIAR"
+
+[node name="Gsalir" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "SALIR"
+
+[connection signal="pressed" from="VBoxContainer/Greiniciar" to="." method="_on_greiniciar_pressed"]
+[connection signal="pressed" from="VBoxContainer/Gsalir" to="." method="_on_gsalir_pressed"]
