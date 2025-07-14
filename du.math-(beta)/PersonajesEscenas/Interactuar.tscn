@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://y1p18ssj68k"]
+
+[ext_resource type="Texture2D" uid="uid://10iiym6tnl4" path="res://SpritesBasicos/SpriteJugador_Basico.png" id="1_mqanm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_krbq8"]
+size = Vector2(64, 64)
+
+[node name="Cambio" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(1, 0.137005, 0.954855, 1)
+texture = ExtResource("1_mqanm")
+
+[node name="Area2D" type="Area2D" parent="Sprite2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Area2D"]
+shape = SubResource("RectangleShape2D_krbq8")

@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://c5q0dfqkgms4f"]
+
+[ext_resource type="Script" uid="uid://cde48j0lakj2i" path="res://Rodrigo/SCRIPTS/menu_juego.gd" id="1_iaoid"]
+[ext_resource type="Texture2D" uid="uid://dp52chqq6hyun" path="res://Rodrigo/IMAGENES/WhatsApp Image 2025-06-12 at 1.05.43 PM.jpeg" id="1_tqce4"]
+[ext_resource type="AudioStream" uid="uid://d0rvw1g2it1rb" path="res://Audios/BETA GAME SOUTH Arreglo.mp3" id="3_cdfhe"]
+
+[node name="MenuJuego" type="Node2D"]
+script = ExtResource("1_iaoid")
+
+[node name="WhatsAppImage2025-06-12At1_05_43Pm" type="Sprite2D" parent="."]
+position = Vector2(238, 123)
+scale = Vector2(0.319005, 0.293478)
+texture = ExtResource("1_tqce4")
+
+[node name="Inicio" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0.352941)
+self_modulate = Color(1, 0.105882, 0.184314, 1)
+offset_left = 41.0
+offset_top = 78.0
+offset_right = 49.0
+offset_bottom = 86.0
+scale = Vector2(8.42581, 2.40257)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_cdfhe")
+
+[connection signal="pressed" from="Inicio" to="." method="_on_inicio_pressed"]

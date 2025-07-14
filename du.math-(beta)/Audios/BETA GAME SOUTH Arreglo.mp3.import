@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://d0rvw1g2it1rb"
+path="res://.godot/imported/BETA GAME SOUTH Arreglo.mp3-c265bdecf06ae7ad54a3bd387c16dfa0.mp3str"
+
+[deps]
+
+source_file="res://Audios/BETA GAME SOUTH Arreglo.mp3"
+dest_files=["res://.godot/imported/BETA GAME SOUTH Arreglo.mp3-c265bdecf06ae7ad54a3bd387c16dfa0.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://b1ie1xkry2trj"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_n073g"]
+
+[node name="Sprite2D" type="Sprite2D"]
+modulate = Color(0.866994, 0.93338, 0, 1)
+scale = Vector2(50, 50)
+texture = SubResource("CanvasTexture_n073g")
