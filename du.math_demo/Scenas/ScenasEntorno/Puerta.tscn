@@ -1,10 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://slsrphlw2jq8"]
+[gd_scene load_steps=4 format=3 uid="uid://slsrphlw2jq8"]
+
+[ext_resource type="Script" uid="uid://bxl6f5a6u5tbe" path="res://Scripts/portal.gd" id="1_treco"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_a47xf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_treco"]
 
 [node name="Area2D" type="Area2D"]
+script = ExtResource("1_treco")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(3.57628e-07, 3.57628e-07)
@@ -13,3 +16,6 @@ texture = SubResource("CanvasTexture_a47xf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_treco")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

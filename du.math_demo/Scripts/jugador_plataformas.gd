@@ -8,6 +8,7 @@ extends CharacterBody2D
 @export var SPEED = 150.0          # Velocidad horizontal del personaje
 @export var JUMP_VELOCITY = -350.0  # Fuerza del salto (negativo porque el eje Y crece hacia abajo)
 
+
 # Función _process: Se ejecuta cada frame (no se usa en este caso)
 func _process(delta: float) -> void:
 	pass
