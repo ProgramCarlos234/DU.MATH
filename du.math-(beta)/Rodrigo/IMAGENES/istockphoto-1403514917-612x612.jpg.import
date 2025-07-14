@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b5vm2fliuayuu"
-path="res://.godot/imported/Flappy2_Logo.png-b0c8c8e73d6cf7dcd4c77565e6516736.ctex"
+uid="uid://dt118bmpyejxl"
+path="res://.godot/imported/istockphoto-1403514917-612x612.jpg-fb71948cbb9104f2377d015b0b6a0ce9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Flappy2_Logo.png"
-dest_files=["res://.godot/imported/Flappy2_Logo.png-b0c8c8e73d6cf7dcd4c77565e6516736.ctex"]
+source_file="res://Rodrigo/IMAGENES/istockphoto-1403514917-612x612.jpg"
+dest_files=["res://.godot/imported/istockphoto-1403514917-612x612.jpg-fb71948cbb9104f2377d015b0b6a0ce9.ctex"]
 
 [params]
 

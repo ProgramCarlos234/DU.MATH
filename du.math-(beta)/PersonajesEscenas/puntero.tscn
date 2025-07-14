@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://cyrw3ts5spo3j"]
+
+[ext_resource type="Texture2D" uid="uid://10iiym6tnl4" path="res://SpritesBasicos/SpriteJugador_Basico.png" id="1_8p5q5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e6gsl"]
+
+[node name="Puntero" type="CharacterBody2D"]
+collision_layer = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.498039, 0, 0, 1)
+position = Vector2(0, -332)
+scale = Vector2(0.16, 10.3837)
+texture = ExtResource("1_8p5q5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -332)
+scale = Vector2(0.320999, 32.7126)
+shape = SubResource("RectangleShape2D_e6gsl")

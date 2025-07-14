@@ -1,0 +1,47 @@
+[gd_scene load_steps=6 format=3 uid="uid://vti1oo3mv007"]
+
+[ext_resource type="Script" uid="uid://bx5uvc2phjf3a" path="res://Scripts/game_manager.gd" id="1_p6i8k"]
+[ext_resource type="PackedScene" uid="uid://cgm0vgw0ni3tp" path="res://PersonajesEscenas/Jugador.tscn" id="2_7rfpu"]
+[ext_resource type="Script" uid="uid://c05bpugykpoo0" path="res://Scripts/jugador.gd" id="3_u2mxo"]
+
+[sub_resource type="GDScript" id="GDScript_vjuos"]
+script/source = "extends Node2D
+"
+
+[sub_resource type="Theme" id="Theme_bqujj"]
+default_font_size = 75
+
+[node name="Etapa1" type="Node2D"]
+script = SubResource("GDScript_vjuos")
+
+[node name="GameManager" type="Node2D" parent="."]
+script = ExtResource("1_p6i8k")
+
+[node name="Jugador" parent="." instance=ExtResource("2_7rfpu")]
+position = Vector2(562, 464)
+script = ExtResource("3_u2mxo")
+
+[node name="1" type="Node2D" parent="."]
+position = Vector2(-178, 303)
+
+[node name="2" type="Node2D" parent="."]
+position = Vector2(562, -173)
+
+[node name="3" type="Node2D" parent="."]
+position = Vector2(1310, 303)
+
+[node name="4" type="Node2D" parent="."]
+position = Vector2(125, -173)
+
+[node name="5" type="Node2D" parent="."]
+position = Vector2(1004, -173)
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+offset_right = 217.0
+offset_bottom = 103.0
+theme = SubResource("Theme_bqujj")
+
+[node name="Label" type="Label" parent="MarginContainer"]
+layout_mode = 2
+text = "10"
+horizontal_alignment = 1

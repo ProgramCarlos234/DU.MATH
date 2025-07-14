@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://cgm0vgw0ni3tp"]
+
+[ext_resource type="Texture2D" uid="uid://10iiym6tnl4" path="res://SpritesBasicos/SpriteJugador_Basico.png" id="1_43k7d"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0ri0x"]
+
+[node name="Jugador" type="CharacterBody2D"]
+scale = Vector2(0.4, 0.4)
+
+[node name="SpriteJugadorBasico" type="Sprite2D" parent="."]
+scale = Vector2(1.00001, 1)
+texture = ExtResource("1_43k7d")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(3.20001, 3.2)
+shape = SubResource("RectangleShape2D_0ri0x")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+collision_mask = 2
+hit_from_inside = true

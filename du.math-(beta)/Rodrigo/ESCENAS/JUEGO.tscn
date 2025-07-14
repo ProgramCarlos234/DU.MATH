@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://drv7n58bq334s"]
+
+[node name="Juego" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1154.0
+offset_bottom = 650.0
