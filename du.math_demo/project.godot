@@ -15,6 +15,10 @@ run/main_scene="uid://btqdsm384ny7v"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+GameManager="*res://Scripts/game_manager.gd"
+
 [input]
 
 Derecha={
