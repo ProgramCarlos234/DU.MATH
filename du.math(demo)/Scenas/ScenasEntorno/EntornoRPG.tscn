@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://btqdsm384ny7v"]
+
+[ext_resource type="PackedScene" uid="uid://b3rquvh0mg2rv" path="res://Scenas/ScenasPersonajes/JugadorRPG.tscn" id="1_pt56k"]
+[ext_resource type="Script" uid="uid://dete40vd7c3mn" path="res://Scripts/jugador_rpg.gd" id="2_mk36i"]
+[ext_resource type="PackedScene" uid="uid://slsrphlw2jq8" path="res://Scenas/ScenasEntorno/Puerta.tscn" id="3_ltbff"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(3, 3)
+
+[node name="CharacterBody2D2" parent="." instance=ExtResource("1_pt56k")]
+position = Vector2(35, -16)
+script = ExtResource("2_mk36i")
+
+[node name="Area2D" parent="." instance=ExtResource("3_ltbff")]
+z_index = -1
+position = Vector2(-108, -10)
+
+[connection signal="body_entered" from="Area2D" to="CharacterBody2D2" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="CharacterBody2D2" method="_on_area_2d_body_exited"]
