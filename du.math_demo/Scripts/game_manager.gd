@@ -11,12 +11,14 @@ var DentroArea:bool = false
 const MAPA_JUEGO = preload("res://Scenas/ScenasEntorno/Mapa_juego.tscn")
 const ENTORNO_RPG = preload("res://Scenas/ScenasEntorno/EntornoRPG.tscn")
 const ENTORNO_PLATAFORMAS = preload("res://Scenas/ScenasEntorno/EntornoPlataformas.tscn")
+const NIVEL_1_MOVER_CAJAS = preload("res://Scenas/ScenasEntorno/Nivel1_MoverCajas.tscn")
 
 #Creacion de un array de scenas que permita el control de abrir o cerrar escenas
 var Scenas: Array = [
 	MAPA_JUEGO, #Escena RPG donde se presentaran los diferentes niveles del juego
 	ENTORNO_RPG, #Primera Escena que se ve, en donde el jugador es transportado para hablar con la entidad
-	ENTORNO_PLATAFORMAS #Escena de 2D plataformas, reservado para el nivel del puente
+	ENTORNO_PLATAFORMAS, #Escena de 2D plataformas, reservado para el nivel del puente
+	NIVEL_1_MOVER_CAJAS
 ]
 
 func  _AbrirEscenas(valor: int):
