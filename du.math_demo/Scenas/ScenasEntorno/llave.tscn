@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://b02xo6p64xa4r"]
+
+[ext_resource type="Texture2D" uid="uid://cdvyl33jpyrgd" path="res://Sprites/SpritesEntorno/llave.png" id="1_cvd8f"]
+[ext_resource type="Script" uid="uid://6wsni27fimto" path="res://Scripts/llave.gd" id="1_vbjkw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vbjkw"]
+size = Vector2(8, 17)
+
+[node name="Area2D" type="Area2D"]
+script = ExtResource("1_vbjkw")
+
+[node name="Llave" type="Sprite2D" parent="."]
+texture = ExtResource("1_cvd8f")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_vbjkw")

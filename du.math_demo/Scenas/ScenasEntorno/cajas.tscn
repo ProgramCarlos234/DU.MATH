@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://571umlrh7ht8"]
+
+[ext_resource type="Script" uid="uid://n5k73t7c028a" path="res://Scripts/cajas.gd" id="1_6ued5"]
+[ext_resource type="Texture2D" uid="uid://c226olxblc13v" path="res://Sprites/SpritesEntorno/CajaPrototipo.png" id="1_x23rt"]
+[ext_resource type="Texture2D" uid="uid://cg8go5tktbqvc" path="res://Sprites/SpritesEntorno/Numero.png" id="2_5wkfn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5wkfn"]
+size = Vector2(16, 16)
+
+[node name="Cajas" type="Area2D"]
+script = ExtResource("1_6ued5")
+
+[node name="CajaPrototipo" type="Sprite2D" parent="."]
+texture = ExtResource("1_x23rt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_5wkfn")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -15)
+scale = Vector2(0.589255, 0.589255)
+texture = ExtResource("2_5wkfn")
+
+[node name="Label" type="Label" parent="Sprite2D"]
+modulate = Color(0, 0, 0, 1)
+offset_left = -15.2735
+offset_top = -10.1823
+offset_right = 24.7265
+offset_bottom = 12.8177
+scale = Vector2(0.764567, 0.764567)
+text = "x"
+horizontal_alignment = 1
+vertical_alignment = 1

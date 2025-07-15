@@ -9,7 +9,6 @@ func _on_body_entered(body: Node2D) -> void:
 	if body.name == "Jugador":
 		# Le pasa el valor del indicador al jugador
 		body.valor = Indicador_mundo
-		
 		# Activa la bandera en el GameManager que permite la interacción
 		GameManager.DentroArea = true
 	pass # Replace with function body.
