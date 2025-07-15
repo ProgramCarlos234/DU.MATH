@@ -8,10 +8,15 @@ extends CharacterBody2D
 @export var SPEED = 150.0          # Velocidad horizontal del personaje
 @export var JUMP_VELOCITY = -350.0  # Fuerza del salto (negativo porque el eje Y crece hacia abajo)
 
+# Variable que almacena el valor del índice de la escena que se debe cargar
+var valor: int
 
 # Función _process: Se ejecuta cada frame (no se usa en este caso)
 func _process(delta: float) -> void:
-	pass
+	# Si está dentro del área y el jugador presiona la tecla de interacción
+	if GameManager.DentroArea and Input.is_action_just_pressed("Interactuar"):
+		# Llama al GameManager para abrir la escena correspondiente según el valor actual
+		GameManager._AbrirEscenas(valor)
 
 # Función _physics_process: Se ejecuta en cada frame de física (tiempo fijo)
 func _physics_process(delta: float) -> void:
