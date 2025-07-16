@@ -280,7 +280,6 @@ script = ExtResource("2_7rp54")
 visible = false
 z_index = -1
 position = Vector2(570, 149)
-Indicador_mundo = 1
 
 [node name="TileMaps" type="Node2D" parent="."]
 

@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=4 uid="uid://be3usqarcnffo"]
+[gd_scene load_steps=10 format=4 uid="uid://be3usqarcnffo"]
 
 [ext_resource type="Script" uid="uid://cpiiauf48m08j" path="res://Scripts/camera_2d.gd" id="1_b3cgw"]
 [ext_resource type="PackedScene" uid="uid://b3rquvh0mg2rv" path="res://Scenas/ScenasPersonajes/JugadorRPG.tscn" id="1_b7odb"]
 [ext_resource type="Script" uid="uid://dete40vd7c3mn" path="res://Scripts/jugador_rpg.gd" id="2_b3cgw"]
 [ext_resource type="PackedScene" uid="uid://slsrphlw2jq8" path="res://Scenas/ScenasEntorno/Puerta.tscn" id="3_qvcje"]
 [ext_resource type="Texture2D" uid="uid://bqdmf135l8ti2" path="res://Sprites/SpritesEntorno/Dungeon_Tileset.png" id="4_hgtqa"]
+[ext_resource type="Script" uid="uid://dyjhwsna5twe0" path="res://Scenas/ScenasEntorno/puerta.gd" id="6_qvcje"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vq1ka"]
 texture = ExtResource("4_hgtqa")
@@ -137,6 +138,10 @@ texture = ExtResource("4_hgtqa")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_vq1ka")
 
+[sub_resource type="GDScript" id="GDScript_qvcje"]
+script/source = "extends Area2D
+"
+
 [node name="Node2D" type="Node2D"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -150,7 +155,8 @@ script = ExtResource("2_b3cgw")
 [node name="Area2D" parent="." instance=ExtResource("3_qvcje")]
 z_index = -1
 position = Vector2(272, -18)
-Indicador_mundo = 3
+script = ExtResource("6_qvcje")
+escena_destino = "res://ScenasEntorno/Nivel1_MoverCajas.tscn"
 
 [node name="TileMaps" type="Node2D" parent="."]
 
@@ -162,7 +168,7 @@ tile_set = SubResource("TileSet_p5rrs")
 [node name="Area2D2" parent="." instance=ExtResource("3_qvcje")]
 z_index = -1
 position = Vector2(656, -118)
-Indicador_mundo = 2
+script = SubResource("GDScript_qvcje")
 
 [connection signal="body_entered" from="Area2D" to="Jugador" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="Jugador" method="_on_area_2d_body_exited"]

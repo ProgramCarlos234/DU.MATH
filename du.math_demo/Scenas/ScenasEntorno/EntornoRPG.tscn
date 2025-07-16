@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=4 uid="uid://btqdsm384ny7v"]
+[gd_scene load_steps=8 format=4 uid="uid://btqdsm384ny7v"]
 
 [ext_resource type="PackedScene" uid="uid://b3rquvh0mg2rv" path="res://Scenas/ScenasPersonajes/JugadorRPG.tscn" id="1_pt56k"]
 [ext_resource type="Script" uid="uid://dete40vd7c3mn" path="res://Scripts/jugador_rpg.gd" id="2_mk36i"]
@@ -136,12 +136,75 @@ texture = ExtResource("4_d5r8n")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_vq1ka")
 
+[sub_resource type="GDScript" id="GDScript_d5r8n"]
+script/source = "extends Area2D
+
+@export var escena_destino: String = \"res://ScenasEntorno/Nivel1_MoverCajas.tscn\"
+@export var transicion_con_fade: bool = true
+@export var tiempo_fade: float = 0.5
+
+@onready var indicador = $Indicador
+
+func _ready():
+	# Conexión segura de señales
+	if not body_entered.is_connected(_on_body_entered):
+		body_entered.connect(_on_body_entered)
+	if not body_exited.is_connected(_on_body_exited):
+		body_exited.connect(_on_body_exited)
+	
+	# Configuración inicial
+	if indicador:
+		indicador.visible = false
+
+func _on_body_entered(body):
+	print(\"Cuerpo entró al portal:\", body.name)
+	if body.is_in_group(\"jugador\"):
+		print(\"Jugador entró en el área del portal\")
+		body.puede_usar_portal = true
+		body.portal_actual = self
+		
+		# Cambio automático si no requiere interacción
+		if not transicion_con_fade:
+			cambiar_escena()
+		elif indicador:
+			indicador.visible = true
+
+func _on_body_exited(body):
+	if body.is_in_group(\"jugador\"):
+		body.puede_usar_portal = false
+		body.portal_actual = null
+		if indicador:
+			indicador.visible = false
+
+func cambiar_escena():
+	print(\"Intentando cambiar a escena:\", escena_destino)
+	
+	# Verificar si la escena existe
+	if not ResourceLoader.exists(escena_destino):
+		printerr(\"ERROR: La escena no existe en la ruta:\", escena_destino)
+		return false
+	
+	# Transición con fade
+	if transicion_con_fade:
+		var tween = get_tree().create_tween()
+		tween.tween_property(get_viewport(), \"modulate:a\", 0, tiempo_fade)
+		await tween.finished
+	
+	# Cambio de escena
+	var resultado = get_tree().change_scene_to_file(escena_destino)
+	if resultado != OK:
+		printerr(\"ERROR al cambiar de escena. Código:\", resultado)
+		return false
+	
+	return true
+"
+
 [node name="Node2D" type="Node2D"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(3, 3)
 
-[node name="Jugador" parent="." instance=ExtResource("1_pt56k")]
+[node name="jugador" parent="." instance=ExtResource("1_pt56k")]
 position = Vector2(35, -16)
 script = ExtResource("2_mk36i")
 
@@ -155,3 +218,8 @@ tile_set = SubResource("TileSet_p5rrs")
 [node name="Area2D" parent="." instance=ExtResource("3_ltbff")]
 z_index = -1
 position = Vector2(83, -11)
+scale = Vector2(1.01107, 1.10569)
+script = SubResource("GDScript_d5r8n")
+escena_destino = "res://ScenasEntorno/Nivel1_MoverCajas.tscn"
+transicion_con_fade = true
+tiempo_fade = 0.5

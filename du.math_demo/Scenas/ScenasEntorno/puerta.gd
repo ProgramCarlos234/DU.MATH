@@ -1,6 +1,6 @@
 extends Area2D
 
-@export var escena_destino: String = "res://Scenas/ScenasEntorno/Mapa_juego.tscn"
+@export var escena_destino: String = "res://ScenasEntorno/Nivel1_MoverCajas.tscn"
 
 func _ready():
 	add_to_group("portal")
