@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://c65hditmthdiv"]
+
+[ext_resource type="PackedScene" uid="uid://uj0isloasghq" path="res://Scenas/ScenasPersonajes/JugadorPlataformas.tscn" id="1_xx2cc"]
+[ext_resource type="Script" uid="uid://cu2lmijnv5ho3" path="res://Scripts/jugador_plataformas.gd" id="2_qqkyw"]
+[ext_resource type="PackedScene" uid="uid://slsrphlw2jq8" path="res://Scenas/ScenasEntorno/Puerta.tscn" id="3_jfyxa"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jfyxa"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(3, 3)
+
+[node name="Jugador" parent="." instance=ExtResource("1_xx2cc")]
+position = Vector2(-129, -22)
+script = ExtResource("2_qqkyw")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(-3, 26)
+scale = Vector2(20.8725, -0.948989)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("RectangleShape2D_jfyxa")
+
+[node name="Area2D" parent="." instance=ExtResource("3_jfyxa")]
+z_index = -1
+position = Vector2(65, -17)
+Indicador_mundo = 1

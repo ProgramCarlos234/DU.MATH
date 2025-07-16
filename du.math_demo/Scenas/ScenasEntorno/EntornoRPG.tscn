@@ -1,0 +1,225 @@
+[gd_scene load_steps=8 format=4 uid="uid://btqdsm384ny7v"]
+
+[ext_resource type="PackedScene" uid="uid://b3rquvh0mg2rv" path="res://Scenas/ScenasPersonajes/JugadorRPG.tscn" id="1_pt56k"]
+[ext_resource type="Script" uid="uid://dete40vd7c3mn" path="res://Scripts/jugador_rpg.gd" id="2_mk36i"]
+[ext_resource type="PackedScene" uid="uid://slsrphlw2jq8" path="res://Scenas/ScenasEntorno/Puerta.tscn" id="3_ltbff"]
+[ext_resource type="Texture2D" uid="uid://bqdmf135l8ti2" path="res://Sprites/SpritesEntorno/Dungeon_Tileset.png" id="4_d5r8n"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vq1ka"]
+texture = ExtResource("4_d5r8n")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+4:0/0 = 0
+4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+5:0/0 = 0
+5:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+6:0/0 = 0
+7:0/0 = 0
+8:0/0 = 0
+9:0/0 = 0
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+5:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+6:1/0 = 0
+7:1/0 = 0
+8:1/0 = 0
+9:1/0 = 0
+0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+5:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+6:2/0 = 0
+7:2/0 = 0
+8:2/0 = 0
+9:2/0 = 0
+0:3/0 = 0
+0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+5:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+6:3/0 = 0
+7:3/0 = 0
+8:3/0 = 0
+9:3/0 = 0
+0:4/0 = 0
+0:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:4/0 = 0
+1:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:4/0 = 0
+2:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:4/0 = 0
+3:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+4:4/0 = 0
+4:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+5:4/0 = 0
+5:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+6:4/0 = 0
+7:4/0 = 0
+8:4/0 = 0
+9:4/0 = 0
+0:5/0 = 0
+0:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:5/0 = 0
+1:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:5/0 = 0
+2:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:5/0 = 0
+3:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+4:5/0 = 0
+4:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+5:5/0 = 0
+5:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+6:5/0 = 0
+7:5/0 = 0
+8:5/0 = 0
+9:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+5:6/0 = 0
+6:6/0 = 0
+7:6/0 = 0
+8:6/0 = 0
+9:6/0 = 0
+0:7/0 = 0
+1:7/0 = 0
+2:7/0 = 0
+3:7/0 = 0
+4:7/0 = 0
+5:7/0 = 0
+6:7/0 = 0
+7:7/0 = 0
+8:7/0 = 0
+9:7/0 = 0
+0:8/0 = 0
+1:8/0 = 0
+2:8/0 = 0
+3:8/0 = 0
+4:8/0 = 0
+5:8/0 = 0
+6:8/0 = 0
+7:8/0 = 0
+8:8/0 = 0
+9:8/0 = 0
+0:9/0 = 0
+1:9/0 = 0
+2:9/0 = 0
+3:9/0 = 0
+4:9/0 = 0
+5:9/0 = 0
+6:9/0 = 0
+7:9/0 = 0
+8:9/0 = 0
+9:9/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_p5rrs"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_vq1ka")
+
+[sub_resource type="GDScript" id="GDScript_d5r8n"]
+script/source = "extends Area2D
+
+@export var escena_destino: String = \"res://ScenasEntorno/Nivel1_MoverCajas.tscn\"
+@export var transicion_con_fade: bool = true
+@export var tiempo_fade: float = 0.5
+
+@onready var indicador = $Indicador
+
+func _ready():
+	# Conexión segura de señales
+	if not body_entered.is_connected(_on_body_entered):
+		body_entered.connect(_on_body_entered)
+	if not body_exited.is_connected(_on_body_exited):
+		body_exited.connect(_on_body_exited)
+	
+	# Configuración inicial
+	if indicador:
+		indicador.visible = false
+
+func _on_body_entered(body):
+	print(\"Cuerpo entró al portal:\", body.name)
+	if body.is_in_group(\"jugador\"):
+		print(\"Jugador entró en el área del portal\")
+		body.puede_usar_portal = true
+		body.portal_actual = self
+		
+		# Cambio automático si no requiere interacción
+		if not transicion_con_fade:
+			cambiar_escena()
+		elif indicador:
+			indicador.visible = true
+
+func _on_body_exited(body):
+	if body.is_in_group(\"jugador\"):
+		body.puede_usar_portal = false
+		body.portal_actual = null
+		if indicador:
+			indicador.visible = false
+
+func cambiar_escena():
+	print(\"Intentando cambiar a escena:\", escena_destino)
+	
+	# Verificar si la escena existe
+	if not ResourceLoader.exists(escena_destino):
+		printerr(\"ERROR: La escena no existe en la ruta:\", escena_destino)
+		return false
+	
+	# Transición con fade
+	if transicion_con_fade:
+		var tween = get_tree().create_tween()
+		tween.tween_property(get_viewport(), \"modulate:a\", 0, tiempo_fade)
+		await tween.finished
+	
+	# Cambio de escena
+	var resultado = get_tree().change_scene_to_file(escena_destino)
+	if resultado != OK:
+		printerr(\"ERROR al cambiar de escena. Código:\", resultado)
+		return false
+	
+	return true
+"
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(3, 3)
+
+[node name="jugador" parent="." instance=ExtResource("1_pt56k")]
+position = Vector2(35, -16)
+script = ExtResource("2_mk36i")
+
+[node name="TileMaps" type="Node2D" parent="."]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="TileMaps"]
+z_index = -2
+tile_map_data = PackedByteArray("AAD7//r/AAABAAAAAAD8//r/AAACAAAAAAD9//r/AAADAAAAAAD+//r/AAAEAAAAAAD///r/AAABAAAAAAAAAPr/AAACAAAAAAABAPr/AAADAAAAAAACAPr/AAAEAAAAAAADAPr/AAABAAAAAAAEAPr/AAACAAAAAAAFAPr/AAADAAAAAAAGAPr/AAAEAAAAAAAHAPr/AAAFAAAAAAAHAPv/AAAFAAEAAAAHAPz/AAAFAAIAAAAHAP7/AAAFAAAAAAAHAP//AAAFAAEAAAAHAAAAAAAFAAIAAAAHAAIAAAAFAAAAAAAHAAMAAAAFAAEAAAAHAP3/AAAFAAEAAAAHAAEAAAAFAAEAAAD4//r/AAAAAAMAAAD4//v/AAAAAAAAAAD4//z/AAAAAAEAAAD4//3/AAAAAAIAAAD4//7/AAAAAAMAAAD4////AAAAAAEAAAD4/wAAAAAAAAAAAAD4/wEAAAAAAAEAAAD4/wIAAAAAAAIAAAD4/wMAAAAAAAMAAAD4/wQAAAAAAAIAAAD7/wUAAAABAAQAAAD8/wUAAAACAAQAAAD9/wUAAAADAAQAAAD+/wUAAAACAAQAAAD//wUAAAADAAQAAAAAAAUAAAAEAAQAAAABAAUAAAACAAQAAAACAAUAAAADAAQAAAADAAUAAAAEAAQAAAAEAAUAAAACAAQAAAAFAAUAAAADAAQAAAAGAAUAAAAEAAQAAAAHAAUAAAAFAAQAAAD4/wUAAAAAAAQAAAD5/wUAAAABAAQAAAD6/wUAAAACAAQAAAAHAAQAAAAFAAIAAAD5//r/AAABAAAAAAD6//r/AAACAAAAAAD5//v/AAABAAEAAAD5//z/AAABAAIAAAD5//3/AAABAAIAAAD6//v/AAACAAEAAAD6//z/AAACAAIAAAD6//3/AAAGAAEAAAD7//v/AAADAAEAAAD7//z/AAAHAAAAAAD7//3/AAAHAAEAAAD8//v/AAACAAEAAAD8//z/AAAIAAAAAAD8//3/AAAIAAEAAAADAPv/AAADAAEAAAADAPz/AAAIAAAAAAADAP3/AAAIAAEAAAAEAPv/AAACAAEAAAAEAPz/AAACAAIAAAAEAP3/AAAHAAEAAAAFAPv/AAADAAEAAAAFAPz/AAADAAIAAAAFAP3/AAAIAAEAAAAGAPv/AAAEAAEAAAAGAPz/AAAEAAIAAAADAAIAAAAGAAIAAAADAAMAAAAIAAIAAAADAAQAAAADAAMAAAAEAAIAAAAHAAIAAAAEAAMAAAACAAIAAAAEAAQAAAACAAMAAAAFAAIAAAAIAAIAAAAFAAMAAAADAAIAAAAFAAQAAAADAAMAAAAGAAIAAAAEAAIAAAAGAAMAAAAEAAIAAAAGAAQAAAAEAAMAAAD5/wIAAAABAAIAAAD5/wMAAAABAAIAAAD5/wQAAAABAAMAAAD6/wIAAAAGAAEAAAD6/wMAAAACAAIAAAD6/wQAAAACAAMAAAD7/wIAAAAHAAEAAAD7/wMAAAADAAIAAAD7/wQAAAADAAMAAAD8/wIAAAAIAAEAAAD8/wMAAAAHAAIAAAD8/wQAAAADAAMAAAD8/wEAAAAIAAIAAAD9/wEAAAAHAAIAAAD9/wIAAAAJAAEAAAD9/wMAAAAIAAIAAAACAAEAAAAHAAAAAAACAAIAAAAHAAEAAAACAAMAAAAHAAIAAAADAAEAAAAGAAEAAAACAP3/AAAHAAEAAAACAP7/AAAHAAIAAAACAP//AAAHAAIAAAADAP7/AAAIAAIAAAADAP//AAAGAAIAAAD8//7/AAAIAAIAAAD8////AAAIAAIAAAD9//3/AAAJAAEAAAD9//7/AAAHAAIAAAD9////AAAHAAAAAAD6//7/AAAGAAEAAAD6////AAAGAAIAAAD7//7/AAAHAAIAAAD7////AAAHAAIAAAD6/wAAAAAGAAEAAAD6/wEAAAAGAAIAAAD7/wAAAAAHAAEAAAD7/wEAAAAHAAIAAAD8/wAAAAAIAAEAAAAEAP7/AAAHAAEAAAAEAP//AAAHAAIAAAAFAP7/AAAIAAEAAAAFAP//AAAIAAIAAAAEAAEAAAAHAAEAAAAFAAEAAAAIAAEAAAD//wQAAAACAAMAAAAAAAQAAAADAAMAAAD9/wQAAAACAAMAAAD+/wQAAAADAAMAAAABAAQAAAACAAMAAAACAAQAAAADAAMAAAD9//v/AAADAAEAAAACAPv/AAACAAEAAAD///v/AAACAAEAAAAAAPv/AAADAAEAAAD+//v/AAADAAEAAAABAPv/AAACAAEAAAD5//7/AAABAAIAAAD5////AAABAAIAAAD5/wAAAAABAAIAAAD5/wEAAAABAAIAAAAGAP7/AAAEAAIAAAAGAP//AAAEAAIAAAAGAAAAAAAEAAIAAAAGAAEAAAAEAAIAAAD9//z/AAAHAAAAAAD+//z/AAAIAAAAAAD+//3/AAAIAAEAAAD+//7/AAAIAAIAAAACAPz/AAAHAAAAAAAAAPz/AAAHAAAAAAAAAP3/AAAHAAEAAAAAAP7/AAAHAAIAAAABAPz/AAAIAAAAAAABAP3/AAAIAAEAAAABAP7/AAAIAAIAAAAAAP//AAAHAAAAAAAAAAAAAAAHAAEAAAAAAAEAAAAHAAAAAAABAP//AAAIAAAAAAABAAAAAAAIAAEAAAABAAEAAAAIAAAAAAAAAAIAAAAHAAEAAAAAAAMAAAAHAAIAAAABAAIAAAAIAAEAAAABAAMAAAAIAAIAAAD+/wEAAAAIAAIAAAD+/wIAAAAHAAEAAAD+/wMAAAAHAAIAAAD//wEAAAAHAAIAAAD//wIAAAAIAAEAAAD//wMAAAAIAAIAAAD9/wAAAAAHAAEAAAD+////AAAIAAAAAAD+/wAAAAAIAAEAAAACAAAAAAAGAAEAAAADAAAAAAAHAAEAAAAEAAAAAAAIAAEAAAAFAAAAAAAJAAEAAAD///z/AAAHAAAAAAD///3/AAAHAAEAAAD///7/AAAHAAIAAAD/////AAAHAAAAAAD//wAAAAAHAAEAAAD0//n/AAAIAAcAAAD1//n/AAAIAAcAAAD1//r/AAAIAAcAAAD2//v/AAAIAAcAAAD2//z/AAAIAAcAAAD3//3/AAAIAAcAAAD3//7/AAAIAAcAAAD3////AAAIAAcAAAD3/wAAAAAIAAcAAAD3/wEAAAAIAAcAAAD3/wIAAAAIAAcAAAD3/wMAAAAIAAcAAAD3/wQAAAAIAAcAAAD3/wUAAAAIAAcAAAD2/wUAAAAIAAcAAAD1/wUAAAAIAAcAAAD1/wQAAAAIAAcAAAD1/wMAAAAIAAcAAAD1/wIAAAAIAAcAAAD1/wEAAAAIAAcAAAD1/wAAAAAIAAcAAAD1////AAAIAAcAAAD1//7/AAAIAAcAAAD1//3/AAAIAAcAAAD1//z/AAAIAAcAAAD1//v/AAAIAAcAAAD0//v/AAAIAAcAAAD0//r/AAAIAAcAAAD0//z/AAAIAAcAAAD0//3/AAAIAAcAAAD0//7/AAAIAAcAAAD0////AAAIAAcAAAD0/wAAAAAIAAcAAAD0/wEAAAAIAAcAAAD0/wIAAAAIAAcAAAD0/wMAAAAIAAcAAAD0/wQAAAAIAAcAAAD0/wUAAAAIAAcAAAD2//7/AAAIAAcAAAD2//3/AAAIAAcAAAD2////AAAIAAcAAAD2/wAAAAAIAAcAAAD2/wEAAAAIAAcAAAD2/wIAAAAIAAcAAAD2/wMAAAAIAAcAAAD2/wQAAAAIAAcAAAD3//z/AAAIAAcAAAD3//v/AAAIAAcAAAD3//r/AAAIAAcAAAD3//n/AAAIAAcAAAD2//n/AAAIAAcAAAD2//r/AAAIAAcAAADz//n/AAAIAAcAAADz//r/AAAIAAcAAADz//v/AAAIAAcAAADz//z/AAAIAAcAAADz//3/AAAIAAcAAADz//7/AAAIAAcAAADz////AAAIAAcAAADz/wAAAAAIAAcAAADz/wEAAAAIAAcAAADz/wIAAAAIAAcAAADz/wMAAAAIAAcAAADz/wQAAAAIAAcAAADz/wUAAAAIAAcAAAAIAPn/AAAIAAcAAAAIAPr/AAAIAAcAAAAIAPv/AAAIAAcAAAAIAPz/AAAIAAcAAAAIAP3/AAAIAAcAAAAIAP7/AAAIAAcAAAAIAP//AAAIAAcAAAAIAAAAAAAIAAcAAAAIAAEAAAAIAAcAAAAIAAIAAAAIAAcAAAAIAAMAAAAIAAcAAAAIAAQAAAAIAAcAAAAIAAUAAAAIAAcAAAAJAPn/AAAIAAcAAAAJAPr/AAAIAAcAAAAJAPv/AAAIAAcAAAAJAPz/AAAIAAcAAAAJAP3/AAAIAAcAAAAJAP7/AAAIAAcAAAAJAP//AAAIAAcAAAAJAAAAAAAIAAcAAAAJAAEAAAAIAAcAAAAJAAIAAAAIAAcAAAAJAAMAAAAIAAcAAAAJAAQAAAAIAAcAAAAJAAUAAAAIAAcAAAAKAPn/AAAIAAcAAAAKAPr/AAAIAAcAAAAKAPv/AAAIAAcAAAAKAPz/AAAIAAcAAAAKAP3/AAAIAAcAAAAKAP7/AAAIAAcAAAAKAP//AAAIAAcAAAAKAAAAAAAIAAcAAAAKAAEAAAAIAAcAAAAKAAIAAAAIAAcAAAAKAAMAAAAIAAcAAAAKAAQAAAAIAAcAAAAKAAUAAAAIAAcAAAALAPn/AAAIAAcAAAALAPr/AAAIAAcAAAALAPv/AAAIAAcAAAALAPz/AAAIAAcAAAALAP3/AAAIAAcAAAALAP7/AAAIAAcAAAALAP//AAAIAAcAAAALAAAAAAAIAAcAAAALAAEAAAAIAAcAAAALAAIAAAAIAAcAAAALAAMAAAAIAAcAAAALAAQAAAAIAAcAAAALAAUAAAAIAAcAAAAMAPn/AAAIAAcAAAAMAPr/AAAIAAcAAAAMAPv/AAAIAAcAAAAMAPz/AAAIAAcAAAAMAP3/AAAIAAcAAAAMAP7/AAAIAAcAAAAMAP//AAAIAAcAAAAMAAAAAAAIAAcAAAAMAAEAAAAIAAcAAAAMAAIAAAAIAAcAAAAMAAMAAAAIAAcAAAAMAAQAAAAIAAcAAAAMAAUAAAAIAAcAAAADAPn/AAAIAAcAAAAEAPn/AAAIAAcAAAAFAPn/AAAIAAcAAAAGAPn/AAAIAAcAAAAHAPn/AAAIAAcAAAD+//n/AAAIAAcAAAD///n/AAAIAAcAAAAAAPn/AAAIAAcAAAABAPn/AAAIAAcAAAACAPn/AAAIAAcAAAD5//n/AAAIAAcAAAD6//n/AAAIAAcAAAD7//n/AAAIAAcAAAD8//n/AAAIAAcAAAD9//n/AAAIAAcAAAD4//n/AAAIAAcAAADz/wYAAAAIAAcAAAD0/wYAAAAIAAcAAAD1/wYAAAAIAAcAAAD2/wYAAAAIAAcAAAD3/wYAAAAIAAcAAAD4/wYAAAAIAAcAAAD5/wYAAAAIAAcAAAD6/wYAAAAIAAcAAAD7/wYAAAAIAAcAAAD8/wYAAAAIAAcAAAD9/wYAAAAIAAcAAAD+/wYAAAAIAAcAAAD//wYAAAAIAAcAAAAAAAYAAAAIAAcAAAABAAYAAAAIAAcAAAACAAYAAAAIAAcAAAADAAYAAAAIAAcAAAAEAAYAAAAIAAcAAAAFAAYAAAAIAAcAAAAGAAYAAAAIAAcAAAAHAAYAAAAIAAcAAAAIAAYAAAAIAAcAAAAJAAYAAAAIAAcAAAAKAAYAAAAIAAcAAAALAAYAAAAIAAcAAAAMAAYAAAAIAAcAAAAGAP3/AAAEAAIAAAA=")
+tile_set = SubResource("TileSet_p5rrs")
+
+[node name="Area2D" parent="." instance=ExtResource("3_ltbff")]
+z_index = -1
+position = Vector2(83, -11)
+scale = Vector2(1.01107, 1.10569)
+script = SubResource("GDScript_d5r8n")
+escena_destino = "res://ScenasEntorno/Nivel1_MoverCajas.tscn"
+transicion_con_fade = true
+tiempo_fade = 0.5

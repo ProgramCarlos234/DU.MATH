@@ -1,0 +1,51 @@
+[gd_scene load_steps=7 format=3 uid="uid://b8wjoy8cfcnxq"]
+
+[ext_resource type="Texture2D" uid="uid://dntbf7e8m1x5q" path="res://Sprites/SpritesEntorno/EnemigoAnimacion.png" id="1_x1o8o"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g5bmv"]
+atlas = ExtResource("1_x1o8o")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s84yb"]
+atlas = ExtResource("1_x1o8o")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_he3io"]
+atlas = ExtResource("1_x1o8o")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gko61"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g5bmv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s84yb")
+}],
+"loop": true,
+"name": &"Atacar",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_he3io")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_24iu6"]
+size = Vector2(8, 13)
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_gko61")
+animation = &"idle"
+frame_progress = 0.0629705
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 1.5)
+shape = SubResource("RectangleShape2D_24iu6")
