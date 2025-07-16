@@ -4,11 +4,11 @@ extends Area2D
 var puede_interactuar := false
 
 func _on_body_entered(body):
-	if body.name == "jugador":
+	if body.name == "Jugador":
 		puede_interactuar = true
 
 func _on_body_exited(body):
-	if body.name == "jugador":
+	if body.name == "Jugador":
 		puede_interactuar = false
 
 func _process(_delta):
