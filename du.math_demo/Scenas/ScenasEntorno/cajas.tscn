@@ -1,11 +1,14 @@
-[gd_scene load_steps=5 format=3 uid="uid://571umlrh7ht8"]
+[gd_scene load_steps=6 format=3 uid="uid://571umlrh7ht8"]
 
 [ext_resource type="Script" uid="uid://n5k73t7c028a" path="res://Scripts/cajas.gd" id="1_6ued5"]
 [ext_resource type="Texture2D" uid="uid://c226olxblc13v" path="res://Sprites/SpritesEntorno/CajaPrototipo.png" id="1_x23rt"]
 [ext_resource type="Texture2D" uid="uid://cg8go5tktbqvc" path="res://Sprites/SpritesEntorno/Numero.png" id="2_5wkfn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5wkfn"]
-size = Vector2(16, 16)
+size = Vector2(46, 8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6ued5"]
+size = Vector2(27.1529, 27.1529)
 
 [node name="Cajas" type="Area2D"]
 script = ExtResource("1_6ued5")
@@ -17,7 +20,7 @@ texture = ExtResource("1_x23rt")
 shape = SubResource("RectangleShape2D_5wkfn")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-18, 9.53674e-07)
+position = Vector2(-14, 0)
 scale = Vector2(0.589255, 0.589255)
 texture = ExtResource("2_5wkfn")
 
@@ -31,3 +34,12 @@ scale = Vector2(0.764567, 0.764567)
 text = "x"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/StaticBody2D"]
+position = Vector2(23.7588, 0)
+shape = SubResource("RectangleShape2D_6ued5")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

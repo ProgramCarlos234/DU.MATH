@@ -1,5 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://b8wjoy8cfcnxq"]
+[gd_scene load_steps=8 format=3 uid="uid://b8wjoy8cfcnxq"]
 
+[ext_resource type="Script" uid="uid://cw72864hucr2q" path="res://Scripts/enemigo_cajas.gd" id="1_g5bmv"]
 [ext_resource type="Texture2D" uid="uid://dntbf7e8m1x5q" path="res://Sprites/SpritesEntorno/EnemigoAnimacion.png" id="1_x1o8o"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_g5bmv"]
@@ -40,6 +41,8 @@ animations = [{
 size = Vector2(8, 13)
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
+z_index = -1
+script = ExtResource("1_g5bmv")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_gko61")
