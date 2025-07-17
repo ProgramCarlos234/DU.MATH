@@ -1,24 +1,28 @@
 extends Area2D
 
-# Señal que se emite cuando la caja es rota por el jugador
 signal caja_rota(numero: int, posicion: Vector2)
 
-# Número que representa el valor visible en la caja
 @export var numero: int
-
-# Acceso al texto de la caja
 @onready var label_caja: Label = $Sprite2D/LabelCaja
 
-func _ready() -> void:
-	add_to_group("Caja")  # Por si lo necesitas después
+var puede_romperse: bool = false
 
-# Asigna el número a mostrar en la caja
+func _ready() -> void:
+	set_label(numero)
+
 func set_label(valor: int):
 	numero = valor
 	label_caja.text = str(valor)
 
-# Detecta cuando el jugador hace clic sobre la caja
-func _input_event(viewport, event, shape_idx):
-	if event is InputEventMouseButton and event.pressed:
+func _on_body_entered(body: Node) -> void:
+	if body.name == "Jugador":
+		puede_romperse = true
+
+func _on_body_exited(body: Node) -> void:
+	if body.name == "Jugador":
+		puede_romperse = false
+
+func _process(_delta: float) -> void:
+	if puede_romperse and Input.is_action_just_pressed("Interactuar"):
 		emit_signal("caja_rota", numero, global_position)
-		queue_free()  # Se elimina tras ser rota
+		queue_free()

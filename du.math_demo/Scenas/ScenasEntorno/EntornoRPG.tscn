@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=4 uid="uid://btqdsm384ny7v"]
+[gd_scene load_steps=8 format=4 uid="uid://cbydru7571klx"]
 
 [ext_resource type="PackedScene" uid="uid://b3rquvh0mg2rv" path="res://Scenas/ScenasPersonajes/JugadorRPG.tscn" id="1_pt56k"]
 [ext_resource type="Script" uid="uid://dete40vd7c3mn" path="res://Scripts/jugador_rpg.gd" id="2_mk36i"]
 [ext_resource type="PackedScene" uid="uid://slsrphlw2jq8" path="res://Scenas/ScenasEntorno/Puerta.tscn" id="3_ltbff"]
 [ext_resource type="Texture2D" uid="uid://bqdmf135l8ti2" path="res://Sprites/SpritesEntorno/Dungeon_Tileset.png" id="4_d5r8n"]
+[ext_resource type="AudioStream" uid="uid://bm2fkvfedst8q" path="res://Musica/Comic_Cinematic_Part_1.mp3" id="5_vq1ka"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vq1ka"]
 texture = ExtResource("4_d5r8n")
@@ -155,3 +156,7 @@ tile_set = SubResource("TileSet_p5rrs")
 [node name="Area2D" parent="." instance=ExtResource("3_ltbff")]
 z_index = -1
 position = Vector2(83, -11)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_vq1ka")
+autoplay = true
