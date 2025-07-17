@@ -1,0 +1,36 @@
+[gd_scene load_steps=4 format=3 uid="uid://csf4fvsoekj0y"]
+
+[ext_resource type="Texture2D" uid="uid://c3b74gqf51sru" path="res://Sprites/SpritesEntorno/WhatsApp Image 2025-07-17 at 10.49.31 AM.jpeg" id="1_4di8f"]
+[ext_resource type="Script" uid="uid://byf2t1frojatb" path="res://Scripts/menu.gd" id="1_ilhvm"]
+[ext_resource type="AudioStream" uid="uid://batcxh08c5fp8" path="res://Musica/Gameplay_PantallaCarga_Masterizada.mp3" id="3_7kx5r"]
+
+[node name="MENU" type="Node2D"]
+script = ExtResource("1_ilhvm")
+
+[node name="MenuButton" type="MenuButton" parent="."]
+offset_left = 34.0
+offset_top = 196.0
+offset_right = 104.0
+offset_bottom = 227.0
+scale = Vector2(4.54898, 3.5744)
+text = "ENTRAR"
+alignment = 0
+
+[node name="MenuButton2" type="MenuButton" parent="."]
+offset_left = 34.0
+offset_top = 325.0
+offset_right = 104.0
+offset_bottom = 356.0
+scale = Vector2(4.54898, 3.5744)
+text = "SALIR"
+alignment = 0
+
+[node name="WhatsAppImage2025-07-17At10_49_31Am" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(578, 326)
+scale = Vector2(0.755077, 0.755077)
+texture = ExtResource("1_4di8f")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_7kx5r")
+autoplay = true
