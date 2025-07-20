@@ -1,0 +1,11 @@
+ColorRect
+Polygon2D
+StaticBody2D
+CollisionShape2D
+Camera2D
+Node2D
+Sprite2D
+TileMapLayer
+Node
+TileMap
+CharacterBody2D

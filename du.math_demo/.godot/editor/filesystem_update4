@@ -1,0 +1,11 @@
+res://Scenas/ScenasEntorno/EntornoRPG.tscn
+res://Tiles/Mapa_juego.tres
+res://Scenas/ScenasEntorno/Puerta.tscn
+res://Scenas/ScenasEntorno/cajas.tscn
+res://Scenas/ScenasEntorno/EnemigoCajas.tscn
+res://Scenas/ScenasEntorno/EntornoPlataformas.tscn
+res://Scenas/ScenasEntorno/llave.tscn
+res://Scenas/ScenasEntorno/Mapa_juego.tscn
+res://Scenas/ScenasEntorno/menu.tscn
+res://Scenas/ScenasEntorno/Nivel1_2AliIs.tscn
+res://Scenas/ScenasEntorno/Nivel1_MoverCajas.tscn
