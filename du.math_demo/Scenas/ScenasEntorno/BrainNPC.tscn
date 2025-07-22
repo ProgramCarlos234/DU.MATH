@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=3 uid="uid://dedex5juuo1uh"]
+
+[ext_resource type="Texture2D" uid="uid://csbbpijah4ar1" path="res://Sprites/SpritesEntorno/catchingBrainNPC.png" id="1_q3uig"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_itggw"]
+radius = 8.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_618g3"]
+atlas = ExtResource("1_q3uig")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a4qqp"]
+atlas = ExtResource("1_q3uig")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_47fpt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_618g3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a4qqp")
+}],
+"loop": true,
+"name": &"run",
+"speed": 6.0
+}]
+
+[node name="1stNPC" type="CharacterBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_itggw")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_47fpt")
+animation = &"run"
+frame = 1
+frame_progress = 0.905959

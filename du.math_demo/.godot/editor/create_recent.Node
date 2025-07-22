@@ -1,11 +1,12 @@
-ColorRect
-Polygon2D
-StaticBody2D
 CollisionShape2D
+AnimatedSprite2D
+CharacterBody2D
 Camera2D
 Node2D
-Sprite2D
 TileMapLayer
+StaticBody2D
+ColorRect
+Polygon2D
+Sprite2D
 Node
 TileMap
-CharacterBody2D
