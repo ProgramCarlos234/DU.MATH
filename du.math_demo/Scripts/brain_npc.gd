@@ -1,4 +1,5 @@
 extends CharacterBody2D
+signal atrapado
 
 @export var speed: float = 60.0
 var direction := Vector2.ZERO
@@ -8,6 +9,7 @@ var move_timer := 0.0
 func _ready():
 	randomize()
 	pick_random_direction()
+	$Area2D.body_entered.connect(_on_body_entered)
 
 func _process(delta):
 	move_timer -= delta
@@ -21,6 +23,8 @@ func pick_random_direction():
 	var angle = randf_range(0, PI * 2)
 	direction = Vector2(cos(angle), sin(angle)).normalized()
 
-func _on_NpcBrain_body_entered(body):
-	if body.name == "player": 
+func _on_body_entered(body):
+	if body.name == "Jugador":  # Cambiado para detectar por nombre
+		emit_signal("atrapado")
+		
 		queue_free()

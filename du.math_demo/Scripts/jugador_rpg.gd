@@ -12,6 +12,7 @@ var velocidad: int = 100
 
 # Variable que almacena el valor del índice de la escena que se debe cargar
 var valor: int = 0
+var iqDelJugador = 10
 
 # Se ejecuta cada frame
 func _process(delta: float) -> void:
@@ -36,3 +37,9 @@ func _physics_process(delta: float) -> void:
 		sprite.scale.x = -1  # Hacia la derecha
 	elif Direccion.x < 0:
 		sprite.scale.x = 1   # Hacia la izquierda
+		
+		
+		
+func aumentar_puntaje():
+	iqDelJugador +=1
+	print("aumentar jug")

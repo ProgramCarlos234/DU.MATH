@@ -1,6 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://dedex5juuo1uh"]
+[gd_scene load_steps=9 format=3 uid="uid://dedex5juuo1uh"]
 
 [ext_resource type="Texture2D" uid="uid://csbbpijah4ar1" path="res://Sprites/SpritesEntorno/catchingBrainNPC.png" id="1_q3uig"]
+[ext_resource type="Script" uid="uid://bn4xi7v7kv44p" path="res://Scripts/brain_npc.gd" id="2_itggw"]
+[ext_resource type="Script" uid="uid://cgdyga8l0nbif" path="res://Scripts/area_2dBrains.gd" id="3_618g3"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_itggw"]
 radius = 8.0
@@ -14,6 +16,7 @@ atlas = ExtResource("1_q3uig")
 region = Rect2(16, 0, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_47fpt"]
+resource_local_to_scene = true
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -27,7 +30,11 @@ animations = [{
 "speed": 6.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_618g3"]
+size = Vector2(18, 18)
+
 [node name="1stNPC" type="CharacterBody2D"]
+script = ExtResource("2_itggw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_itggw")
@@ -35,5 +42,13 @@ shape = SubResource("CircleShape2D_itggw")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_47fpt")
 animation = &"run"
-frame = 1
-frame_progress = 0.905959
+autoplay = "run"
+frame_progress = 0.618715
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("3_618g3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_618g3")
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
