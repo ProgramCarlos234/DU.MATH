@@ -1,0 +1,14 @@
+Label
+CollisionShape2D
+Area2D
+TileMapLayer
+AnimatedSprite2D
+CharacterBody2D
+Camera2D
+Node2D
+StaticBody2D
+ColorRect
+Polygon2D
+Sprite2D
+Node
+TileMap

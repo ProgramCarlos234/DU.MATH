@@ -9,6 +9,9 @@ var vida: int
 @onready var sprite = $AnimatedSprite2D
 @onready var Jugador = $"."  # Referencia al nodo del jugador (opcional, equivale a "self")
 @onready var tilemap = get_node("../TileMaps")
+# Velocidad de movimiento del personaje
+# Variable que almacena el valor del índice de la escena que se debe cargar
+var iqDelJugador = 10
 
 # Se ejecuta cada frame
 func _process(delta: float) -> void:
@@ -30,3 +33,9 @@ func _physics_process(delta: float) -> void:
 		sprite.scale.x = 1   # Hacia la izquierda
 	elif Direccion.x == 0:
 		animated_sprite_2d.play("Idle")
+		
+		
+		
+func aumentar_puntaje():
+	iqDelJugador +=1
+	print("aumentar jug")

@@ -180,7 +180,6 @@ scale = Vector2(1.16, 1.16)
 position = Vector2(-68, -71)
 
 [node name="Area2D" parent="." instance=ExtResource("3_6ci3s")]
-visible = false
 z_index = -1
 position = Vector2(570, 149)
 Indicador_mundo = 1
