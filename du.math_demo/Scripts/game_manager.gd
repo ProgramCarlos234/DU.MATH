@@ -2,7 +2,11 @@ extends Node
 # ======================= #
 #       VARIABLES         #
 # ======================= #
+
 var DentroArea := false
+var VidaJugador: int = 10
+var JugadorRecibeDaño = false
+
 # ======================= #
 #    ESCENAS DISPONIBLES  #
 # ======================= #
@@ -30,4 +34,9 @@ func _ready() -> void:
 func _AbrirEscenas(valor: int) ->void:
 	if valor >= 0 and valor < Scenas.size():
 		get_tree().change_scene_to_packed(Scenas[valor])
+	pass
+
+func _recibirDaño(Daño : int) -> void:
+	VidaJugador -= Daño
+	JugadorRecibeDaño = true
 	pass

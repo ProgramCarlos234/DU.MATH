@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=4 uid="uid://be3usqarcnffo"]
+[gd_scene load_steps=7 format=4 uid="uid://be3usqarcnffo"]
 
 [ext_resource type="Script" uid="uid://cpiiauf48m08j" path="res://Scripts/camera_2d.gd" id="1_b3cgw"]
 [ext_resource type="PackedScene" uid="uid://b3rquvh0mg2rv" path="res://Scenas/ScenasPersonajes/JugadorRPG.tscn" id="1_b7odb"]
-[ext_resource type="Script" uid="uid://dete40vd7c3mn" path="res://Scripts/jugador_rpg.gd" id="2_b3cgw"]
+[ext_resource type="PackedScene" uid="uid://r5urwg3eshph" path="res://Scenas/ScenasEntorno/barra_vida.tscn" id="2_qvcje"]
+[ext_resource type="PackedScene" uid="uid://b8wjoy8cfcnxq" path="res://Scenas/ScenasEntorno/EnemigoCajas.tscn" id="3_hgtqa"]
 [ext_resource type="PackedScene" uid="uid://slsrphlw2jq8" path="res://Scenas/ScenasEntorno/Puerta.tscn" id="3_qvcje"]
 [ext_resource type="TileSet" uid="uid://0qbyio30mgda" path="res://Tiles/Mapa_juego.tres" id="5_b3cgw"]
 
@@ -12,9 +13,12 @@
 zoom = Vector2(3, 3)
 script = ExtResource("1_b3cgw")
 
+[node name="BarraVida" parent="Camera2D" instance=ExtResource("2_qvcje")]
+position = Vector2(-159, 72)
+scale = Vector2(1.16, 1.16)
+
 [node name="Jugador" parent="." instance=ExtResource("1_b7odb")]
 position = Vector2(33, -12)
-script = ExtResource("2_b3cgw")
 
 [node name="Area2D" parent="." instance=ExtResource("3_qvcje")]
 z_index = -1
@@ -37,6 +41,9 @@ tile_set = ExtResource("5_b3cgw")
 z_index = -1
 position = Vector2(656, -118)
 Indicador_mundo = 2
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("3_hgtqa")]
+position = Vector2(165, -3)
 
 [connection signal="body_entered" from="Area2D" to="Jugador" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="Jugador" method="_on_area_2d_body_exited"]

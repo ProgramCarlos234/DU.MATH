@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://b8wjoy8cfcnxq"]
+[gd_scene load_steps=10 format=3 uid="uid://b8wjoy8cfcnxq"]
 
 [ext_resource type="Script" uid="uid://cw72864hucr2q" path="res://Scripts/enemigo_cajas.gd" id="1_g5bmv"]
 [ext_resource type="Texture2D" uid="uid://dntbf7e8m1x5q" path="res://Sprites/SpritesEntorno/EnemigoAnimacion.png" id="1_x1o8o"]
+[ext_resource type="Script" uid="uid://kei063phsbyi" path="res://Scripts/ataque_EnemigoCajas.gd" id="3_s84yb"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_g5bmv"]
 atlas = ExtResource("1_x1o8o")
@@ -37,6 +38,9 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_he3io"]
+size = Vector2(12, 8)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_24iu6"]
 size = Vector2(8, 13)
 
@@ -46,9 +50,17 @@ script = ExtResource("1_g5bmv")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_gko61")
-animation = &"idle"
-frame_progress = 0.0629705
+animation = &"Atacar"
+
+[node name="Ataque" type="Area2D" parent="AnimatedSprite2D"]
+script = ExtResource("3_s84yb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/Ataque"]
+position = Vector2(12, 3)
+shape = SubResource("RectangleShape2D_he3io")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1, 1.5)
 shape = SubResource("RectangleShape2D_24iu6")
+
+[connection signal="body_entered" from="AnimatedSprite2D/Ataque" to="AnimatedSprite2D/Ataque" method="_on_body_entered"]

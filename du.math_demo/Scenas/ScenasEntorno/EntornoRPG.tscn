@@ -1,7 +1,6 @@
-[gd_scene load_steps=8 format=4 uid="uid://cbydru7571klx"]
+[gd_scene load_steps=7 format=4 uid="uid://cbydru7571klx"]
 
 [ext_resource type="PackedScene" uid="uid://b3rquvh0mg2rv" path="res://Scenas/ScenasPersonajes/JugadorRPG.tscn" id="1_pt56k"]
-[ext_resource type="Script" uid="uid://dete40vd7c3mn" path="res://Scripts/jugador_rpg.gd" id="2_mk36i"]
 [ext_resource type="PackedScene" uid="uid://slsrphlw2jq8" path="res://Scenas/ScenasEntorno/Puerta.tscn" id="3_ltbff"]
 [ext_resource type="Texture2D" uid="uid://bqdmf135l8ti2" path="res://Sprites/SpritesEntorno/Dungeon_Tileset.png" id="4_d5r8n"]
 [ext_resource type="AudioStream" uid="uid://bm2fkvfedst8q" path="res://Musica/Comic_Cinematic_Part_1.mp3" id="5_vq1ka"]
@@ -144,7 +143,6 @@ zoom = Vector2(3, 3)
 
 [node name="Jugador" parent="." instance=ExtResource("1_pt56k")]
 position = Vector2(35, -16)
-script = ExtResource("2_mk36i")
 
 [node name="TileMaps" type="Node2D" parent="."]
 

@@ -1,0 +1,86 @@
+[gd_scene load_steps=9 format=3 uid="uid://r5urwg3eshph"]
+
+[ext_resource type="Script" uid="uid://caw1xf30nyn65" path="res://Scripts/barra_vida.gd" id="1_4lfkd"]
+[ext_resource type="Texture2D" uid="uid://g2qdskcw1a8g" path="res://Sprites/SpritesEntorno/JugadorBien2.png" id="1_bism1"]
+[ext_resource type="Texture2D" uid="uid://binyotb68nn8" path="res://Sprites/SpritesEntorno/FondoBarra.png" id="1_fybvk"]
+[ext_resource type="Texture2D" uid="uid://dgh6lpkt5fbvr" path="res://Sprites/SpritesEntorno/JugadorBien1.png" id="2_fybvk"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bism1"]
+bg_color = Color(0.693704, 0.126369, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fybvk"]
+bg_color = Color(0, 0.65, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5fy0e"]
+bg_color = Color(0.1122, 0.051, 0.51, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4lfkd"]
+bg_color = Color(0, 0.75, 0.7375, 1)
+
+[node name="BarraVida" type="Node2D"]
+script = ExtResource("1_4lfkd")
+
+[node name="FondoBarra" type="Sprite2D" parent="."]
+position = Vector2(56, -1)
+scale = Vector2(1.6648, 0.858212)
+texture = ExtResource("1_fybvk")
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+custom_minimum_size = Vector2(100, 0)
+offset_left = 18.0
+offset_top = -10.0
+offset_right = 118.0
+offset_bottom = 17.0
+scale = Vector2(0.802621, 0.3677)
+theme_override_styles/background = SubResource("StyleBoxFlat_bism1")
+theme_override_styles/fill = SubResource("StyleBoxFlat_fybvk")
+max_value = 10.0
+value = 10.0
+show_percentage = false
+
+[node name="ProgressBar2" type="ProgressBar" parent="."]
+custom_minimum_size = Vector2(100, 0)
+offset_left = 18.0
+offset_top = 3.0
+offset_right = 118.0
+offset_bottom = 30.0
+scale = Vector2(0.762621, 0.1277)
+theme_override_styles/background = SubResource("StyleBoxFlat_5fy0e")
+theme_override_styles/fill = SubResource("StyleBoxFlat_4lfkd")
+max_value = 300.0
+value = 300.0
+show_percentage = false
+
+[node name="JugadorBien2" type="Sprite2D" parent="."]
+texture = ExtResource("1_bism1")
+
+[node name="JugadorBien1" type="Sprite2D" parent="."]
+texture = ExtResource("2_fybvk")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 96.0
+offset_top = -12.0
+offset_right = 136.0
+offset_bottom = 11.0
+scale = Vector2(0.56, 0.56)
+text = "HP"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 104.0
+offset_top = -2.0
+offset_right = 144.0
+offset_bottom = 21.0
+scale = Vector2(0.48, 0.48)
+text = "IQ"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="."]
+offset_left = 96.0
+offset_top = -1.0
+offset_right = 136.0
+offset_bottom = 22.0
+scale = Vector2(0.410361, 0.410361)
+text = "300"
