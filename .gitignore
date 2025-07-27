@@ -1,0 +1,12 @@
+# Agregar estas líneas al .gitignore
+echo "# Godot 4+ specific ignores" >> .gitignore
+echo ".godot/" >> .gitignore
+echo "# Godot-specific ignores" >> .gitignore
+echo "*.tmp" >> .gitignore
+echo "*.swp" >> .gitignore
+echo "*~" >> .gitignore
+
+# Ignorar archivos temporales del editor de Godot
+du.math_demo/.godot/editor/
+du.math_demo/.godot/uid_cache.bin
+

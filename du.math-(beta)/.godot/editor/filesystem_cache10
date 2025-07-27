@@ -1,44 +1,44 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1753027185
-::res://Audios/::1753027143
-BETA GAME SOUTH Arreglo.mp3::AudioStreamMP3::8950393284277287203::1753027142::1753027187::1::::<><><>0<>0<>5e5246957d4e4b68ffce4cd432de7976<>res://.godot/imported/BETA GAME SOUTH Arreglo.mp3-c265bdecf06ae7ad54a3bd387c16dfa0.mp3str::
-BETA ORCHETA SOUTH.mp3::AudioStreamMP3::5394903347896724980::1753027143::1753027187::1::::<><><>0<>0<>9f4b02c1999926da7b5315e07ad0bd55<>res://.godot/imported/BETA ORCHETA SOUTH.mp3-3b9d67d0fa4c9b751a72172df8c7c932.mp3str::
-WhatsApp Audio 2025-06-12 at 2.50.06 PM.mp3::AudioStreamMP3::2499399053485210042::1753027143::1753027187::1::::<><><>0<>0<>d10326b31b9d5fa79681fc520c8a45b2<>res://.godot/imported/WhatsApp Audio 2025-06-12 at 2.50.06 PM.mp3-f8079577a9677856d595f08b4855dbde.mp3str::
-::res://Escenas/::1753027143
-Etapa1_BETA.tscn::PackedScene::8620146744443330295::1753027143::0::1::::<><><>0<>0<><>::uid://cgm0vgw0ni3tp::::res://PersonajesEscenas/Jugador.tscn<>uid://bx5uvc2phjf3a::::res://Scripts/game_manager.gd<>uid://c05bpugykpoo0::::res://Scripts/jugador.gd<>uid://bbuy0civ4veic::::res://Audios/WhatsApp Audio 2025-06-12 at 2.50.06 PM.mp3
-Jefe.tscn::PackedScene::1513721818552721726::1753027143::0::1::::<><><>0<>0<><>::uid://bx5uvc2phjf3a::::res://Scripts/game_manager.gd<>uid://cgm0vgw0ni3tp::::res://PersonajesEscenas/Jugador.tscn<>uid://c05bpugykpoo0::::res://Scripts/jugador.gd
-Menu_juego.tscn::PackedScene::6913060290589493415::1753027143::0::1::::<><><>0<>0<><>::uid://cde48j0lakj2i::::res://Rodrigo/SCRIPTS/menu_juego.gd<>uid://dp52chqq6hyun::::res://Rodrigo/IMAGENES/WhatsApp Image 2025-06-12 at 1.05.43 PM.jpeg<>uid://d0rvw1g2it1rb::::res://Audios/BETA GAME SOUTH Arreglo.mp3
-rpg_mundo.gd::GDScript::7493383724445447508::1753027143::0::1::::<>Node2D<><>0<>0<><>::
-RPG_Mundo.tscn::PackedScene::2182617594403695816::1753027143::0::1::::<><><>0<>0<><>::uid://de0362a6ljb45::::res://Escenas/rpg_mundo.gd<>uid://cgm0vgw0ni3tp::::res://PersonajesEscenas/Jugador.tscn<>uid://d0h0th4043m5d::::res://SritesOficiales/Dungeon_Tileset.png<>uid://bqfnr4x5sj222::::res://Rodrigo/SCRIPTS/jugador_movement_RPG.gd<>uid://y1p18ssj68k::::res://PersonajesEscenas/Interactuar.tscn<>uid://ci4ljgbrlyeau::::res://Audios/BETA ORCHETA SOUTH.mp3<>uid://dpinv6jh4u68p::::res://PersonajesEscenas/interactuar.gd
-::res://PersonajesEscenas/::1753027143
-Enemigo.tscn::PackedScene::6200842170564624031::1753027143::0::1::::<><><>0<>0<><>::uid://b1j6year420k5::::res://Scripts/enemigoBasico_script.gd<>uid://bwl0p6523ucvv::::res://SpritesBasicos/SpritesEnemigo_(NombreEnemigo).png<>uid://clbmvjschddn3::::res://Shaders/Enemigo.gdshader
-Etiquetas_Graficas.tscn::PackedScene::4228136163217669903::1753027143::0::1::::<><><>0<>0<><>::
-interactuar.gd::GDScript::8229438192744952957::1753027143::0::1::::<>Node2D<><>0<>0<><>::
-Interactuar.tscn::PackedScene::51151912245867984::1753027143::0::1::::<><><>0<>0<><>::uid://10iiym6tnl4::::res://SpritesBasicos/SpriteJugador_Basico.png
-Jugador.tscn::PackedScene::5220302739033681589::1753027143::0::1::::<><><>0<>0<><>::uid://10iiym6tnl4::::res://SpritesBasicos/SpriteJugador_Basico.png
-puntero.tscn::PackedScene::6493854839726050513::1753027143::0::1::::<><><>0<>0<><>::uid://10iiym6tnl4::::res://SpritesBasicos/SpriteJugador_Basico.png
-::res://Rodrigo/::1753027143
-::res://Rodrigo/ESCENAS/::1753027143
-Derrota.tscn::PackedScene::1588035686070693439::1753027143::0::1::::<><><>0<>0<><>::uid://2bjumpguymlt::::res://Rodrigo/SCRIPTS/derrota.gd<>uid://dt118bmpyejxl::::res://Rodrigo/IMAGENES/istockphoto-1403514917-612x612.jpg
-JUEGO.tscn::PackedScene::8397792111597400220::1753027143::0::1::::<><><>0<>0<><>::
-Victoria.tscn::PackedScene::3829627477912455939::1753027143::0::1::::<><><>0<>0<><>::uid://455nhkk11swa::::res://Rodrigo/SCRIPTS/victoria.gd<>uid://cf6efesc6lahl::::res://Rodrigo/IMAGENES/istockphoto-1333010525-612x612.jpg
-::res://Rodrigo/IMAGENES/::1753027143
-istockphoto-1333010525-612x612.jpg::CompressedTexture2D::5188033330925417345::1753027143::1753027187::1::::<><><>0<>0<>ea7e6225ae02987ba891bdc9a014b1d8<>res://.godot/imported/istockphoto-1333010525-612x612.jpg-3fa5410957fada004c21a5a179e21d9b.ctex::
-istockphoto-1403514917-612x612.jpg::CompressedTexture2D::8548161546593037245::1753027143::1753027188::1::::<><><>0<>0<>9aa198d624a3f834bbc6dd42ca2ea269<>res://.godot/imported/istockphoto-1403514917-612x612.jpg-fb71948cbb9104f2377d015b0b6a0ce9.ctex::
-WhatsApp Image 2025-06-12 at 1.05.43 PM.jpeg::CompressedTexture2D::8275669361813104957::1753027143::1753027188::1::::<><><>0<>0<>4db5e6a49b1f959f5f91e92b4e041168<>res://.godot/imported/WhatsApp Image 2025-06-12 at 1.05.43 PM.jpeg-86d83eb467abfbddfcce5029427f1f25.ctex::
-::res://Rodrigo/SCRIPTS/::1753027143
-derrota.gd::GDScript::1897745978546495033::1753027143::0::1::::<>Node2D<><>0<>0<><>::
-jugador_movement_RPG.gd::GDScript::3520585310169423749::1753027143::0::1::::<>CharacterBody2D<><>0<>0<><>::
-menu_juego.gd::GDScript::4993485645136083122::1753027143::0::1::::<>Node2D<><>0<>0<><>::
-victoria.gd::GDScript::2099252906830127588::1753027143::0::1::::<>Node2D<><>0<>0<><>::
-::res://Scripts/::1753027143
-enemigoBasico_script.gd::GDScript::4231835314803605918::1753027143::0::1::::<>CharacterBody2D<><>0<>0<><>::
-game_manager.gd::GDScript::4063947408964636964::1753027143::0::1::::GameManager<>Node2D<><>0<>0<><>::
-jugador.gd::GDScript::6589582355700394053::1753027143::0::1::::<>CharacterBody2D<><>0<>0<><>::
-::res://Shaders/::1753027143
-Enemigo.gdshader::Shader::5547749631360796330::1753027143::0::1::::<><><>0<>0<><>::
-::res://SpritesBasicos/::1753027143
-SpriteJugador_Basico.png::CompressedTexture2D::55206490625475791::1753027143::1753027187::1::::<><><>0<>0<>6e417c5f010e481abcbf97466bc4bac1<>res://.godot/imported/SpriteJugador_Basico.png-adcf8ded07f2eb1e1858076beca47661.ctex::
-SpritesEnemigo_(NombreEnemigo).png::CompressedTexture2D::3954829786585156007::1753027143::1753027187::1::::<><><>0<>0<>f42447cbdb7d4a0b0036d754d475c75c<>res://.godot/imported/SpritesEnemigo_(NombreEnemigo).png-2e00f3fc1a5cc48546ccb36d7e988763.ctex::
-::res://SritesOficiales/::1753027143
-Dungeon_Tileset.png::CompressedTexture2D::8929986054850419647::1753027143::1753027187::1::::<><><>0<>0<>733bb3b9bc2617b4416231a920853808<>res://.godot/imported/Dungeon_Tileset.png-df2c3c76c9970c67ef3064fae0349621.ctex::
+::res://::1753470499
+::res://Audios/::1753308464
+BETA GAME SOUTH Arreglo.mp3::AudioStreamMP3/AudioStreamMP3::8950393284277287203::1753308464::1753308464::1::::<><><>0<>0<>5e5246957d4e4b68ffce4cd432de7976<>res://.godot/imported/BETA GAME SOUTH Arreglo.mp3-c265bdecf06ae7ad54a3bd387c16dfa0.mp3str::
+BETA ORCHETA SOUTH.mp3::AudioStreamMP3/AudioStreamMP3::5394903347896724980::1753308464::1753308464::1::::<><><>0<>0<>9f4b02c1999926da7b5315e07ad0bd55<>res://.godot/imported/BETA ORCHETA SOUTH.mp3-3b9d67d0fa4c9b751a72172df8c7c932.mp3str::
+WhatsApp Audio 2025-06-12 at 2.50.06 PM.mp3::AudioStreamMP3/AudioStreamMP3::2499399053485210042::1753308464::1753308464::1::::<><><>0<>0<>d10326b31b9d5fa79681fc520c8a45b2<>res://.godot/imported/WhatsApp Audio 2025-06-12 at 2.50.06 PM.mp3-f8079577a9677856d595f08b4855dbde.mp3str::
+::res://Escenas/::1753308464
+Etapa1_BETA.tscn::PackedScene::8620146744443330295::1753308464::0::1::::<><><>0<>0<><>::uid://cgm0vgw0ni3tp::::res://PersonajesEscenas/Jugador.tscn<>uid://bx5uvc2phjf3a::::res://Scripts/game_manager.gd<>uid://c05bpugykpoo0::::res://Scripts/jugador.gd<>uid://bbuy0civ4veic::::res://Audios/WhatsApp Audio 2025-06-12 at 2.50.06 PM.mp3
+Jefe.tscn::PackedScene::1513721818552721726::1753308464::0::1::::<><><>0<>0<><>::uid://bx5uvc2phjf3a::::res://Scripts/game_manager.gd<>uid://cgm0vgw0ni3tp::::res://PersonajesEscenas/Jugador.tscn<>uid://c05bpugykpoo0::::res://Scripts/jugador.gd
+Menu_juego.tscn::PackedScene::6913060290589493415::1753308464::0::1::::<><><>0<>0<><>::uid://cde48j0lakj2i::::res://Rodrigo/SCRIPTS/menu_juego.gd<>uid://dp52chqq6hyun::::res://Rodrigo/IMAGENES/WhatsApp Image 2025-06-12 at 1.05.43 PM.jpeg<>uid://d0rvw1g2it1rb::::res://Audios/BETA GAME SOUTH Arreglo.mp3
+rpg_mundo.gd::GDScript::7493383724445447508::1753308464::0::1::::<>Node2D<><>0<>0<><>::
+RPG_Mundo.tscn::PackedScene::2182617594403695816::1753308464::0::1::::<><><>0<>0<><>::uid://de0362a6ljb45::::res://Escenas/rpg_mundo.gd<>uid://cgm0vgw0ni3tp::::res://PersonajesEscenas/Jugador.tscn<>uid://d0h0th4043m5d::::res://SritesOficiales/Dungeon_Tileset.png<>uid://bqfnr4x5sj222::::res://Rodrigo/SCRIPTS/jugador_movement_RPG.gd<>uid://y1p18ssj68k::::res://PersonajesEscenas/Interactuar.tscn<>uid://ci4ljgbrlyeau::::res://Audios/BETA ORCHETA SOUTH.mp3<>uid://dpinv6jh4u68p::::res://PersonajesEscenas/interactuar.gd
+::res://PersonajesEscenas/::1753308464
+Enemigo.tscn::PackedScene::6200842170564624031::1753308464::0::1::::<><><>0<>0<><>::uid://b1j6year420k5::::res://Scripts/enemigoBasico_script.gd<>uid://bwl0p6523ucvv::::res://SpritesBasicos/SpritesEnemigo_(NombreEnemigo).png<>uid://clbmvjschddn3::::res://Shaders/Enemigo.gdshader
+Etiquetas_Graficas.tscn::PackedScene::4228136163217669903::1753308464::0::1::::<><><>0<>0<><>::
+interactuar.gd::GDScript::8229438192744952957::1753308464::0::1::::<>Node2D<><>0<>0<><>::
+Interactuar.tscn::PackedScene::51151912245867984::1753308464::0::1::::<><><>0<>0<><>::uid://10iiym6tnl4::::res://SpritesBasicos/SpriteJugador_Basico.png
+Jugador.tscn::PackedScene::5220302739033681589::1753308464::0::1::::<><><>0<>0<><>::uid://10iiym6tnl4::::res://SpritesBasicos/SpriteJugador_Basico.png
+puntero.tscn::PackedScene::6493854839726050513::1753308464::0::1::::<><><>0<>0<><>::uid://10iiym6tnl4::::res://SpritesBasicos/SpriteJugador_Basico.png
+::res://Rodrigo/::1753308464
+::res://Rodrigo/ESCENAS/::1753308464
+Derrota.tscn::PackedScene::1588035686070693439::1753308464::0::1::::<><><>0<>0<><>::uid://2bjumpguymlt::::res://Rodrigo/SCRIPTS/derrota.gd<>uid://dt118bmpyejxl::::res://Rodrigo/IMAGENES/istockphoto-1403514917-612x612.jpg
+JUEGO.tscn::PackedScene::8397792111597400220::1753308464::0::1::::<><><>0<>0<><>::
+Victoria.tscn::PackedScene::3829627477912455939::1753308464::0::1::::<><><>0<>0<><>::uid://455nhkk11swa::::res://Rodrigo/SCRIPTS/victoria.gd<>uid://cf6efesc6lahl::::res://Rodrigo/IMAGENES/istockphoto-1333010525-612x612.jpg
+::res://Rodrigo/IMAGENES/::1753308464
+istockphoto-1333010525-612x612.jpg::CompressedTexture2D/CompressedTexture2D::5188033330925417345::1753308464::1753308464::1::::<><><>0<>0<>ea7e6225ae02987ba891bdc9a014b1d8<>res://.godot/imported/istockphoto-1333010525-612x612.jpg-3fa5410957fada004c21a5a179e21d9b.ctex::
+istockphoto-1403514917-612x612.jpg::CompressedTexture2D/CompressedTexture2D::8548161546593037245::1753308464::1753308464::1::::<><><>0<>0<>9aa198d624a3f834bbc6dd42ca2ea269<>res://.godot/imported/istockphoto-1403514917-612x612.jpg-fb71948cbb9104f2377d015b0b6a0ce9.ctex::
+WhatsApp Image 2025-06-12 at 1.05.43 PM.jpeg::CompressedTexture2D/CompressedTexture2D::8275669361813104957::1753308464::1753308464::1::::<><><>0<>0<>4db5e6a49b1f959f5f91e92b4e041168<>res://.godot/imported/WhatsApp Image 2025-06-12 at 1.05.43 PM.jpeg-86d83eb467abfbddfcce5029427f1f25.ctex::
+::res://Rodrigo/SCRIPTS/::1753308464
+derrota.gd::GDScript::1897745978546495033::1753308464::0::1::::<>Node2D<><>0<>0<><>::
+jugador_movement_RPG.gd::GDScript::3520585310169423749::1753308464::0::1::::<>CharacterBody2D<><>0<>0<><>::
+menu_juego.gd::GDScript::4993485645136083122::1753308464::0::1::::<>Node2D<><>0<>0<><>::
+victoria.gd::GDScript::2099252906830127588::1753308464::0::1::::<>Node2D<><>0<>0<><>::
+::res://Scripts/::1753308464
+enemigoBasico_script.gd::GDScript::4231835314803605918::1753308464::0::1::::<>CharacterBody2D<><>0<>0<><>::
+game_manager.gd::GDScript::4063947408964636964::1753308464::0::1::::GameManager<>Node2D<><>0<>0<><>::
+jugador.gd::GDScript::6589582355700394053::1753308464::0::1::::<>CharacterBody2D<><>0<>0<><>::
+::res://Shaders/::1753308464
+Enemigo.gdshader::Shader::5547749631360796330::1753308464::0::1::::<><><>0<>0<><>::
+::res://SpritesBasicos/::1753308464
+SpriteJugador_Basico.png::CompressedTexture2D/CompressedTexture2D::55206490625475791::1753308464::1753308464::1::::<><><>0<>0<>6e417c5f010e481abcbf97466bc4bac1<>res://.godot/imported/SpriteJugador_Basico.png-adcf8ded07f2eb1e1858076beca47661.ctex::
+SpritesEnemigo_(NombreEnemigo).png::CompressedTexture2D/CompressedTexture2D::3954829786585156007::1753308464::1753308464::1::::<><><>0<>0<>f42447cbdb7d4a0b0036d754d475c75c<>res://.godot/imported/SpritesEnemigo_(NombreEnemigo).png-2e00f3fc1a5cc48546ccb36d7e988763.ctex::
+::res://SritesOficiales/::1753308464
+Dungeon_Tileset.png::CompressedTexture2D/CompressedTexture2D::8929986054850419647::1753308464::1753308464::1::::<><><>0<>0<>733bb3b9bc2617b4416231a920853808<>res://.godot/imported/Dungeon_Tileset.png-df2c3c76c9970c67ef3064fae0349621.ctex::

@@ -124,8 +124,9 @@ func atrapar_jugador():
 	iqDelJugador -=1
 	print(iqDelJugador)
 	if jugador:
+		queue_free()
 		# Reinicia al jugador en posición segura
-		jugador.global_position = Vector2(100, 100)  # Ajusta según tu spawn
+		#jugador.global_position = Vector2(100, 100)  # Ajusta según tu spawn
 		
 		# Opcional: Efecto visual/sonoro de captura
 		# $AudioStreamPlayer2D.play()
