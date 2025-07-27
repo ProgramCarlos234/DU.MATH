@@ -22,6 +22,7 @@ func _ready():
 
 	configurar_obstaculos()
 	conectar_cajas()
+	GameManager.iniciar_movimiento_paredes()
 
 func configurar_obstaculos():
 	for obstaculo in nodo_obstaculos.get_children():

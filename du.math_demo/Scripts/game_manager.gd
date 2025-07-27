@@ -1,4 +1,5 @@
 extends Node
+
 # ======================= #
 #       VARIABLES         #
 # ======================= #
@@ -6,6 +7,8 @@ extends Node
 var DentroArea := false
 var VidaJugador: int = 10
 var JugadorRecibeDaño = false
+var paredes: Array = []
+var indice_actual := 0
 
 # ======================= #
 #    ESCENAS DISPONIBLES  #
@@ -24,6 +27,7 @@ var Scenas: Array = [
 	NIVEL_1_MOVER_CAJAS,
 	MAPA_JUEGO_ISLAND
 ]
+
 # ======================= #
 #        _READY           #
 # ======================= #
@@ -42,3 +46,24 @@ func _recibirDaño(Daño : int) -> void:
 	VidaJugador -= Daño
 	JugadorRecibeDaño = true
 	pass
+
+# ============================== #
+#   MOVIMIENTO DE PAREDES PUAS   #
+# ============================== #
+func iniciar_movimiento_paredes():
+	var contenedor = get_tree().current_scene.get_node("Paredes")
+	paredes = contenedor.get_children()  # Cada uno es un ParedPuas
+	indice_actual = 0
+
+	if paredes.size() > 0:
+		conectar_y_mover(paredes[0])
+
+func conectar_y_mover(pared_puas):
+	var pared_real = pared_puas.get_node("Pared")
+	pared_real.connect("movimiento_terminado", Callable(self, "_on_pared_movida"))
+	pared_real.iniciar_movimiento()
+
+func _on_pared_movida():
+	indice_actual += 1
+	if indice_actual < paredes.size():
+		conectar_y_mover(paredes[indice_actual])

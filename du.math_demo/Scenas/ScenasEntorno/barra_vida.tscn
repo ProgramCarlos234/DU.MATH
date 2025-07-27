@@ -21,7 +21,7 @@ bg_color = Color(0, 0.75, 0.7375, 1)
 script = ExtResource("1_4lfkd")
 
 [node name="FondoBarra" type="Sprite2D" parent="."]
-position = Vector2(56, -1)
+position = Vector2(61, -1)
 scale = Vector2(1.6648, 0.858212)
 texture = ExtResource("1_fybvk")
 
