@@ -1,3 +1,13 @@
-res://Scenas/ScenasEntorno/Mapa_juego_Island.tscn
+res://Scenas/ScenasPersonajes/JugadorRPG.tscn
 res://Tiles/Mapa_juego.tres
+res://Scenas/ScenasPersonajes/JugadorPlataformas.tscn
+res://Scenas/ScenasEntorno/Mapa_juego.tscn
+res://Scenas/ScenasEntorno/Mapa_juego_Island.tscn
+res://Scenas/ScenasEntorno/BrainEvil.tscn
+res://Scenas/ScenasEntorno/BrainNPC.tscn
+res://Scenas/ScenasEntorno/Nivel1_MoverCajas.tscn
+res://Scripts/game_manager.gd
 res://Scripts/jugador_rpg.gd
+res://Scenas/ScenasEntorno/barra_vida.tscn
+res://Scenas/ScenasEntorno/Puerta.tscn
+res://Scripts/barra_vida.gd

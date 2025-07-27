@@ -1,4 +1,5 @@
 Label
+AudioStreamPlayer2D
 CollisionShape2D
 Area2D
 TileMapLayer
@@ -11,4 +12,3 @@ ColorRect
 Polygon2D
 Sprite2D
 Node
-TileMap

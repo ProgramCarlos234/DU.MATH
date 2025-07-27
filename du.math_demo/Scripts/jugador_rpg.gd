@@ -35,7 +35,6 @@ func _physics_process(delta: float) -> void:
 		animated_sprite_2d.play("Idle")
 		
 		
-		
 func aumentar_puntaje():
 	iqDelJugador +=1
 	print("aumentar jug")
