@@ -62,5 +62,6 @@ shape = SubResource("RectangleShape2D_he3io")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1, 1.5)
 shape = SubResource("RectangleShape2D_24iu6")
+disabled = true
 
 [connection signal="body_entered" from="AnimatedSprite2D/Ataque" to="AnimatedSprite2D/Ataque" method="_on_body_entered"]

@@ -1,7 +1,5 @@
 extends Node2D
 
-signal npc_toco_jugador(tipo_brain: String)
-
 const BRAIN_EVIL = preload("res://Scenas/ScenasEntorno/BrainEvil.tscn")
 const BRAIN_NPC = preload("res://Scenas/ScenasEntorno/BrainNPC.tscn")
 
@@ -9,7 +7,8 @@ const BRAIN_NPC = preload("res://Scenas/ScenasEntorno/BrainNPC.tscn")
 var npcsBrains: Array = [BRAIN_EVIL, BRAIN_NPC]
 var instancias_activas: Array = []
 
-@export var max_evil_brains: int = 5
+# Variables de configuración del spawner (EvilBrains menos que NPCs)
+@export var max_evil_brains: int = 3
 @export var max_npc_brains: int = 8
 @export var spawn_interval: float = 2.0
 @export var despawn_distance: float = 500.0
@@ -62,33 +61,21 @@ func verificar_y_spawnear():
 		if randf() < 0.8: # 80% de probabilidad (mayor que antes)
 			spawn_npc_brain()
 
-# Spawnear un cerebro evil con tipo específico
+# Spawnear un cerebro evil exactamente en la posición del spawner
 func spawn_evil_brain():
 	var nueva_instancia = crear_instancia(BRAIN_EVIL, global_position)
 	if nueva_instancia:
 		nueva_instancia.add_to_group("evil_brains")
-		# Conectar con el tipo "evil"
-		if nueva_instancia.has_signal("atrapado"):
-			nueva_instancia.atrapado.connect(_on_npc_atrapo_jugador.bind("evil"))
 		evil_brains_count += 1
 		print("Evil Brain spawneado en posición exacta del spawner: ", global_position)
 
-#  Spawnear un cerebro NPC con tipo específico
+# Spawnear un cerebro NPC exactamente en la posición del spawner
 func spawn_npc_brain():
 	var nueva_instancia = crear_instancia(BRAIN_NPC, global_position)
 	if nueva_instancia:
 		nueva_instancia.add_to_group("npc_brains")
-		# Conectar con el tipo "npc"
-		if nueva_instancia.has_signal("atrapado"):
-			nueva_instancia.atrapado.connect(_on_npc_atrapo_jugador.bind("npc"))
 		npc_brains_count += 1
 		print("NPC Brain spawneado en posición exacta del spawner: ", global_position)
-
-# Callback que recibe el tipo de brain
-func _on_npc_atrapo_jugador(tipo: String):
-	print("¡Un ", tipo, " brain tocó al jugador desde el spawner!")
-	# Emitir señal con el tipo al nodo principal
-	emit_signal("npc_toco_jugador", tipo)
 
 # Crear una instancia y añadirla al escenario en posición exacta
 func crear_instancia(escena: PackedScene, posicion: Vector2) -> Node2D:
@@ -210,6 +197,7 @@ func obtener_info_spawner() -> Dictionary:
 func debug_info():
 	var info = obtener_info_spawner()
 	print("=== SPAWNER DEBUG ===")
+	print("Posición: ", info.posicion_spawner)
 	print("Evil Brains: ", info.evil_brains_activos, "/", info.max_evil)
 	print("NPC Brains: ", info.npc_brains_activos, "/", info.max_npc)
 	print("Proporción: ", info.proporcion_evil_vs_npc)
