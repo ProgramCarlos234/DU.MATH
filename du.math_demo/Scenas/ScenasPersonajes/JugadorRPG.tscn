@@ -1,7 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://b3rquvh0mg2rv"]
+[gd_scene load_steps=20 format=3 uid="uid://b3rquvh0mg2rv"]
 
 [ext_resource type="Texture2D" uid="uid://f2froljf4ce1" path="res://Sprites/SpritesJugador/Plantilla16x16-Sheet.png" id="1_lffiv"]
 [ext_resource type="Script" uid="uid://dete40vd7c3mn" path="res://Scripts/jugador_rpg.gd" id="1_mvuvu"]
+[ext_resource type="Texture2D" uid="uid://ddgwv1bnagg8h" path="res://Sprites/SpritesJugador/Jugador_Attack.png" id="3_qppy6"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mvuvu"]
 atlas = ExtResource("1_lffiv")
@@ -58,17 +59,85 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_1v8fg"]
+atlas = ExtResource("3_qppy6")
+region = Rect2(0, 0, 48, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_46qng"]
+atlas = ExtResource("3_qppy6")
+region = Rect2(48, 0, 48, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pt85g"]
+atlas = ExtResource("3_qppy6")
+region = Rect2(96, 0, 48, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8x7r5"]
+atlas = ExtResource("3_qppy6")
+region = Rect2(144, 0, 48, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_387vh"]
+atlas = ExtResource("3_qppy6")
+region = Rect2(192, 0, 48, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mg03g"]
+atlas = ExtResource("3_qppy6")
+region = Rect2(240, 0, 48, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_72f3y"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1v8fg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_46qng")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pt85g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8x7r5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_387vh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mg03g")
+}],
+"loop": false,
+"name": &"attack",
+"speed": 20.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mvuvu"]
+size = Vector2(10.25, 16.25)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tko4a"]
 size = Vector2(9, 7)
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 script = ExtResource("1_mvuvu")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="Movimiento_Animacion" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_dy64e")
-animation = &"Movement"
+animation = &"Idle"
 autoplay = "Idle"
+
+[node name="Ataque_Animacion" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_72f3y")
+animation = &"attack"
+frame = 5
+frame_progress = 1.0
+
+[node name="AreaAttack" type="Area2D" parent="Ataque_Animacion"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ataque_Animacion/AreaAttack"]
+position = Vector2(-9.875, 0.125)
+shape = SubResource("RectangleShape2D_mvuvu")
+debug_color = Color(0.891082, 0.236244, 0.564338, 0.42)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0.5, 3.5)
 shape = SubResource("RectangleShape2D_tko4a")
+
+[connection signal="animation_finished" from="Ataque_Animacion" to="." method="_on_ataque_animacion_animation_finished"]
