@@ -2,29 +2,27 @@ extends CharacterBody2D
 signal atrapado
 
 @export var speed: float = 60.0
+
+var jugador: Node2D
 var direction := Vector2.ZERO
-var random_move_time := 1.5
-var move_timer := 0.0
 
 func _ready():
-	randomize()
-	pick_random_direction()
+	# Buscar al jugador
+	jugador = get_tree().get_first_node_in_group("player")
+	if not jugador:
+		jugador = get_node("../Jugador")  # Ajusta según tu estructura
+	
 	$Area2D.body_entered.connect(_on_body_entered)
 
 func _process(delta):
-	move_timer -= delta
-	if move_timer <= 0:
-		pick_random_direction()
-		move_timer = random_move_time
+	if jugador and is_instance_valid(jugador):
+		# Siempre dirigirse hacia el jugador
+		direction = (jugador.global_position - global_position).normalized()
+	
 	velocity = direction * speed
 	move_and_slide()
 
-func pick_random_direction():
-	var angle = randf_range(0, PI * 2)
-	direction = Vector2(cos(angle), sin(angle)).normalized()
-
 func _on_body_entered(body):
-	if body.name == "Jugador":  # Cambiado para detectar por nombre
+	if body.name == "Jugador":
 		emit_signal("atrapado")
-		
 		queue_free()

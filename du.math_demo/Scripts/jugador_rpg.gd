@@ -5,7 +5,7 @@ signal attack_finished
 @onready var movimiento_animacion: AnimatedSprite2D = $Movimiento_Animacion
 @onready var ataque_animacion: AnimatedSprite2D = $Ataque_Animacion
 @onready var Jugador = $"."  # Referencia al nodo del jugador
-@onready var tilemap = get_node("../TileMaps")
+@onready var tilemap = get_node("../TileMapLayer")
 
 var iqDelJugador = 10
 var is_attack = false
