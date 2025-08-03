@@ -1,9 +1,8 @@
-[gd_scene load_steps=12 format=4 uid="uid://chw48vuv5cjm5"]
+[gd_scene load_steps=11 format=4 uid="uid://chw48vuv5cjm5"]
 
 [ext_resource type="Texture2D" uid="uid://dx5y33pn6rvkt" path="res://Sprites/SpritesEntorno/Escenario4Island.png" id="1_2ua6e"]
 [ext_resource type="Script" uid="uid://bmxhhjfkn0txy" path="res://Scripts/juego_island.gd" id="1_gealf"]
 [ext_resource type="PackedScene" uid="uid://b3rquvh0mg2rv" path="res://Scenas/ScenasPersonajes/JugadorRPG.tscn" id="2_jpbme"]
-[ext_resource type="Script" uid="uid://dete40vd7c3mn" path="res://Scripts/jugador_rpg.gd" id="3_wfl71"]
 [ext_resource type="PackedScene" uid="uid://dedex5juuo1uh" path="res://Scenas/ScenasEntorno/BrainNPC.tscn" id="4_gealf"]
 [ext_resource type="Texture2D" uid="uid://bvenhdgnubqr0" path="res://Sprites/SpritesEntorno/OtrosElementos1.png" id="6_2k5km"]
 [ext_resource type="PackedScene" uid="uid://cyconbj55gfqr" path="res://Scenas/ScenasEntorno/BrainEvil.tscn" id="7_cp385"]
@@ -178,7 +177,6 @@ tile_set = SubResource("TileSet_shaon")
 
 [node name="Jugador" parent="." instance=ExtResource("2_jpbme")]
 position = Vector2(-413, -256)
-script = ExtResource("3_wfl71")
 
 [node name="Camera2D" type="Camera2D" parent="Jugador"]
 texture_filter = 3
