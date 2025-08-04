@@ -1,6 +1,6 @@
 [gd_scene load_steps=14 format=4 uid="uid://l2a7scguj8od"]
 
-[ext_resource type="Script" uid="uid://cg35gyrv2dgic" path="res://Scripts/Nivel1_2.gd" id="1_t4asn"]
+[ext_resource type="Script" uid="uid://coieenjdrdthd" path="res://Scripts/Nivel1_2.gd" id="1_t4asn"]
 [ext_resource type="PackedScene" uid="uid://b8wjoy8cfcnxq" path="res://Scenas/ScenasEntorno/EnemigoCajas.tscn" id="2_qjp26"]
 [ext_resource type="Script" uid="uid://cpiiauf48m08j" path="res://Scripts/camera_2d.gd" id="2_ymn4f"]
 [ext_resource type="Texture2D" uid="uid://cg8go5tktbqvc" path="res://Sprites/SpritesEntorno/Numero.png" id="3_qjp26"]
