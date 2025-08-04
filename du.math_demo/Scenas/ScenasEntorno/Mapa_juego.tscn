@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=4 uid="uid://be3usqarcnffo"]
+[gd_scene load_steps=8 format=4 uid="uid://be3usqarcnffo"]
 
 [ext_resource type="Script" uid="uid://cpiiauf48m08j" path="res://Scripts/camera_2d.gd" id="1_b3cgw"]
 [ext_resource type="PackedScene" uid="uid://b3rquvh0mg2rv" path="res://Scenas/ScenasPersonajes/JugadorRPG.tscn" id="1_b7odb"]
@@ -7,7 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://slsrphlw2jq8" path="res://Scenas/ScenasEntorno/Puerta.tscn" id="3_qvcje"]
 [ext_resource type="TileSet" uid="uid://0qbyio30mgda" path="res://Tiles/Mapa_juego.tres" id="5_b3cgw"]
 [ext_resource type="AudioStream" uid="uid://fnuux12mevqd" path="res://Musica/Gameplay_Mini_Mapa_Masterizada.mp3" id="7_hgtqa"]
-[ext_resource type="PackedScene" uid="uid://mkp4wthaa1q8" path="res://Scenas/ScenasEntorno/UI.tscn" id="8_seu3u"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -18,10 +17,6 @@ script = ExtResource("1_b3cgw")
 [node name="BarraVida" parent="Camera2D" instance=ExtResource("2_qvcje")]
 position = Vector2(-159, 72)
 scale = Vector2(1.16, 1.16)
-
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Camera2D"]
-stream = ExtResource("7_hgtqa")
-autoplay = true
 
 [node name="Jugador" parent="." instance=ExtResource("1_b7odb")]
 position = Vector2(33, -12)
@@ -51,13 +46,13 @@ Indicador_mundo = 2
 [node name="CharacterBody2D" parent="." instance=ExtResource("3_hgtqa")]
 position = Vector2(165, -3)
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_hgtqa")
+autoplay = true
+
 [node name="Area2D3" parent="." instance=ExtResource("3_qvcje")]
 position = Vector2(280, -326)
 Indicador_mundo = 4
-
-[node name="Node2D" parent="." instance=ExtResource("8_seu3u")]
-position = Vector2(272, -28)
-scale = Vector2(0.32, 0.32)
 
 [connection signal="body_entered" from="Area2D" to="Jugador" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="Jugador" method="_on_area_2d_body_exited"]

@@ -72,6 +72,7 @@ Pausar={
 
 [layer_names]
 
+2d_render/layer_1="muro"
 2d_physics/layer_1="muro"
 2d_physics/layer_2="Collision2Mapa"
 

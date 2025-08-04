@@ -5,7 +5,7 @@ var puntaje_real: int = 0  # El puntaje real acumulado
 var ultimo_valor: int = 0  # El último valor que tocó al jugador
 
 # Referencias a los nodos
-@onready var texto_operacion: Label = $Camera2D/TextoOperacion
+@onready var texto_operacion: Label = $Jugador/TextoOperacion
 @onready var spawner: Node2D = $SpawnerIsla
 
 func _ready():
@@ -87,3 +87,7 @@ func reiniciar_puntaje():
 	ultimo_valor = 0
 	mostrar_valor_inicial()
 	print("Sistema de puntaje reiniciado")
+
+
+func _on_timer_timeout() -> void:
+	pass # Replace with function body.

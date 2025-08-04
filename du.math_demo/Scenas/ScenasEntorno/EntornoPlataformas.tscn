@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://c65hditmthdiv"]
+[gd_scene load_steps=5 format=3 uid="uid://c65hditmthdiv"]
 
 [ext_resource type="PackedScene" uid="uid://uj0isloasghq" path="res://Scenas/ScenasPersonajes/JugadorPlataformas.tscn" id="1_xx2cc"]
+[ext_resource type="Script" uid="uid://cu2lmijnv5ho3" path="res://Scripts/jugador_plataformas.gd" id="2_qqkyw"]
 [ext_resource type="PackedScene" uid="uid://slsrphlw2jq8" path="res://Scenas/ScenasEntorno/Puerta.tscn" id="3_jfyxa"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jfyxa"]
@@ -12,6 +13,7 @@ zoom = Vector2(3, 3)
 
 [node name="Jugador" parent="." instance=ExtResource("1_xx2cc")]
 position = Vector2(-129, -22)
+script = ExtResource("2_qqkyw")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(-3, 26)
