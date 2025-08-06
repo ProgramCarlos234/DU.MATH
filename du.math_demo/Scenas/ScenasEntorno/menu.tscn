@@ -25,7 +25,7 @@ scale = Vector2(4.54898, 3.5744)
 text = "SALIR"
 alignment = 0
 
-[node name="WhatsAppImage2025-07-17At10_49_31Am" type="Sprite2D" parent="."]
+[node name="MainMenu" type="Sprite2D" parent="."]
 z_index = -1
 position = Vector2(578, 326)
 scale = Vector2(0.755077, 0.755077)
