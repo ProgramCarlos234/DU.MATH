@@ -51,4 +51,12 @@ script = ExtResource("3_618g3")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("RectangleShape2D_618g3")
 
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+path_desired_distance = 4.0
+target_desired_distance = 8.0
+path_max_distance = 400.0
+avoidance_enabled = true
+max_speed = 60.0
+debug_enabled = true
+
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
