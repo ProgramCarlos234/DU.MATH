@@ -1,6 +1,8 @@
 extends Area2D
 
 @export var Indicador_mundo: int
+@export var TipoDePortal: bool
+
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.name == "Jugador": # Verifica que el cuerpo que entró sea el jugador

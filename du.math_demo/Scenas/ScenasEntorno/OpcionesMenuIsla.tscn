@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://u8mc6ab8fm3y"]
+[gd_scene load_steps=4 format=3 uid="uid://l6nattmlj42l"]
 
 [ext_resource type="Texture2D" uid="uid://c3b74gqf51sru" path="res://Sprites/SpritesEntorno/WhatsApp Image 2025-07-17 at 10.49.31 AM.jpeg" id="2_o47pv"]
 [ext_resource type="AudioStream" uid="uid://batcxh08c5fp8" path="res://Musica/Gameplay_PantallaCarga_Masterizada.mp3" id="3_neysj"]

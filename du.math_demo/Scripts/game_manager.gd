@@ -4,11 +4,13 @@ extends Node
 #       VARIABLES         #
 # ======================= #
 
-var DentroArea := false
-var VidaJugador: int = 10
+var DentroArea := false # variable usada para detectar que el jugador se encuentra dentro de un area 2D
+var VidaJugador: int = 10 # variable usada para almacenar la vida del jugador
+var IQJugador: int = 40# variable usada para almacenar la vida del jugador
 var JugadorRecibeDaño = false
 var paredes: Array = []
 var indice_actual := 0
+var llave_conseguida = false #variable usada para detectar que el jugador obtiene la llave
 
 # ======================= #
 #    ESCENAS DISPONIBLES  #

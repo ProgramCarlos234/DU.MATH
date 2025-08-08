@@ -48,7 +48,6 @@ scale = Vector2(0.762621, 0.1277)
 theme_override_styles/background = SubResource("StyleBoxFlat_5fy0e")
 theme_override_styles/fill = SubResource("StyleBoxFlat_4lfkd")
 max_value = 300.0
-value = 300.0
 show_percentage = false
 
 [node name="JugadorBien2" type="Sprite2D" parent="."]
