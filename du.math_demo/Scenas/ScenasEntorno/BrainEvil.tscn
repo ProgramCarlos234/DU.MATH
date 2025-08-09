@@ -49,6 +49,11 @@ radius = 8.0
 [node name="EvilBrain" type="CharacterBody2D"]
 script = ExtResource("1_ov4ni")
 
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+avoidance_enabled = true
+radius = 50.0
+neighbor_distance = 3377.7
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_47fpt")
 animation = &"Atack"
