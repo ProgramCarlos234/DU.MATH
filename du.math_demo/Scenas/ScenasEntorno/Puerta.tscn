@@ -1,18 +1,99 @@
-[gd_scene load_steps=4 format=3 uid="uid://slsrphlw2jq8"]
+[gd_scene load_steps=15 format=3 uid="uid://slsrphlw2jq8"]
 
 [ext_resource type="Script" uid="uid://bxl6f5a6u5tbe" path="res://Scripts/portal.gd" id="1_treco"]
+[ext_resource type="Texture2D" uid="uid://ceq2nt3c102kk" path="res://Sprites/SpritesEntorno/PortalAnimaciones.png" id="2_8kni8"]
+[ext_resource type="Texture2D" uid="uid://dmx1q1b7xo5kn" path="res://Sprites/SpritesEntorno/Portal_Tierra.png" id="3_41qye"]
 
-[sub_resource type="CanvasTexture" id="CanvasTexture_a47xf"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_41qye"]
+atlas = ExtResource("2_8kni8")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0i5gj"]
+atlas = ExtResource("2_8kni8")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dbdmo"]
+atlas = ExtResource("2_8kni8")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yocgf"]
+atlas = ExtResource("2_8kni8")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2meq4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_41qye")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0i5gj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dbdmo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yocgf")
+}],
+"loop": true,
+"name": &"PortalAnimacion",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2meq4"]
+atlas = ExtResource("3_41qye")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xani1"]
+atlas = ExtResource("3_41qye")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_10h4n"]
+atlas = ExtResource("3_41qye")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0bia7"]
+atlas = ExtResource("3_41qye")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ebi8f"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2meq4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xani1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_10h4n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0bia7")
+}],
+"loop": true,
+"name": &"AnimacionTierra",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_treco"]
 
 [node name="Area2D" type="Area2D"]
 script = ExtResource("1_treco")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(3.57628e-07, 3.57628e-07)
-scale = Vector2(20, 20)
-texture = SubResource("CanvasTexture_a47xf")
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(1.56, 1.56)
+sprite_frames = SubResource("SpriteFrames_2meq4")
+animation = &"PortalAnimacion"
+autoplay = "PortalAnimacion"
+
+[node name="Sprite2D2" type="AnimatedSprite2D" parent="."]
+scale = Vector2(1.56, 1.56)
+sprite_frames = SubResource("SpriteFrames_ebi8f")
+animation = &"AnimacionTierra"
+autoplay = "AnimacionTierra"
+frame = 3
+frame_progress = 0.125075
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_treco")

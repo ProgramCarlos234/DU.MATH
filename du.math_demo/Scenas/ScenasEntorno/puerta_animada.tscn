@@ -1,0 +1,66 @@
+[gd_scene load_steps=7 format=3 uid="uid://cnjwvko1of8k0"]
+
+[ext_resource type="Texture2D" uid="uid://p764x032bfh4" path="res://Sprites/SpritesEntorno/MuroEntrada.png" id="1_4twdu"]
+[ext_resource type="Script" uid="uid://disjqreps5ciq" path="res://Scripts/PuertaAnimada.gd" id="1_t6pwp"]
+[ext_resource type="Script" uid="uid://cwdqfkp6oo6w" path="res://Scripts/InteraccionPuerta.gd" id="2_t6pwp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oogux"]
+size = Vector2(16, 100)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4twdu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t6pwp"]
+
+[node name="PuertaAnimada" type="Area2D" node_paths=PackedStringArray("Limite_movimiento_muro_arriba", "Limite_movimiento_muro_abajo")]
+script = ExtResource("1_t6pwp")
+Limite_movimiento_muro_arriba = NodePath("Marker2D")
+Limite_movimiento_muro_abajo = NodePath("Marker2D2")
+
+[node name="MuroEntrada" type="Sprite2D" parent="."]
+position = Vector2(0, -32)
+texture = ExtResource("1_4twdu")
+
+[node name="MuroEntrada2" type="Sprite2D" parent="."]
+position = Vector2(0, 32)
+texture = ExtResource("1_4twdu")
+
+[node name="Izquierda" type="Area2D" parent="."]
+script = ExtResource("2_t6pwp")
+Entrada = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Izquierda"]
+position = Vector2(-11, 0)
+shape = SubResource("RectangleShape2D_oogux")
+
+[node name="Izquierda2" type="Area2D" parent="."]
+script = ExtResource("2_t6pwp")
+Salida = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Izquierda2"]
+position = Vector2(11, 0)
+shape = SubResource("RectangleShape2D_oogux")
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(0, -62)
+
+[node name="Marker2D2" type="Marker2D" parent="."]
+position = Vector2(0, 56)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+scale = Vector2(0.36, 5.4)
+shape = SubResource("RectangleShape2D_4twdu")
+debug_color = Color(0.739791, 0.219095, 1, 0.42)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(0.159999, 5.88)
+shape = SubResource("RectangleShape2D_t6pwp")
+debug_color = Color(6.73831e-07, 0.640607, 0.347328, 0.42)
+
+[connection signal="Movimiento_Abrir_puerta" from="Izquierda" to="." method="_on_izquierda_movimiento_abrir_puerta"]
+[connection signal="Movimiento_Cerrar_puerta" from="Izquierda" to="." method="_on_izquierda_movimiento_cerrar_puerta"]
+[connection signal="body_entered" from="Izquierda" to="Izquierda" method="_on_body_entered"]
+[connection signal="Movimiento_Abrir_puerta" from="Izquierda2" to="." method="_on_izquierda_movimiento_abrir_puerta"]
+[connection signal="Movimiento_Cerrar_puerta" from="Izquierda2" to="." method="_on_izquierda_movimiento_cerrar_puerta"]
+[connection signal="body_entered" from="Izquierda2" to="Izquierda2" method="_on_body_entered"]

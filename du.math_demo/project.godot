@@ -74,6 +74,7 @@ Pausar={
 
 2d_render/layer_1="muro"
 2d_physics/layer_1="muro"
+2d_navigation/layer_1="ObjetoChoque"
 2d_physics/layer_2="Collision2Mapa"
 
 [rendering]

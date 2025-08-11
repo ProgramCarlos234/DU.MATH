@@ -8,7 +8,6 @@ var vida: int
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D # Referencia al nodo de animación del personaje
 @onready var sprite = $AnimatedSprite2D
 @onready var Jugador = $"."  # Referencia al nodo del jugador (opcional, equivale a "self")
-@onready var tilemap = get_node("../TileMaps")
 # Velocidad de movimiento del personaje
 # Variable que almacena el valor del índice de la escena que se debe cargar
 var iqDelJugador = 10

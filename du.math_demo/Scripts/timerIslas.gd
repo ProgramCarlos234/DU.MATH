@@ -1,6 +1,6 @@
 extends Timer
 
-@export var tiempo_inicial: int = 20
+@export var tiempo_inicial: int = 120
 var tiempo_restante: int = 0
 
 @onready var tiempo_contador: Label = $"../TiempoContador"
@@ -25,6 +25,8 @@ func _on_timer_timeout():
 	if tiempo_restante <= 0:
 		stop()
 		print("¡TIEMPO TERMINADO!")
+		# 👉 Cambiar de escena al terminar el tiempo
+		get_tree().change_scene_to_file("res://Scenas/ScenasEntorno/OpcionesMenuIsla.tscn")
 
 func actualizar_display():
 	if tiempo_contador:

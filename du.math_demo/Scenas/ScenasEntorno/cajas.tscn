@@ -35,9 +35,11 @@ text = "x"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Sprite2D"]
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(-14, 0)
+scale = Vector2(0.589255, 0.589255)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(23.7588, 0)
 shape = SubResource("RectangleShape2D_6ued5")
 
