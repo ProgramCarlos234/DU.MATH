@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://slsrphlw2jq8"]
+[gd_scene load_steps=15 format=3 uid="uid://slsrphlw2jq8"]
 
 [ext_resource type="Script" uid="uid://bxl6f5a6u5tbe" path="res://Scripts/portal.gd" id="1_treco"]
 [ext_resource type="Texture2D" uid="uid://ceq2nt3c102kk" path="res://Sprites/SpritesEntorno/PortalAnimaciones.png" id="2_8kni8"]
+[ext_resource type="Texture2D" uid="uid://dmx1q1b7xo5kn" path="res://Sprites/SpritesEntorno/Portal_Tierra.png" id="3_41qye"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_41qye"]
 atlas = ExtResource("2_8kni8")
@@ -37,10 +38,41 @@ animations = [{
 "loop": true,
 "name": &"PortalAnimacion",
 "speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2meq4"]
+atlas = ExtResource("3_41qye")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xani1"]
+atlas = ExtResource("3_41qye")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_10h4n"]
+atlas = ExtResource("3_41qye")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0bia7"]
+atlas = ExtResource("3_41qye")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ebi8f"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2meq4")
 }, {
-"frames": [],
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xani1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_10h4n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0bia7")
+}],
 "loop": true,
-"name": &"PortalTierraAnimacion",
+"name": &"AnimacionTierra",
 "speed": 5.0
 }]
 
@@ -50,20 +82,18 @@ animations = [{
 script = ExtResource("1_treco")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(3.57628e-07, -1)
 scale = Vector2(1.56, 1.56)
 sprite_frames = SubResource("SpriteFrames_2meq4")
 animation = &"PortalAnimacion"
 autoplay = "PortalAnimacion"
-frame = 1
-frame_progress = 0.140611
 
 [node name="Sprite2D2" type="AnimatedSprite2D" parent="."]
-position = Vector2(9.15528e-07, -2.56)
-scale = Vector2(2.4336, 2.4336)
-sprite_frames = SubResource("SpriteFrames_2meq4")
-animation = &"PortalTierraAnimacion"
-autoplay = "PortalAnimacion"
+scale = Vector2(1.56, 1.56)
+sprite_frames = SubResource("SpriteFrames_ebi8f")
+animation = &"AnimacionTierra"
+autoplay = "AnimacionTierra"
+frame = 3
+frame_progress = 0.125075
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_treco")

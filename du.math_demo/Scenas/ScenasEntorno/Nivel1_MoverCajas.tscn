@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=4 uid="uid://b3ii1hs6wykix"]
+[gd_scene load_steps=17 format=4 uid="uid://b3ii1hs6wykix"]
 
 [ext_resource type="PackedScene" uid="uid://b3rquvh0mg2rv" path="res://Scenas/ScenasPersonajes/JugadorRPG.tscn" id="1_0c4c4"]
 [ext_resource type="Script" uid="uid://cpiiauf48m08j" path="res://Scripts/camera_2d.gd" id="1_7rp54"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://001w35x8xb6r" path="res://Scenas/ScenasEntorno/Pared.tscn" id="11_0dkpv"]
 [ext_resource type="AudioStream" uid="uid://ce1wb7g0y6k88" path="res://Musica/Gameplay_Combat_2_Masterizada.mp3" id="11_2r6pi"]
 [ext_resource type="PackedScene" uid="uid://cnjwvko1of8k0" path="res://Scenas/ScenasEntorno/puerta_animada.tscn" id="13_5wgtm"]
+[ext_resource type="PackedScene" uid="uid://slsrphlw2jq8" path="res://Scenas/ScenasEntorno/Puerta.tscn" id="14_l2snx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vq1ka"]
 texture = ExtResource("4_1kf0i")
@@ -668,3 +669,7 @@ position = Vector2(0, 50)
 
 [node name="Area2D" parent="." instance=ExtResource("3_5wgtm")]
 position = Vector2(685, 429)
+
+[node name="Area2D2" parent="." instance=ExtResource("14_l2snx")]
+position = Vector2(913, 438)
+Indicador_mundo = 5

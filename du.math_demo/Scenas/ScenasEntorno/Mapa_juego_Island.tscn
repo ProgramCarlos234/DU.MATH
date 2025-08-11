@@ -1,7 +1,7 @@
 [gd_scene load_steps=27 format=4 uid="uid://chw48vuv5cjm5"]
 
 [ext_resource type="Script" uid="uid://bmxhhjfkn0txy" path="res://Scripts/juego_island.gd" id="1_gealf"]
-[ext_resource type="Script" path="res://Scripts/Camera_2dIsland.gd" id="2_cp385"]
+[ext_resource type="Script" uid="uid://l8da3q7w8yh1" path="res://Scripts/Camera_2dIsland.gd" id="2_cp385"]
 [ext_resource type="PackedScene" uid="uid://b3rquvh0mg2rv" path="res://Scenas/ScenasPersonajes/JugadorRPG.tscn" id="2_jpbme"]
 [ext_resource type="Texture2D" uid="uid://bati3rstetgfb" path="res://Sprites/SpritesEntorno/PizarraIsla.png" id="4_shaon"]
 [ext_resource type="PackedScene" uid="uid://r5urwg3eshph" path="res://Scenas/ScenasEntorno/barra_vida.tscn" id="5_cp385"]

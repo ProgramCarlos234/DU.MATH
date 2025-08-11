@@ -21,13 +21,17 @@ const ENTORNO_RPG = preload("res://Scenas/ScenasEntorno/EntornoRPG.tscn")
 const ENTORNO_PLATAFORMAS = preload("res://Scenas/ScenasEntorno/EntornoPlataformas.tscn")
 const NIVEL_1_MOVER_CAJAS = preload("res://Scenas/ScenasEntorno/Nivel1_MoverCajas.tscn")
 const MAPA_JUEGO_ISLAND = preload("res://Scenas/ScenasEntorno/Mapa_juego_Island.tscn")
+const SUB_NIVELES = preload("res://Scenas/ScenasEntorno/sub_niveles.tscn")
+const NIVEL_1_2_DIVISORES = preload("res://Scenas/ScenasEntorno/Nivel1_2Divisores.tscn")
 
 var Scenas: Array = [
 	MAPA_JUEGO,
 	ENTORNO_RPG,
 	ENTORNO_PLATAFORMAS,
 	NIVEL_1_MOVER_CAJAS,
-	MAPA_JUEGO_ISLAND
+	MAPA_JUEGO_ISLAND,
+	SUB_NIVELES,
+	NIVEL_1_2_DIVISORES
 ]
 
 # ======================= #
