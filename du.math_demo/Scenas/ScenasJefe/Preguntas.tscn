@@ -1,0 +1,59 @@
+[gd_scene load_steps=9 format=3 uid="uid://crnq4bv4sn8g1"]
+
+[ext_resource type="Texture2D" uid="uid://duui1ci6tby4r" path="res://Sprites/SpritesEntorno/SignoInterrogacion.png" id="1_40hff"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xd1p8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yuwlg"]
+atlas = ExtResource("1_40hff")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x6yph"]
+atlas = ExtResource("1_40hff")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f0cty"]
+atlas = ExtResource("1_40hff")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q86y2"]
+atlas = ExtResource("1_40hff")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mi7br"]
+atlas = ExtResource("1_40hff")
+region = Rect2(192, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_up2gc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yuwlg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x6yph")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f0cty")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q86y2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mi7br")
+}],
+"loop": true,
+"name": &"Interrogacion",
+"speed": 5.0
+}]
+
+[node name="Preguntas" type="Node2D"]
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_xd1p8")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Area2D"]
+sprite_frames = SubResource("SpriteFrames_up2gc")
+animation = &"Interrogacion"
