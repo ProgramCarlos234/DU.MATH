@@ -1,0 +1,12 @@
+~ start
+Carlos: [[Hi|Hello|Howdy]], this is some dialogue.
+Carlos: Here are some choices.
+- Primera opcion
+	Nathan: You picked the first one.
+	Carlos: La tuya por siacaso
+- Second one
+	Nathan: You picked the second one.
+- Start again => start
+- End the conversation => END
+Nathan: For more information see the online documentation.
+=> END

@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://bdxfoa2lpg5cy"
+path="res://.godot/imported/Pruba.dialogue-a63c2485dd2af9127175c31917c66d7a.tres"
+
+[deps]
+
+source_file="res://Dialogos/Pruba.dialogue"
+dest_files=["res://.godot/imported/Pruba.dialogue-a63c2485dd2af9127175c31917c66d7a.tres"]
+
+[params]
+
+defaults=true

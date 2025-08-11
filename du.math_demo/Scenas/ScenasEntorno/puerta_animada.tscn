@@ -61,6 +61,8 @@ debug_color = Color(6.73831e-07, 0.640607, 0.347328, 0.42)
 [connection signal="Movimiento_Abrir_puerta" from="Izquierda" to="." method="_on_izquierda_movimiento_abrir_puerta"]
 [connection signal="Movimiento_Cerrar_puerta" from="Izquierda" to="." method="_on_izquierda_movimiento_cerrar_puerta"]
 [connection signal="body_entered" from="Izquierda" to="Izquierda" method="_on_body_entered"]
+[connection signal="body_exited" from="Izquierda" to="Izquierda" method="_on_body_exited"]
 [connection signal="Movimiento_Abrir_puerta" from="Izquierda2" to="." method="_on_izquierda_movimiento_abrir_puerta"]
 [connection signal="Movimiento_Cerrar_puerta" from="Izquierda2" to="." method="_on_izquierda_movimiento_cerrar_puerta"]
 [connection signal="body_entered" from="Izquierda2" to="Izquierda2" method="_on_body_entered"]
+[connection signal="body_exited" from="Izquierda2" to="Izquierda2" method="_on_body_exited"]

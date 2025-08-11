@@ -153,7 +153,7 @@ llave_escena = ExtResource("3_5wgtm")
 posicion_llave = NodePath("PosicionLlave")
 
 [node name="Jugador" parent="." instance=ExtResource("1_0c4c4")]
-position = Vector2(744, 430)
+position = Vector2(-33, -44)
 
 [node name="Paredes" type="Node2D" parent="."]
 position = Vector2(-129, -50)
@@ -657,19 +657,16 @@ position = Vector2(0, -16)
 [node name="Cajas4" parent="NodoObstaculos/Obstaculo19" instance=ExtResource("9_k6uwd")]
 
 [node name="PuertaAnimada" parent="." node_paths=PackedStringArray("Limite_movimiento_muro_arriba", "Limite_movimiento_muro_abajo") instance=ExtResource("13_5wgtm")]
-position = Vector2(812, 431)
+position = Vector2(813, 431)
 Limite_movimiento_muro_arriba = NodePath("LimiteArriba")
 Limite_movimiento_muro_abajo = NodePath("LimiteAbajo")
 
 [node name="LimiteArriba" type="Marker2D" parent="PuertaAnimada"]
-position = Vector2(0, -60)
+position = Vector2(0, -78)
 
 [node name="LimiteAbajo" type="Marker2D" parent="PuertaAnimada"]
-position = Vector2(0, 50)
-
-[node name="Area2D" parent="." instance=ExtResource("3_5wgtm")]
-position = Vector2(685, 429)
+position = Vector2(0, 67)
 
 [node name="Area2D2" parent="." instance=ExtResource("14_l2snx")]
-position = Vector2(913, 438)
+position = Vector2(912, 434)
 Indicador_mundo = 5

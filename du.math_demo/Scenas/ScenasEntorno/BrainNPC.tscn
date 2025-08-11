@@ -46,7 +46,9 @@ time_horizon_obstacles = 0.65
 max_speed = 60.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(0.92, 0.92)
 shape = SubResource("CircleShape2D_itggw")
+debug_color = Color(1, 0, 0.766666, 1)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_47fpt")
