@@ -45,3 +45,5 @@ animation = &"Walk"
 [node name="SpawnTimer" type="Timer" parent="."]
 
 [node name="WaveTimer" type="Timer" parent="."]
+
+[node name="PreguntaTimer" type="Timer" parent="."]

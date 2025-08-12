@@ -1,10 +1,35 @@
-[gd_scene load_steps=22 format=3 uid="uid://dqveeptoh80a3"]
+[gd_scene load_steps=29 format=3 uid="uid://dqveeptoh80a3"]
 
 [ext_resource type="Script" uid="uid://b18iduo3qx00f" path="res://Scenas/ScenasJefe/Enemigos.gd" id="1_seng0"]
 [ext_resource type="Texture2D" uid="uid://c4ijdenex04p5" path="res://Sprites/Npcs/Animacion_Enemigo_triangulo.png" id="2_jwlfs"]
+[ext_resource type="Texture2D" uid="uid://hp2kxgathrxd" path="res://Sprites/Npcs/Enemigos_Triangulos_MuertesAgregadas.png" id="2_xjvop"]
 [ext_resource type="Script" uid="uid://c4jnxuxbhjmeo" path="res://Scenas/ScenasJefe/area_ataque.gd" id="3_t16i2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jwlfs"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bl3av"]
+atlas = ExtResource("2_xjvop")
+region = Rect2(672, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rb6d1"]
+atlas = ExtResource("2_xjvop")
+region = Rect2(720, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7s7hm"]
+atlas = ExtResource("2_xjvop")
+region = Rect2(768, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s44a5"]
+atlas = ExtResource("2_xjvop")
+region = Rect2(816, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ew4lw"]
+atlas = ExtResource("2_xjvop")
+region = Rect2(864, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yoqxd"]
+atlas = ExtResource("2_xjvop")
+region = Rect2(912, 0, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_t16i2"]
 atlas = ExtResource("2_jwlfs")
@@ -24,6 +49,29 @@ region = Rect2(144, 0, 48, 48)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_t16i2"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bl3av")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rb6d1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7s7hm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s44a5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ew4lw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yoqxd")
+}],
+"loop": true,
+"name": &"Death",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_t16i2")
@@ -121,7 +169,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t16i2"]
-size = Vector2(21, 20)
+size = Vector2(17.5, 20)
 
 [node name="Enemigos" type="CharacterBody2D"]
 script = ExtResource("1_seng0")
@@ -131,7 +179,7 @@ shape = SubResource("RectangleShape2D_jwlfs")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_t16i2")
-animation = &"Walk"
+animation = &"Death"
 autoplay = "Walk"
 
 [node name="Mordida" type="AnimatedSprite2D" parent="."]
@@ -145,7 +193,7 @@ frame_progress = 1.0
 script = ExtResource("3_t16i2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Mordida/AreaAtaque"]
-position = Vector2(-13, 0)
+position = Vector2(-11.25, 0)
 shape = SubResource("RectangleShape2D_t16i2")
 debug_color = Color(0.857217, 0.250511, 0.66918, 0.42)
 
