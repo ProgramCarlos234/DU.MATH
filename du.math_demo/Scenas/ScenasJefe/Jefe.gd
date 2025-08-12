@@ -1,8 +1,8 @@
 extends Node2D
 
 @export var vida_max: int = 100
-@export var spawn_interval_fase1: float = 60.0
-@export var spawn_interval_fase2: float = 40.0
+@export var spawn_interval_fase1: float = 10.0  # 40 seg
+@export var spawn_interval_fase2: float = 30.0  # 1 min
 @export var enemigos_por_fase1: int = 2
 @export var enemigos_por_fase2: int = 4
 @export var vida_fase2: int = 50
@@ -20,22 +20,22 @@ var fase: int = 1
 var jugador_activo: bool = false
 
 func _ready():
-	var mapa = get_tree().current_scene.get_node_or_null("JefeFinal")
-	if mapa:
-		var spawns = mapa.get_node_or_null("SpawnPoints")
-		if spawns:
-			spawn_points = spawns.get_children()
+	# Buscar nodos de spawn y preguntas de forma RELATIVA
+	var spawns = get_parent().get_node_or_null("SpawnPoints")
+	if spawns:
+		spawn_points = spawns.get_children()
+	else:
+		print("⚠ No se encontraron puntos de spawn.")
 
-		var preguntas = mapa.get_node_or_null("QuestionPoints")
-		if preguntas:
-			question_points = preguntas.get_children()
+	var preguntas = get_parent().get_node_or_null("QuestionPoints")
+	if preguntas:
+		question_points = preguntas.get_children()
 
 	vida_actual = vida_max
 
 	spawn_timer.timeout.connect(_on_spawn_timer_timeout)
 	wave_timer.timeout.connect(_on_wave_timer_timeout)
 
-	# Solo reproducir si existe la animación
 	if sprite and sprite.sprite_frames and sprite.sprite_frames.has_animation("Walk"):
 		sprite.play("Walk")
 	else:
@@ -55,18 +55,23 @@ func iniciar():
 
 func iniciar_fase1():
 	fase = 1
+	print("📌 Iniciando Fase 1: 2 enemigos cada 40 seg")
 	spawn_timer.wait_time = spawn_interval_fase1
 	spawn_timer.start()
 
 func iniciar_fase2():
 	fase = 2
+	print("📌 Iniciando Fase 2: 4 enemigos cada 60 seg")
 	spawn_timer.stop()
 	spawn_timer.wait_time = spawn_interval_fase2
 	spawn_timer.start()
 
 func iniciar_fase3():
 	fase = 3
+	print("📌 Iniciando Fase 3: enemigos + ondas de ataque")
 	spawn_timer.stop()
+	spawn_timer.wait_time = spawn_interval_fase2  # o el tiempo que quieras
+	spawn_timer.start()
 	wave_timer.start()
 
 func _on_spawn_timer_timeout():
@@ -75,23 +80,22 @@ func _on_spawn_timer_timeout():
 		return
 
 	var cantidad = enemigos_por_fase1 if fase == 1 else enemigos_por_fase2
+	print("⚔ Generando", cantidad, "enemigos (Fase", fase, ")")
 	for i in range(cantidad):
 		var punto = spawn_points.pick_random()
 		var enemigo = preload("res://Scenas/ScenasJefe/Enemigos.tscn").instantiate()
 		get_tree().current_scene.add_child(enemigo)
 		enemigo.global_position = punto.global_position
 
-		# Buscar sprite del enemigo
 		var sprite_enemigo = enemigo.get_node_or_null("AnimatedSprite2D")
 		if not sprite_enemigo:
 			sprite_enemigo = enemigo.find_child("AnimatedSprite2D", true, false)
 
-		# Reproducir animación solo si existe
-		if sprite_enemigo and sprite_enemigo.sprite_frames and sprite_enemigo.sprite_frames.has_animation("walk"):
+		if sprite_enemigo and sprite_enemigo.sprite_frames and sprite_enemigo.sprite_frames.has_animation("Walk"):
 			sprite_enemigo.play("Walk")
 
 func _on_wave_timer_timeout():
-	print("Lanzando onda de ataque")
+	print("🌊 Lanzando onda de ataque")
 
 func recibir_danio(cantidad):
 	if not jugador_activo:
@@ -109,7 +113,7 @@ func recibir_danio(cantidad):
 		derrotado()
 
 func derrotado():
-	print("¡Jefe derrotado!")
+	print("🏆 ¡Jefe derrotado!")
 	spawn_timer.stop()
 	wave_timer.stop()
 	queue_free()

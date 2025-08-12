@@ -165,17 +165,23 @@ script = ExtResource("3_36870")
 shape = SubResource("RectangleShape2D_rhonx")
 
 [node name="SpawnPoints" type="Node2D" parent="."]
+position = Vector2(981, -3)
 
 [node name="Spawn1" type="Marker2D" parent="SpawnPoints"]
+position = Vector2(37, -17)
 
 [node name="Spawn2" type="Marker2D" parent="SpawnPoints"]
+position = Vector2(36, 40)
 
 [node name="Spawn3" type="Marker2D" parent="SpawnPoints"]
+position = Vector2(-45, -18)
 
 [node name="Spawn4" type="Marker2D" parent="SpawnPoints"]
+position = Vector2(-47, 36)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 z_index = 1
+position = Vector2(2, -2)
 zoom = Vector2(3, 3)
 script = ExtResource("5_sinan")
 
@@ -184,7 +190,23 @@ position = Vector2(-159, 72)
 scale = Vector2(1.16, 1.16)
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Camera2D"]
+position = Vector2(-6, 1)
 stream = ExtResource("8_5pgax")
 autoplay = true
+
+[node name="QuestionPoints" type="Node2D" parent="."]
+position = Vector2(981, -5)
+
+[node name="Q1" type="Marker2D" parent="QuestionPoints"]
+position = Vector2(105, -44)
+
+[node name="Q2" type="Marker2D" parent="QuestionPoints"]
+position = Vector2(108, 73)
+
+[node name="Q3" type="Marker2D" parent="QuestionPoints"]
+position = Vector2(-84, -54)
+
+[node name="Q4" type="Marker2D" parent="QuestionPoints"]
+position = Vector2(-94, 71)
 
 [connection signal="body_entered" from="BossTriggerArea" to="BossTriggerArea" method="_on_body_entered"]

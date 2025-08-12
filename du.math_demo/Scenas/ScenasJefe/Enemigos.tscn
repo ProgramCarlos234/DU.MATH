@@ -1,25 +1,26 @@
-[gd_scene load_steps=9 format=3 uid="uid://dqveeptoh80a3"]
+[gd_scene load_steps=22 format=3 uid="uid://dqveeptoh80a3"]
 
 [ext_resource type="Script" uid="uid://b18iduo3qx00f" path="res://Scenas/ScenasJefe/Enemigos.gd" id="1_seng0"]
-[ext_resource type="Texture2D" uid="uid://cokb01iv23ri0" path="res://Sprites/Npcs/Sprite-0001-Sheet.png" id="2_jwlfs"]
+[ext_resource type="Texture2D" uid="uid://c4ijdenex04p5" path="res://Sprites/Npcs/Animacion_Enemigo_triangulo.png" id="2_jwlfs"]
+[ext_resource type="Script" uid="uid://c4jnxuxbhjmeo" path="res://Scenas/ScenasJefe/area_ataque.gd" id="3_t16i2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jwlfs"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_t16i2"]
 atlas = ExtResource("2_jwlfs")
-region = Rect2(0, 0, 16, 16)
+region = Rect2(0, 0, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xjvop"]
 atlas = ExtResource("2_jwlfs")
-region = Rect2(16, 0, 16, 16)
+region = Rect2(48, 0, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1kv06"]
 atlas = ExtResource("2_jwlfs")
-region = Rect2(32, 0, 16, 16)
+region = Rect2(96, 0, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nyj08"]
 atlas = ExtResource("2_jwlfs")
-region = Rect2(48, 0, 16, 16)
+region = Rect2(144, 0, 48, 48)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_t16i2"]
 animations = [{
@@ -37,19 +38,116 @@ animations = [{
 "texture": SubResource("AtlasTexture_nyj08")
 }],
 "loop": true,
-"name": &"walk",
+"name": &"Walk",
 "speed": 5.0
 }]
 
-[node name="Enemigos" type="Node2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t16i2"]
+size = Vector2(21, 20)
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+[sub_resource type="AtlasTexture" id="AtlasTexture_jwlfs"]
+atlas = ExtResource("2_jwlfs")
+region = Rect2(192, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vj7w0"]
+atlas = ExtResource("2_jwlfs")
+region = Rect2(240, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3yqm2"]
+atlas = ExtResource("2_jwlfs")
+region = Rect2(288, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1yqou"]
+atlas = ExtResource("2_jwlfs")
+region = Rect2(336, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cvvg7"]
+atlas = ExtResource("2_jwlfs")
+region = Rect2(384, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_10nau"]
+atlas = ExtResource("2_jwlfs")
+region = Rect2(432, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sxyeq"]
+atlas = ExtResource("2_jwlfs")
+region = Rect2(480, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yievn"]
+atlas = ExtResource("2_jwlfs")
+region = Rect2(528, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6ck7m"]
+atlas = ExtResource("2_jwlfs")
+region = Rect2(576, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nk0j2"]
+atlas = ExtResource("2_jwlfs")
+region = Rect2(624, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bl3av"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jwlfs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vj7w0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3yqm2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1yqou")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cvvg7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_10nau")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sxyeq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yievn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6ck7m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nk0j2")
+}],
+"loop": false,
+"name": &"Mordida",
+"speed": 5.0
+}]
+
+[node name="Enemigos" type="CharacterBody2D" groups=["enemigos"]]
 script = ExtResource("1_seng0")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_jwlfs")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_t16i2")
-animation = &"walk"
-autoplay = "walk"
+animation = &"Walk"
+autoplay = "Walk"
+
+[node name="AreaAtaque" type="Area2D" parent="."]
+script = ExtResource("3_t16i2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaAtaque"]
+position = Vector2(-20.5, 0)
+shape = SubResource("RectangleShape2D_t16i2")
+debug_color = Color(0.857217, 0.250511, 0.66918, 0.42)
+
+[node name="Mordida" type="AnimatedSprite2D" parent="AreaAtaque"]
+sprite_frames = SubResource("SpriteFrames_bl3av")
+animation = &"Mordida"
+autoplay = "Mordida"
+frame = 9
+frame_progress = 1.0
+
+[connection signal="body_entered" from="AreaAtaque" to="AreaAtaque" method="_on_body_entered"]
+[connection signal="animation_finished" from="AreaAtaque/Mordida" to="." method="_on_mordida_animation_finished"]
