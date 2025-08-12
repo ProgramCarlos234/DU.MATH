@@ -79,5 +79,5 @@ func _on_ataque_animacion_animation_finished():
 	attack_finished.emit()
 
 func _on_area_attack_body_entered(body):
-	if is_attack and body.is_in_group("Enemigos"):
+	if is_attack and body.is_in_group("Enemigos") and body is CharacterBody2D:
 		body.queue_free()

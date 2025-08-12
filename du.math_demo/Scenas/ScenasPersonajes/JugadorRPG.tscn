@@ -114,8 +114,8 @@ animations = [{
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qppy6"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_1lfyw"]
-size = Vector2(13, 16)
+[sub_resource type="CircleShape2D" id="CircleShape2D_qppy6"]
+radius = 14.0357
 
 [node name="Jugador" type="CharacterBody2D"]
 script = ExtResource("1_mvuvu")
@@ -139,6 +139,6 @@ shape = SubResource("CapsuleShape2D_qppy6")
 [node name="AreaAtaque" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaAtaque"]
-position = Vector2(-12.5, 0)
-shape = SubResource("RectangleShape2D_1lfyw")
+position = Vector2(0, 1)
+shape = SubResource("CircleShape2D_qppy6")
 debug_color = Color(0.914068, 0.0150007, 0.712196, 0.42)

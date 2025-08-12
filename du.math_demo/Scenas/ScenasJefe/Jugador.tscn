@@ -127,7 +127,7 @@ size = Vector2(13, 16)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6qnoj"]
 size = Vector2(13, 16)
 
-[node name="Jugador" type="Node2D" groups=["enemigos"]]
+[node name="Jugador" type="Node2D"]
 script = SubResource("GDScript_daxgu")
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
@@ -151,7 +151,7 @@ animation = &"attack"
 position = Vector2(0.5, 0)
 shape = SubResource("RectangleShape2D_qeimi")
 
-[node name="AreaAtaque" type="Area2D" parent="CharacterBody2D" groups=["enemigos"]]
+[node name="AreaAtaque" type="Area2D" parent="CharacterBody2D"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/AreaAtaque"]
 position = Vector2(-12.5, 0)
