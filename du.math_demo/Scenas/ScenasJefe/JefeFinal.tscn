@@ -168,16 +168,16 @@ shape = SubResource("RectangleShape2D_rhonx")
 position = Vector2(981, -3)
 
 [node name="Spawn1" type="Marker2D" parent="SpawnPoints"]
-position = Vector2(36, -7)
+position = Vector2(37, -17)
 
 [node name="Spawn2" type="Marker2D" parent="SpawnPoints"]
-position = Vector2(24, 46)
+position = Vector2(36, 40)
 
 [node name="Spawn3" type="Marker2D" parent="SpawnPoints"]
-position = Vector2(-25, -18)
+position = Vector2(-45, -18)
 
 [node name="Spawn4" type="Marker2D" parent="SpawnPoints"]
-position = Vector2(-22, 35)
+position = Vector2(-47, 36)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 z_index = 1
