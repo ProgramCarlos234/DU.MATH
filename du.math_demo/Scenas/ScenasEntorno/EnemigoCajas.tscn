@@ -87,4 +87,6 @@ position = Vector2(1, 1.5)
 scale = Vector2(0.600002, 0.600002)
 shape = SubResource("CircleShape2D_s84yb")
 
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+
 [connection signal="body_entered" from="AnimatedSprite2D/Ataque" to="AnimatedSprite2D/Ataque" method="_on_body_entered"]

@@ -3,6 +3,7 @@ extends CharacterBody2D
 @onready var SpriteEnemigo: AnimatedSprite2D = $AnimatedSprite2D
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
+
 const SPEED = 30.0  # Puedes ajustar la velocidad del enemigo
 var jugador: CharacterBody2D
 
