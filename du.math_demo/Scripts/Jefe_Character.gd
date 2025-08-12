@@ -1,4 +1,4 @@
-extends Node2D
+extends CharacterBody2D
 
 @export var vida_max: int = 100
 @export var spawn_interval_fase1: float = 10.0  # 40 seg
@@ -8,7 +8,7 @@ extends Node2D
 @export var vida_fase2: int = 50
 @export var vida_fase3: int = 20
 
-@onready var sprite: AnimatedSprite2D = $CharacterBody2D/AnimatedSprite2D
+@onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var spawn_timer: Timer = $SpawnTimer
 @onready var wave_timer: Timer = $WaveTimer
 
@@ -86,14 +86,7 @@ func _on_spawn_timer_timeout():
 		var enemigo = preload("res://Scenas/ScenasJefe/Enemigos.tscn").instantiate()
 		get_tree().current_scene.add_child(enemigo)
 		enemigo.global_position = punto.global_position
-
-		var sprite_enemigo = enemigo.get_node_or_null("AnimatedSprite2D")
-		if not sprite_enemigo:
-			sprite_enemigo = enemigo.find_child("AnimatedSprite2D", true, false)
-
-		if sprite_enemigo and sprite_enemigo.sprite_frames and sprite_enemigo.sprite_frames.has_animation("Walk"):
-			sprite_enemigo.play("Walk")
-
+	
 func _on_wave_timer_timeout():
 	print("🌊 Lanzando onda de ataque")
 

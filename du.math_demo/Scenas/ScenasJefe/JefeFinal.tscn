@@ -145,7 +145,7 @@ size = Vector2(27, 48)
 [node name="JefeFinal" type="Node2D"]
 
 [node name="Jugador" parent="." instance=ExtResource("5_w3llp")]
-position = Vector2(30, 1)
+position = Vector2(587, 10)
 
 [node name="Jefe" parent="." instance=ExtResource("2_rhonx")]
 position = Vector2(980, -1)

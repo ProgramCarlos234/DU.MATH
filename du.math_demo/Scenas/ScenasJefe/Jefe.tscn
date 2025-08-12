@@ -1,15 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://cc052y6027hpc"]
+[gd_scene load_steps=9 format=3 uid="uid://cc052y6027hpc"]
 
-[ext_resource type="Script" uid="uid://cnebcfiooisyl" path="res://Scenas/ScenasJefe/Jefe.gd" id="1_jlv10"]
+[ext_resource type="Script" uid="uid://dtvvx27pmxcy6" path="res://Scripts/Jefe_Character.gd" id="1_jlv10"]
 [ext_resource type="Texture2D" uid="uid://brb7rqsuo017w" path="res://Scenas/ScenasPersonajes/SpritesJefe/Sprites_Anim_01.png" id="2_byvsj"]
 [ext_resource type="Texture2D" uid="uid://c6wl12mv313gk" path="res://Scenas/ScenasPersonajes/SpritesJefe/Sprites_Anim_02.png" id="3_nmrol"]
 [ext_resource type="Texture2D" uid="uid://d33hxpwywvnr8" path="res://Scenas/ScenasPersonajes/SpritesJefe/Sprites_Anim_03.png" id="4_at84b"]
 [ext_resource type="Texture2D" uid="uid://cd5bbed8uomal" path="res://Scenas/ScenasPersonajes/SpritesJefe/Sprites_Anim_04.png" id="5_rlclk"]
 [ext_resource type="Texture2D" uid="uid://dsvuxylj4vnja" path="res://Scenas/ScenasPersonajes/SpritesJefe/Sprites_Anim_05.png" id="6_68rew"]
-
-[sub_resource type="GDScript" id="GDScript_av6hj"]
-script/source = "extends CharacterBody2D
-"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s71rq"]
 
@@ -36,16 +32,13 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Jefe" type="Node2D"]
+[node name="CharacterBody2D" type="CharacterBody2D"]
 script = ExtResource("1_jlv10")
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
-script = SubResource("GDScript_av6hj")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_s71rq")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_qlds7")
 animation = &"Walk"
 
