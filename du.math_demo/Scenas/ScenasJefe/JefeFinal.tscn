@@ -148,7 +148,7 @@ size = Vector2(27, 48)
 position = Vector2(30, 1)
 
 [node name="Jefe" parent="." instance=ExtResource("2_rhonx")]
-position = Vector2(896, 0)
+position = Vector2(980, -1)
 
 [node name="TileMaps" type="Node2D" parent="."]
 

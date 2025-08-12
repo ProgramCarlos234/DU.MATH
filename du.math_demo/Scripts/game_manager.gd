@@ -6,7 +6,8 @@ extends Node
 
 var DentroArea := false # variable usada para detectar que el jugador se encuentra dentro de un area 2D
 var VidaJugador: int = 10 # variable usada para almacenar la vida del jugador
-var IQJugador: int = 40# variable usada para almacenar la vida del jugador
+var IQJugador: int = 40 # variable usada para almacenar la vida del jugador
+var Cantidad_Puntaje_Nivel_Island: int # variable de uso para el nivel de la isla
 var JugadorRecibeDaño = false
 var paredes: Array = []
 var indice_actual := 0
@@ -39,7 +40,6 @@ var Scenas: Array = [
 # ======================= #
 func _ready() -> void:
 	await get_tree().process_frame  # Esperar a que se cargue toda la escena
-	
 # ============================== #
 #  GENERACIÓN DE NÚMERO OBJETIVO #
 # ============================== #
@@ -51,6 +51,10 @@ func _AbrirEscenas(valor: int) ->void:
 func _recibirDaño(Daño : int) -> void:
 	VidaJugador -= Daño
 	JugadorRecibeDaño = true
+	pass
+	
+func _CalcularValor_Nivel_Island(Cantidad : int) -> void:
+	Cantidad_Puntaje_Nivel_Island += Cantidad
 	pass
 
 # ============================== #

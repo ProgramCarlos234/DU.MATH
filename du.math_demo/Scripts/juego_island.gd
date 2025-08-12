@@ -24,6 +24,10 @@ func _ready():
 	# Mostrar texto inicial
 	mostrar_valor_inicial()
 
+func _process(delta: float) -> void:
+	puntaje_real = GameManager.Cantidad_Puntaje_Nivel_Island # igualamos el puntaje al valor del gamemanager
+	pass
+	
 # Esta función se ejecuta cuando un Brain toca al jugador
 func _on_npc_toco_jugador(tipo_brain: String):
 	var valor_obtenido: int = 0
@@ -46,7 +50,8 @@ func _on_npc_toco_jugador(tipo_brain: String):
 	
 	# Guardar el último valor y actualizar puntaje real
 	ultimo_valor = valor_obtenido
-	puntaje_real += valor_obtenido
+	GameManager._CalcularValor_Nivel_Island(valor_obtenido)
+	
 	
 	print("Valor obtenido: ", valor_obtenido)
 	print("Puntaje real acumulado: ", puntaje_real)
