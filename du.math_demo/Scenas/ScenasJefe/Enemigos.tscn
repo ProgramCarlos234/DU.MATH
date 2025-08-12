@@ -41,15 +41,13 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Enemigos" type="Node2D"]
-
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+[node name="Enemigos" type="CharacterBody2D"]
 script = ExtResource("1_seng0")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_jwlfs")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_t16i2")
 animation = &"walk"
 autoplay = "walk"

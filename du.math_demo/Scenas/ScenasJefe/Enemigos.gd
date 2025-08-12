@@ -1,23 +1,22 @@
 extends CharacterBody2D
 
-@export var velocidad: int = 50
-@export var vida: int = 3
-@export var dano: int = 1
+@onready var SpriteEnemigo: AnimatedSprite2D = $AnimatedSprite2D
 
-@onready var jugador: Node2D = get_tree().get_first_node_in_group("Jugador")
+const SPEED = 30.0
+var jugador: CharacterBody2D
+
+func _ready() -> void:
+	jugador = get_tree().current_scene.get_node_or_null("Jugador")
+	add_to_group("Enemigos") # ✅ Para que el jugador pueda reconocerlo en el ataque
 
 func _physics_process(delta: float) -> void:
 	if jugador:
-		# Perseguir al jugador
 		var direccion = (jugador.global_position - global_position).normalized()
-		velocity = direccion * velocidad
+		velocity = direccion * SPEED
 		move_and_slide()
-
-func recibir_dano(cantidad: int) -> void:
-	vida -= cantidad
-	if vida <= 0:
-		queue_free()
-
-func _on_body_entered(body: Node) -> void:
-	if body.is_in_group("Jugador"):
-		GameManager.VidaJugador -= dano
+	
+	# Voltear sprite
+	if velocity.x < 0:
+		SpriteEnemigo.scale.x = -1
+	elif velocity.x > 0:
+		SpriteEnemigo.scale.x = 1
