@@ -4,9 +4,9 @@ signal attack_finished
 
 @onready var movimiento_animacion: AnimatedSprite2D = $Movimiento_Animacion
 @onready var ataque_animacion: AnimatedSprite2D = $Ataque_Animacion
-@onready var attack_area: Area2D = $AreaAtaque
+@onready var attack_area: Area2D = $Ataque_Animacion/AreaAtaque
 
-var velocidad: int = 100
+@export var velocidad: int = 100
 var is_attack: bool = false
 var vida: int
 var valor: int # ← aquí guardaremos el índice del nivel que envía el portal

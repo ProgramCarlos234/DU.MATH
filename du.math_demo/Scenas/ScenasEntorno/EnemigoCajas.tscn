@@ -43,7 +43,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_xdsi0")
 }],
-"loop": true,
+"loop": false,
 "name": &"Attack",
 "speed": 5.0
 }, {
@@ -64,7 +64,7 @@ size = Vector2(12, 8)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_s84yb"]
 
-[node name="CharacterBody2D" type="CharacterBody2D"]
+[node name="CharacterBody2D" type="CharacterBody2D" groups=["Enemigos"]]
 z_index = -1
 script = ExtResource("1_g5bmv")
 
@@ -72,7 +72,6 @@ script = ExtResource("1_g5bmv")
 sprite_frames = SubResource("SpriteFrames_gko61")
 animation = &"Attack"
 autoplay = "Movement"
-frame_progress = 0.893781
 
 [node name="Ataque" type="Area2D" parent="AnimatedSprite2D"]
 script = ExtResource("3_s84yb")

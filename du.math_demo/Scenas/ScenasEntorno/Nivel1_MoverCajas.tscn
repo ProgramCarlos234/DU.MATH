@@ -243,7 +243,7 @@ Velocidad = 40
 position = Vector2(411, 0)
 
 [node name="ParedPuas2" type="Node2D" parent="Nivel1/Paredes"]
-position = Vector2(466, -47)
+position = Vector2(466, -54)
 rotation = 1.57079
 
 [node name="Pared" parent="Nivel1/Paredes/ParedPuas2" instance=ExtResource("11_0dkpv")]
@@ -255,10 +255,10 @@ Nodo_Final = NodePath("../NodoDestino1")
 Velocidad = 40
 
 [node name="NodoDestino1" type="Node2D" parent="Nivel1/Paredes/ParedPuas2"]
-position = Vector2(157, 2.00035)
+position = Vector2(163, 2.00039)
 
 [node name="ParedPuas3" type="Node2D" parent="Nivel1/Paredes"]
-position = Vector2(416, 161)
+position = Vector2(410, 161)
 
 [node name="Pared" parent="Nivel1/Paredes/ParedPuas3" instance=ExtResource("11_0dkpv")]
 z_index = 1
@@ -269,10 +269,10 @@ Nodo_Final = NodePath("../NodoDestino1")
 Velocidad = 40
 
 [node name="NodoDestino1" type="Node2D" parent="Nivel1/Paredes/ParedPuas3"]
-position = Vector2(199, 0)
+position = Vector2(201, 0)
 
 [node name="ParedPuas4" type="Node2D" parent="Nivel1/Paredes"]
-position = Vector2(659, 113)
+position = Vector2(659, 108)
 rotation = 1.57079
 
 [node name="Pared" parent="Nivel1/Paredes/ParedPuas4" instance=ExtResource("11_0dkpv")]
@@ -284,7 +284,7 @@ Nodo_Final = NodePath("../NodoDestino1")
 Velocidad = 40
 
 [node name="NodoDestino1" type="Node2D" parent="Nivel1/Paredes/ParedPuas4"]
-position = Vector2(147, -0.000586414)
+position = Vector2(163, -0.000486024)
 
 [node name="ParedPuas5" type="Node2D" parent="Nivel1/Paredes"]
 position = Vector2(712, 323)
@@ -302,7 +302,7 @@ Velocidad = 40
 position = Vector2(312, -0.00043981)
 
 [node name="ParedPuas6" type="Node2D" parent="Nivel1/Paredes"]
-position = Vector2(354, 273)
+position = Vector2(354, 267)
 rotation = 1.57079
 
 [node name="Pared" parent="Nivel1/Paredes/ParedPuas6" instance=ExtResource("11_0dkpv")]
@@ -314,10 +314,10 @@ Nodo_Final = NodePath("../NodoDestino1")
 Velocidad = 40
 
 [node name="NodoDestino1" type="Node2D" parent="Nivel1/Paredes/ParedPuas6"]
-position = Vector2(152, -0.000575308)
+position = Vector2(165, -0.000493741)
 
 [node name="ParedPuas7" type="Node2D" parent="Nivel1/Paredes"]
-position = Vector2(403, 482)
+position = Vector2(408, 482)
 rotation = 3.14159
 
 [node name="Pared" parent="Nivel1/Paredes/ParedPuas7" instance=ExtResource("11_0dkpv")]
@@ -329,10 +329,10 @@ Nodo_Final = NodePath("../NodoDestino1")
 Velocidad = 40
 
 [node name="NodoDestino1" type="Node2D" parent="Nivel1/Paredes/ParedPuas7"]
-position = Vector2(258, -0.000679707)
+position = Vector2(261, -0.000672101)
 
 [node name="ParedPuas8" type="Node2D" parent="Nivel1/Paredes"]
-position = Vector2(98, 432)
+position = Vector2(98, 427)
 rotation = 1.57079
 
 [node name="Pared" parent="Nivel1/Paredes/ParedPuas8" instance=ExtResource("11_0dkpv")]
@@ -344,10 +344,10 @@ Nodo_Final = NodePath("../NodoDestino1")
 Velocidad = 40
 
 [node name="NodoDestino1" type="Node2D" parent="Nivel1/Paredes/ParedPuas8"]
-position = Vector2(178, -0.000517555)
+position = Vector2(184, -0.000479909)
 
 [node name="ParedPuas9" type="Node2D" parent="Nivel1/Paredes"]
-position = Vector2(57, 673)
+position = Vector2(43, 673)
 
 [node name="Pared" parent="Nivel1/Paredes/ParedPuas9" instance=ExtResource("11_0dkpv")]
 z_index = 1
@@ -358,10 +358,10 @@ Nodo_Final = NodePath("../NodoDestino1")
 Velocidad = 40
 
 [node name="NodoDestino1" type="Node2D" parent="Nivel1/Paredes/ParedPuas9"]
-position = Vector2(431, 0)
+position = Vector2(493, 0)
 
 [node name="ParedPuas10" type="Node2D" parent="Nivel1/Paredes"]
-position = Vector2(593, 716)
+position = Vector2(593, 727)
 rotation = -1.57079
 
 [node name="Pared" parent="Nivel1/Paredes/ParedPuas10" instance=ExtResource("11_0dkpv")]
@@ -373,10 +373,10 @@ Nodo_Final = NodePath("../NodoDestino1")
 Velocidad = 40
 
 [node name="NodoDestino1" type="Node2D" parent="Nivel1/Paredes/ParedPuas10"]
-position = Vector2(183, 0.000506448)
+position = Vector2(195, 0.000431155)
 
 [node name="ParedPuas11" type="Node2D" parent="Nivel1/Paredes"]
-position = Vector2(505, 480)
+position = Vector2(491, 480)
 
 [node name="Pared" parent="Nivel1/Paredes/ParedPuas11" instance=ExtResource("11_0dkpv")]
 z_index = 1
@@ -387,7 +387,7 @@ Nodo_Final = NodePath("../NodoDestino1")
 Velocidad = 40
 
 [node name="NodoDestino1" type="Node2D" parent="Nivel1/Paredes/ParedPuas11"]
-position = Vector2(202, 0)
+position = Vector2(247, 0)
 
 [node name="TileMaps" type="TileMap" parent="Nivel1"]
 format = 2
