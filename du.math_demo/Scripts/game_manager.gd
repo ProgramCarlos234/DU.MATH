@@ -61,7 +61,7 @@ func _CalcularValor_Nivel_Island(Cantidad : int) -> void:
 #   MOVIMIENTO DE PAREDES PUAS   #
 # ============================== #
 func iniciar_movimiento_paredes():
-	var contenedor = get_tree().current_scene.get_node("Paredes")
+	var contenedor = get_tree().current_scene.get_node("Nivel1/Paredes")
 	paredes = contenedor.get_children()  # Cada uno es un ParedPuas
 	indice_actual = 0
 

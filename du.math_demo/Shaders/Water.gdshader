@@ -6,7 +6,7 @@ uniform sampler2D noise_texture:filter_nearest,repeat_enable;
 uniform vec2 speed = vec2(0.9 , 0.5);
 uniform float wave_strength =0.1;
 
-uniform float distortion = 0.01;
+uniform float distortion = 0.05;
 	
 void vertex() {
 	// Called for every vertex the material is visible on.
