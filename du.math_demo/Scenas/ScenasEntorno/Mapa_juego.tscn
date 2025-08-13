@@ -53,6 +53,7 @@ Indicador_mundo = 5
 TipoDePortal = true
 
 [node name="Area2D3" parent="." instance=ExtResource("3_qvcje")]
+z_index = -1
 position = Vector2(280, -326)
 Indicador_mundo = 4
 

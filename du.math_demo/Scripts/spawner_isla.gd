@@ -9,9 +9,9 @@ const BRAIN_NPC = preload("res://Scenas/ScenasEntorno/BrainNPC.tscn")
 var npcsBrains: Array = [BRAIN_EVIL, BRAIN_NPC]
 var instancias_activas: Array = []
 
-@export var max_evil_brains: int = 5
-@export var max_npc_brains: int = 8
-@export var spawn_interval: float = 2.0
+@export var max_evil_brains: int = 7
+@export var max_npc_brains: int = 13
+@export var spawn_interval: float = 1.0
 @export var despawn_distance: float = 500.0
 
 # Variables internas optimizadas

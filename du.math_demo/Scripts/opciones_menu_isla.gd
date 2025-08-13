@@ -20,6 +20,12 @@ func _ready() -> void:
 	# Asignamos la respuesta correcta al botón elegido
 	Opciones_Menu_Island[indice_correcto].text = str(respuesta_correcta)
 	
+	# Conectamos las señales de cada botón
+	for i in range(Opciones_Menu_Island.size()):
+		var menu_button = Opciones_Menu_Island[i]
+		# Conectamos la señal pressed con el índice del botón
+		menu_button.pressed.connect(_on_button_pressed.bind(i))
+	
 	# Generamos las otras dos opciones
 	var indices_incorrectos = [0, 1, 2]
 	indices_incorrectos.erase(indice_correcto)
@@ -34,3 +40,15 @@ func _ready() -> void:
 			valor_incorrecto += 1
 		
 		Opciones_Menu_Island[idx].text = str(valor_incorrecto)
+
+# Función que se ejecuta cuando se presiona cualquier botón
+func _on_button_pressed(indice_boton: int):
+	# Verificamos si el botón presionado es el correcto
+	if indice_boton == indice_correcto:
+		# Respuesta correcta - cambiar a pantalla de acierto
+		get_tree().change_scene_to_file("res://Scenas/ScenasEntorno/PantallaAcierto.tscn")
+	else:
+		# Respuesta incorrecta - aquí puedes agregar lo que quieras que pase
+		print("Respuesta incorrecta")
+		# Por ejemplo, cambiar a una pantalla de error:
+		# get_tree().change_scene_to_file("res://Scenas/ScenasEntorno/PantallaError.tscn")
