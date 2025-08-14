@@ -1,6 +1,6 @@
 extends Timer
 
-@export var tiempo_inicial: int = 10
+@export var tiempo_inicial: int = 60
 var tiempo_restante: int = 0
 
 @onready var tiempo_contador: Label = $"../TiempoContador"

@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bxbrpa5gr2cmh"]
 
-[ext_resource type="Script" uid="uid://byf2t1frojatb" path="res://Scripts/menu.gd" id="1_r7d07"]
+[ext_resource type="Script" uid="uid://m2bpwaj8a6c7" path="res://Scenas/ScenasEntorno/pantalla_1_island.gd" id="1_r7d07"]
 [ext_resource type="AudioStream" uid="uid://batcxh08c5fp8" path="res://Musica/Gameplay_PantallaCarga_Masterizada.mp3" id="2_fskht"]
 [ext_resource type="Texture2D" uid="uid://coipqaa16txn3" path="res://Sprites/PantallasCarga/PantallaCargaISLA.png" id="3_28jff"]
 
@@ -22,6 +22,6 @@ stream = ExtResource("2_fskht")
 autoplay = true
 
 [node name="PantallaCargaIsla" type="Sprite2D" parent="."]
-position = Vector2(575.5, 310)
-scale = Vector2(2.438, 2.28667)
+position = Vector2(579, 310)
+scale = Vector2(2.452, 2.28667)
 texture = ExtResource("3_28jff")
