@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://c7vtr8e6ohur4" path="res://Scenas/ScenasJefe/Preguntas.gd" id="1_xd1p8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xd1p8"]
+size = Vector2(26, 29)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yuwlg"]
 atlas = ExtResource("1_40hff")
@@ -54,6 +55,7 @@ script = ExtResource("1_xd1p8")
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -0.5)
 shape = SubResource("RectangleShape2D_xd1p8")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Area2D"]

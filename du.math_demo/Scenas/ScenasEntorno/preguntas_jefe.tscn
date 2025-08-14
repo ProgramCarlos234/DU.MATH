@@ -1,5 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://wld3tv8nlybf"]
+[gd_scene load_steps=5 format=3 uid="uid://wld3tv8nlybf"]
 
+[ext_resource type="Script" uid="uid://bvp68rwhgu6lj" path="res://Scenas/ScenasEntorno/preguntas_jefe.gd" id="1_kn3xh"]
 [ext_resource type="Texture2D" uid="uid://dj1alur5xg2w8" path="res://Sprites/SpritesEntorno/Problema_Icono.png" id="1_vy2pl"]
 [ext_resource type="Texture2D" uid="uid://caqqncipsmpw" path="res://Sprites/SpritesEntorno/Boton Seleccion.png" id="2_kn3xh"]
 
@@ -7,6 +8,7 @@
 size = Vector2(36, 20)
 
 [node name="Preguntas_Jefe" type="Node2D"]
+script = ExtResource("1_kn3xh")
 
 [node name="ProblemaIcono" type="Sprite2D" parent="."]
 position = Vector2(0, -19)
@@ -20,7 +22,7 @@ position = Vector2(0, 26)
 scale = Vector2(0.759999, 1.32)
 texture = ExtResource("2_kn3xh")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Opcion"]
+[node name="Respuesta2" type="CollisionShape2D" parent="Opcion"]
 shape = SubResource("RectangleShape2D_mj6h2")
 
 [node name="Opcion2" type="Area2D" parent="."]
@@ -30,7 +32,7 @@ position = Vector2(-38, 26)
 scale = Vector2(0.759999, 1.32)
 texture = ExtResource("2_kn3xh")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Opcion2"]
+[node name="Respuesta1" type="CollisionShape2D" parent="Opcion2"]
 shape = SubResource("RectangleShape2D_mj6h2")
 
 [node name="Opcion3" type="Area2D" parent="."]
@@ -40,5 +42,5 @@ position = Vector2(38, 26)
 scale = Vector2(0.759999, 1.32)
 texture = ExtResource("2_kn3xh")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Opcion3"]
+[node name="Respuesta3" type="CollisionShape2D" parent="Opcion3"]
 shape = SubResource("RectangleShape2D_mj6h2")

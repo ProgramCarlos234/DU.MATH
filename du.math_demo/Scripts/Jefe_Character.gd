@@ -8,8 +8,8 @@ extends CharacterBody2D
 @export var vida_fase2: int = 50
 @export var vida_fase3: int = 20
 
-@export var primera_pregunta_delay: float = 15.0 # primera pregunta después de 15 seg
-@export var pregunta_interval: float = 20.0 # cada 20 seg después de responder
+@export var primera_pregunta_delay: float = 15.0
+@export var pregunta_interval: float = 20.0
 
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var spawn_timer: Timer = $SpawnTimer
@@ -22,6 +22,7 @@ var question_points: Array = []
 var vida_actual: int
 var fase: int = 1
 var jugador_activo: bool = false
+var pregunta_activa: bool = false  # 🔹 Nuevo control de estado
 
 func _ready():
 	var spawns = get_parent().get_node_or_null("SpawnPoints")
@@ -104,15 +105,17 @@ func recibir_danio(cantidad):
 		derrotado()
 
 func derrotado():
-	print("🏆 ¡Jefe derrotado!")
+	print("🏆 ¡Jefe derrotado! 🚫")
 	spawn_timer.stop()
 	wave_timer.stop()
 	pregunta_timer.stop()
 	queue_free()
 
 func mostrar_pregunta():
-	if question_points.is_empty():
+	if question_points.is_empty() or pregunta_activa:
 		return
+
+	pregunta_activa = true  # 🔹 Marca como activa
 
 	var punto = question_points.pick_random()
 	var pregunta = preload("res://Scenas/ScenasJefe/Preguntas.tscn").instantiate()
@@ -123,6 +126,7 @@ func mostrar_pregunta():
 		pregunta.set_boss(self)
 
 func pregunta_respondida():
-	# Siguiente pregunta en 20 seg después de responder
+	print("✅ Pregunta respondida, esperando", pregunta_interval, "segundos para la próxima.")
+	pregunta_activa = false
 	pregunta_timer.wait_time = pregunta_interval
 	pregunta_timer.start()
