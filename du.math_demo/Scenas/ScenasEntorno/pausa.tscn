@@ -1,0 +1,34 @@
+[gd_scene load_steps=2 format=3 uid="uid://cdojcetevalkf"]
+
+[ext_resource type="Script" uid="uid://dalr0gxmsekg8" path="res://Scripts/pausa.gd" id="1_kv3n7"]
+
+[node name="Pausa" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_kv3n7")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.08, 0.08, 0.08, 0.423529)
+
+[node name="Label" type="Label" parent="ColorRect"]
+offset_left = 268.0
+offset_top = 25.0
+offset_right = 320.0
+offset_bottom = 48.0
+scale = Vector2(11.76, 11.76)
+text = "PAUSA"
+
+[node name="Label2" type="Label" parent="ColorRect"]
+offset_left = 43.0
+offset_top = 368.0
+offset_right = 456.0
+offset_bottom = 417.0
+scale = Vector2(2.6054, 2.6054)
+text = "Para Salir de la pantalla de PAUSA vuelve 
+a oprimir \"Esc\" o \"Start\" "
+horizontal_alignment = 1

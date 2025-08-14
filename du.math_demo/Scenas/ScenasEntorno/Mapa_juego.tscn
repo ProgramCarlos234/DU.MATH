@@ -49,13 +49,13 @@ TipoDePortal = true
 [node name="Area2D" parent="." instance=ExtResource("3_qvcje")]
 z_index = -1
 position = Vector2(272, -18)
-Indicador_mundo = 5
+Indicador_mundo = 8
 TipoDePortal = true
 
 [node name="Area2D3" parent="." instance=ExtResource("3_qvcje")]
 z_index = -1
 position = Vector2(280, -326)
-Indicador_mundo = 4
+Indicador_mundo = 5
 
 [connection signal="body_entered" from="Area2D2" to="Jugador" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D2" to="Jugador" method="_on_area_2d_body_exited"]

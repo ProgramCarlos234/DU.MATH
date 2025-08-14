@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=4 uid="uid://b3ii1hs6wykix"]
+[gd_scene load_steps=25 format=4 uid="uid://b3ii1hs6wykix"]
 
 [ext_resource type="PackedScene" uid="uid://b3rquvh0mg2rv" path="res://Scenas/ScenasPersonajes/JugadorRPG.tscn" id="1_0c4c4"]
 [ext_resource type="Script" uid="uid://cpiiauf48m08j" path="res://Scripts/camera_2d.gd" id="1_7rp54"]
@@ -14,6 +14,8 @@
 [ext_resource type="AudioStream" uid="uid://ce1wb7g0y6k88" path="res://Musica/Gameplay_Combat_2_Masterizada.mp3" id="11_2r6pi"]
 [ext_resource type="PackedScene" uid="uid://cnjwvko1of8k0" path="res://Scenas/ScenasEntorno/puerta_animada.tscn" id="13_5wgtm"]
 [ext_resource type="PackedScene" uid="uid://slsrphlw2jq8" path="res://Scenas/ScenasEntorno/Puerta.tscn" id="14_l2snx"]
+[ext_resource type="PackedScene" uid="uid://cdojcetevalkf" path="res://Scenas/ScenasEntorno/pausa.tscn" id="15_mvksm"]
+[ext_resource type="PackedScene" uid="uid://sebwvh3ntocm" path="res://Scenas/ScenasEntorno/informacion_niveL_Multiplo.tscn" id="16_v12w2"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_l2snx"]
 vertices = PackedVector2Array(60, 410, 60, 454, -10, 454, -54, 410, -54, 646, -10, 602, 166, 646, 166, 602, 518, 410, 518, 454, 486, 454, 442, 410, 442, 602, 486, 646, 308, 646, 308, 602, 982, 362, 982, 502, 826, 502, 826.602, 495, 826, 495, 826.602, 367, 826, 362, 826, 367, 287, 250, 287, 294, 246, 294, 202, 250, 202, 454, 246, 454, 799.398, 454, 590, 454, 590, 410, 799.398, 410, 398, 294, 358, 294, 358, 250, 398, 250, 550, 90, 550, 294, 505, 294, 506, 250, 505, 250, 506, 134, 475, 90, 475, 134, 358, 90, 374, 90, 374, 134, 314, 134, 314, -26, 358, -70, 292, -70, 292, -26, 55, -26, -102, -26, -102, -70, 55, -70, 256, -26, 91, -26, 91, -70, 256, -70)
@@ -222,6 +224,7 @@ script = ExtResource("1_521ph")
 enemigo_escena = ExtResource("2_0dkpv")
 llave_escena = ExtResource("3_5wgtm")
 posicion_llave = NodePath("PosicionLlave")
+pantalla_inicio_escena = ExtResource("16_v12w2")
 
 [node name="Jugador" parent="Nivel1" instance=ExtResource("1_0c4c4")]
 position = Vector2(-33, -44)
@@ -427,16 +430,6 @@ scale = Vector2(1.6, 1.6)
 text = "x"
 horizontal_alignment = 1
 vertical_alignment = 1
-
-[node name="Interfas" type="Node2D" parent="Nivel1/Camera2D"]
-position = Vector2(0, 7)
-
-[node name="Label" type="Label" parent="Nivel1/Camera2D/Interfas"]
-offset_left = -176.0
-offset_top = -103.0
-offset_right = -101.0
-offset_bottom = -80.0
-text = "Correctos"
 
 [node name="BarraVida" parent="Nivel1/Camera2D" instance=ExtResource("6_2r6pi")]
 position = Vector2(-159, 72)
@@ -746,3 +739,7 @@ position = Vector2(0, 67)
 [node name="Area2D2" parent="Nivel1" instance=ExtResource("14_l2snx")]
 position = Vector2(912, 434)
 Indicador_mundo = 5
+
+[node name="Pausa" parent="." instance=ExtResource("15_mvksm")]
+
+[node name="Informacion_Niveles" parent="." instance=ExtResource("16_v12w2")]

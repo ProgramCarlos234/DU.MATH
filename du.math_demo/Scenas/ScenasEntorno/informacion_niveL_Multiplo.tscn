@@ -1,0 +1,58 @@
+[gd_scene load_steps=5 format=3 uid="uid://sebwvh3ntocm"]
+
+[ext_resource type="Script" uid="uid://cls0xlt8evti1" path="res://Scripts/informacion_niveles.gd" id="1_co5o7"]
+[ext_resource type="Texture2D" uid="uid://cbsx8k48xdmjo" path="res://Sprites/PantallasCarga/Flecha_Roja.png" id="2_ps8ie"]
+[ext_resource type="Texture2D" uid="uid://cg8go5tktbqvc" path="res://Sprites/SpritesEntorno/Numero.png" id="3_kdn7i"]
+[ext_resource type="PackedScene" uid="uid://571umlrh7ht8" path="res://Scenas/ScenasEntorno/cajas.tscn" id="4_b4el2"]
+
+[node name="Informacion_Niveles" type="CanvasLayer"]
+script = ExtResource("1_co5o7")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.08, 0.08, 0.08, 0.423529)
+
+[node name="FlechaRoja" type="Sprite2D" parent="."]
+position = Vector2(361, 75)
+scale = Vector2(0.400001, 0.400001)
+texture = ExtResource("2_ps8ie")
+
+[node name="Numero" type="Sprite2D" parent="."]
+position = Vector2(567, 70)
+scale = Vector2(6.57087, 6.57087)
+texture = ExtResource("3_kdn7i")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 94.0
+offset_top = 30.0
+offset_right = 270.0
+offset_bottom = 122.0
+text = "Al comenzar el nivel aparecera un número aleatorio en esta casilla."
+horizontal_alignment = 3
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+offset_left = 305.0
+offset_top = 238.0
+offset_right = 497.0
+offset_bottom = 427.0
+text = "Frente a ti encontrarás varios obstáculos con distintos números. Solo debes destruir la caja cuyo número sea múltiplo del valor que aparece en la casilla superior."
+horizontal_alignment = 3
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(229, 450)
+scale = Vector2(4.70571, 4.70571)
+
+[node name="Cajas" parent="Node2D" instance=ExtResource("4_b4el2")]
+position = Vector2(0, -48)
+
+[node name="Cajas2" parent="Node2D" instance=ExtResource("4_b4el2")]
+position = Vector2(0, -32)
+
+[node name="Cajas3" parent="Node2D" instance=ExtResource("4_b4el2")]
+position = Vector2(0, -16)
+
+[node name="Cajas4" parent="Node2D" instance=ExtResource("4_b4el2")]

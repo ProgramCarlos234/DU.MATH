@@ -23,17 +23,20 @@ const ENTORNO_PLATAFORMAS = preload("res://Scenas/ScenasEntorno/EntornoPlataform
 const NIVEL_1_MOVER_CAJAS = preload("res://Scenas/ScenasEntorno/Nivel1_MoverCajas.tscn")
 const MAPA_JUEGO_ISLAND = preload("res://Scenas/ScenasEntorno/Mapa_juego_Island.tscn")
 const PANTALLA1JUEGOISLAND = preload("res://Scenas/ScenasEntorno/pantalla1Island.tscn")
-const SUB_NIVELES = preload("res://Scenas/ScenasEntorno/sub_niveles.tscn")
+const SUB_NIVELES = preload("res://Scenas/ScenasEntorno/sub_niveles.tscn")  #Sub niveles
 const NIVEL_1_2_DIVISORES = preload("res://Scenas/ScenasEntorno/Nivel1_2Divisores.tscn")
+const INTRODUCCION_SUB_NIVELES = preload("res://Scenas/ScenasEntorno/introduccion_sub_niveles.tscn")   #Nivel Cajas
 
 var Scenas: Array = [
 	MAPA_JUEGO,
 	ENTORNO_RPG,
 	ENTORNO_PLATAFORMAS,
 	NIVEL_1_MOVER_CAJAS,
+	MAPA_JUEGO_ISLAND,
 	PANTALLA1JUEGOISLAND,
 	SUB_NIVELES,
-	NIVEL_1_2_DIVISORES
+	NIVEL_1_2_DIVISORES,
+	INTRODUCCION_SUB_NIVELES
 ]
 
 # ======================= #

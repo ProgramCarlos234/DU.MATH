@@ -29,6 +29,10 @@ func _process(_delta):
 	# Lógica de interacción con portal
 	if GameManager.DentroArea and Input.is_action_just_pressed("Interactuar") and valor >= 0:
 		GameManager._AbrirEscenas(valor)
+		
+	if vida <= 0:
+		#escribir la condicion de muerte
+		pass
 
 func _physics_process(_delta):
 	var direccion := Input.get_vector("Izquierda", "Derecha", "Arriba", "Abajo")

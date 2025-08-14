@@ -1,0 +1,61 @@
+[gd_scene load_steps=5 format=3 uid="uid://cmfxpcj35thx7"]
+
+[ext_resource type="Script" uid="uid://ctskp5o0lhxsx" path="res://Scripts/Pantallas_Informativas_Script.gd" id="1_6yfme"]
+[ext_resource type="Texture2D" uid="uid://cskplqygmcre2" path="res://Sprites/PantallasCarga/Pantalla_Informativa_N1.png" id="1_7leb8"]
+[ext_resource type="Texture2D" uid="uid://ddd10tlg88qie" path="res://Sprites/Assets/Botones1.png" id="2_y7n27"]
+[ext_resource type="PackedScene" uid="uid://b8wjoy8cfcnxq" path="res://Scenas/ScenasEntorno/EnemigoCajas.tscn" id="3_v31ka"]
+
+[node name="IntroduccionSub_Niveles" type="Node2D"]
+script = ExtResource("1_6yfme")
+Indicador = 6
+
+[node name="PantallaInformativaN1" type="Sprite2D" parent="."]
+position = Vector2(576, 325)
+scale = Vector2(2.36, 2.2)
+texture = ExtResource("1_7leb8")
+
+[node name="Op1" type="MenuButton" parent="."]
+self_modulate = Color(1, 0.542667, 0.02, 1)
+top_level = true
+z_index = 2
+offset_left = 610.0
+offset_top = 476.0
+offset_right = 713.0
+offset_bottom = 507.0
+scale = Vector2(4.54898, 3.5744)
+pivot_offset = Vector2(1, 0)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "CONTINUAR"
+metadata/_edit_use_anchors_ = true
+
+[node name="Botones1" type="Sprite2D" parent="."]
+position = Vector2(873, 593)
+scale = Vector2(3.29875, 1.90938)
+texture = ExtResource("2_y7n27")
+
+[node name="Label" type="Label" parent="."]
+self_modulate = Color(0.43, 0.329667, 0, 1)
+offset_left = 263.0
+offset_top = 52.0
+offset_right = 493.0
+offset_bottom = 75.0
+scale = Vector2(2.96, 2.96)
+text = "BIENVENIDO AL PRIMER RETO"
+horizontal_alignment = 1
+vertical_alignment = 1
+max_lines_visible = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+self_modulate = Color(0, 0, 0, 1)
+offset_left = 171.0
+offset_top = 154.0
+offset_right = 618.0
+offset_bottom = 468.0
+theme_override_font_sizes/normal_font_size = 24
+text = "Tu misión es superar las pruebas que te esperan, poniendo a prueba tus conocimientos sobre múltiplos y divisores. Pero cuidado… no será una tarea sencilla. Deberás enfrentarte a los guardianes de las cajas, y si llegas a invocarlos, no te darán ni un respiro. ¡Prepárate y demuestra de qué estás hecho!"
+horizontal_alignment = 3
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("3_v31ka")]
+z_index = 2
+position = Vector2(836, 297)
+scale = Vector2(20.7932, 20.7932)

@@ -3,19 +3,41 @@ extends Node2D
 @export var enemigo_escena: PackedScene
 @export var llave_escena: PackedScene
 @export var posicion_llave: NodePath
+@export var pantalla_inicio_escena: PackedScene  # NUEVO: escena del CanvasLayer
 
 @onready var label: Label = $Camera2D/Label
 @onready var nodo_obstaculos = $NodoObstaculos
 @onready var nodo_llave = get_node(posicion_llave)
+@onready var camera_nivel: Camera2D = $Camera2D  # NUEVO
 
 var numero_objetivo: int
 var cajas_correctas_rotas := 0
-
 const TOTAL_CORRECTAS := 14
-
 var caja_a_grupo: Dictionary = {}
 
 func _ready():
+	mostrar_pantalla_inicio()
+
+# ========================
+# NUEVO: Mostrar pantalla de inicio
+# ========================
+func mostrar_pantalla_inicio():
+	if pantalla_inicio_escena:
+		var pantalla = pantalla_inicio_escena.instantiate()
+		add_child(pantalla)
+		camera_nivel.visible = false
+		pantalla.connect("pantalla_cerrada", Callable(self, "_on_pantalla_cerrada"))
+		get_tree().paused = true
+
+func _on_pantalla_cerrada():
+	camera_nivel.visible = true
+	get_tree().paused = false
+	iniciar_juego()
+
+# ========================
+# Lo que antes estaba en _ready() ahora está aquí
+# ========================
+func iniciar_juego():
 	randomize()
 	numero_objetivo = randi_range(2, 9)
 	label.text = str(numero_objetivo)
@@ -57,13 +79,11 @@ func _on_caja_rota(numero: int, posicion: Vector2):
 		return
 
 	if numero % numero_objetivo == 0:
-		# Caja correcta: eliminar grupo, sin enemigos
 		cajas_correctas_rotas += 1
 		grupo.queue_free()
 		if cajas_correctas_rotas == TOTAL_CORRECTAS:
 			instanciar_llave()
 	else:
-		# Caja incorrecta: enemigo en todas las incorrectas, incluida la rota
 		for caja in grupo.get_children():
 			if caja.numero % numero_objetivo != 0:
 				instanciar_enemigo(caja.global_position)
