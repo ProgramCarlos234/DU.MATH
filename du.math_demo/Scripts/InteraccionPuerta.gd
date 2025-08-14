@@ -16,7 +16,7 @@ func _process(delta: float) -> void:
 
 		elif Salida:
 			print_debug("Abrir puerta de salida")
-			Movimiento_Abrir_puerta.emit(true)
+			Movimiento_Cerrar_puerta.emit(true)
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.name == "Jugador":

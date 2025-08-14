@@ -737,8 +737,9 @@ position = Vector2(0, -78)
 position = Vector2(0, 67)
 
 [node name="Area2D2" parent="Nivel1" instance=ExtResource("14_l2snx")]
+z_index = -1
 position = Vector2(912, 434)
-Indicador_mundo = 5
+Indicador_mundo = 9
 
 [node name="Pausa" parent="." instance=ExtResource("15_mvksm")]
 

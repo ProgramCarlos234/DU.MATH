@@ -1,10 +1,12 @@
-[gd_scene load_steps=4 format=3 uid="uid://vk88tkh00xi1"]
+[gd_scene load_steps=5 format=3 uid="uid://vk88tkh00xi1"]
 
 [ext_resource type="Texture2D" uid="uid://bceeyas08sy5y" path="res://Sprites/SpritesEntorno/WhatsApp Image 2025-08-13 at 10.26.47 PM.jpeg" id="1_3qkyf"]
+[ext_resource type="Script" uid="uid://ctskp5o0lhxsx" path="res://Scripts/Pantallas_Informativas_Script.gd" id="1_joxcm"]
 [ext_resource type="Texture2D" uid="uid://cdvyl33jpyrgd" path="res://Sprites/SpritesEntorno/llave.png" id="2_7ayyh"]
 [ext_resource type="Texture2D" uid="uid://ddd10tlg88qie" path="res://Sprites/Assets/Botones1.png" id="3_bfu8u"]
 
 [node name="PantallaGanaste" type="Node2D"]
+script = ExtResource("1_joxcm")
 
 [node name="WhatsAppImage2025-08-13At10_26_47Pm" type="Sprite2D" parent="."]
 position = Vector2(577, 309)

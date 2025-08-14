@@ -16,7 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://cdojcetevalkf" path="res://Scenas/ScenasEntorno/pausa.tscn" id="14_sl0v3"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_pb20p"]
-vertices = PackedVector2Array(817, 783, 908, 783, 908, 827, 773, 827, 773, 683, 817, 639, 772, 639, 772, 683, 1221, 827, 1050, 827, 1050, 783, 1221, 783, 1409, 399, 1409, 827, 1363, 827, 1365, 783, 1363, 783, 1365, 399, 593, 639, 665, 639, 665, 683, 549, 683, 549, 399, 593, 399, 802, 443, 694, 443, 694, 399, 802, 399, 881, 223, 881, 443, 838, 443, 838, 379, 837, 379, 837, 286, 838, 286, 838, 223, 1305.4, 223, 1305.4, 267, 1201, 267, 1157, 223, 1157, 443, 1201, 399, 1202, 443, 1202, 399, 1294, 443, 1274, 443, 1274, 399, 1294, 399, 1473, 191, 1473, 299, 1333, 299, 1333, 267, 1332.6, 267, 1332.6, 223, 1333, 223, 1333, 191, 802, 267, 725, 267, 725, 223, 802, 223)
+vertices = PackedVector2Array(817, 783, 908, 783, 908, 827, 773, 827, 773, 683, 817, 639, 772, 639, 772, 683, 1221, 827, 1050, 827, 1050, 783, 1221, 783, 1409, 399, 1409, 827, 1363, 827, 1365, 783, 1363, 783, 1365, 399, 593, 639, 665, 639, 665, 683, 549, 683, 549, 399, 593, 399, 802, 443, 694, 443, 694, 399, 802, 399, 881, 223, 881, 443, 838, 443, 838, 379, 837, 379, 837, 286, 838, 286, 838, 223, 1305.4, 223, 1305.4, 267, 1201, 267, 1157, 223, 1157, 443, 1201, 399, 1202, 443, 1202, 399, 1294, 443, 1274, 443, 1274, 399, 1294, 399, 1473, 191, 1473, 299, 1333, 299, 1333, 267, 1332.6, 267, 1332.6, 223, 1333, 223, 1333, 191, 802, 267, 613, 267, 613, 223, 802, 223)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(0, 3, 4, 5), PackedInt32Array(6, 5, 4, 7), PackedInt32Array(8, 9, 10, 11), PackedInt32Array(12, 13, 14, 15), PackedInt32Array(14, 16, 15), PackedInt32Array(12, 15, 17), PackedInt32Array(18, 19, 20, 21), PackedInt32Array(18, 21, 22, 23), PackedInt32Array(24, 25, 26, 27), PackedInt32Array(28, 29, 30, 31), PackedInt32Array(31, 32, 33, 34), PackedInt32Array(28, 31, 34), PackedInt32Array(28, 34, 35), PackedInt32Array(36, 37, 38, 39), PackedInt32Array(40, 39, 38, 41), PackedInt32Array(42, 40, 41, 43), PackedInt32Array(44, 45, 46, 47), PackedInt32Array(48, 49, 50, 51), PackedInt32Array(51, 52, 53, 54), PackedInt32Array(48, 51, 54), PackedInt32Array(48, 54, 55), PackedInt32Array(56, 57, 58, 59)])
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_sl0v3"]
@@ -225,7 +225,6 @@ posicion_llave = NodePath("PosicionLlave")
 metadata/_edit_vertical_guides_ = [437.0]
 
 [node name="Camera2D" type="Camera2D" parent="Nivel1"]
-visible = false
 z_index = 2
 position = Vector2(752, 261)
 zoom = Vector2(3, 3)
@@ -280,6 +279,7 @@ tile_set = ExtResource("7_pb20p")
 
 [node name="Area2D" parent="Nivel1/TileMaps" instance=ExtResource("10_pb20p")]
 position = Vector2(669, -4)
+Indicador_mundo = 9
 
 [node name="PuertaAnimada" parent="Nivel1/TileMaps" instance=ExtResource("11_sl0v3")]
 position = Vector2(588, -5)

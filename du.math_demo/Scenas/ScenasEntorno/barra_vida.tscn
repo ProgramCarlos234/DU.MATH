@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://r5urwg3eshph"]
+[gd_scene load_steps=10 format=3 uid="uid://r5urwg3eshph"]
 
 [ext_resource type="Script" uid="uid://caw1xf30nyn65" path="res://Scripts/barra_vida.gd" id="1_4lfkd"]
 [ext_resource type="Texture2D" uid="uid://g2qdskcw1a8g" path="res://Sprites/SpritesEntorno/JugadorBien2.png" id="1_bism1"]
 [ext_resource type="Texture2D" uid="uid://binyotb68nn8" path="res://Sprites/SpritesEntorno/FondoBarra.png" id="1_fybvk"]
 [ext_resource type="Texture2D" uid="uid://dgh6lpkt5fbvr" path="res://Sprites/SpritesEntorno/JugadorBien1.png" id="2_fybvk"]
+[ext_resource type="PackedScene" uid="uid://b02xo6p64xa4r" path="res://Scenas/ScenasEntorno/llave.tscn" id="5_5fy0e"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bism1"]
 bg_color = Color(0.693704, 0.126369, 0, 1)
@@ -83,3 +84,27 @@ offset_right = 136.0
 offset_bottom = 22.0
 scale = Vector2(0.410361, 0.410361)
 text = "300"
+
+[node name="Area2D" parent="." instance=ExtResource("5_5fy0e")]
+position = Vector2(136, 0)
+scale = Vector2(1.18876, 1.18876)
+
+[node name="Label4" type="Label" parent="."]
+offset_left = 135.0
+offset_top = -5.0
+offset_right = 175.0
+offset_bottom = 18.0
+scale = Vector2(0.410361, 0.410361)
+text = "x"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label5" type="Label" parent="."]
+offset_left = 139.0
+offset_top = -5.0
+offset_right = 179.0
+offset_bottom = 18.0
+scale = Vector2(0.410361, 0.410361)
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1

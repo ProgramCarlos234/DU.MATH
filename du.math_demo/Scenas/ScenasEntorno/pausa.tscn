@@ -16,6 +16,7 @@ grow_vertical = 2
 color = Color(0.08, 0.08, 0.08, 0.423529)
 
 [node name="Label" type="Label" parent="ColorRect"]
+layout_mode = 0
 offset_left = 268.0
 offset_top = 25.0
 offset_right = 320.0
@@ -24,6 +25,7 @@ scale = Vector2(11.76, 11.76)
 text = "PAUSA"
 
 [node name="Label2" type="Label" parent="ColorRect"]
+layout_mode = 0
 offset_left = 43.0
 offset_top = 368.0
 offset_right = 456.0

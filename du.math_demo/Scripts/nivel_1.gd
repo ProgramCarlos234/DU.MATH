@@ -10,6 +10,7 @@ extends Node2D
 @onready var nodo_llave = get_node(posicion_llave)
 @onready var camera_nivel: Camera2D = $Camera2D  # NUEVO
 
+var juego_iniciado := false  # NUEVO
 var numero_objetivo: int
 var cajas_correctas_rotas := 0
 const TOTAL_CORRECTAS := 14
