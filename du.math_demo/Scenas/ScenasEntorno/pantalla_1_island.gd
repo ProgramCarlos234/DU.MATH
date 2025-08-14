@@ -1,5 +1,5 @@
 extends Node2D
-@onready var menu_button: MenuButton = $MenuButton
+@onready var menu_button: MenuButton = $Op1
 
 
 # Called when the node enters the scene tree for the first time.

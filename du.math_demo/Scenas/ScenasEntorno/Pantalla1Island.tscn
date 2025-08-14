@@ -1,27 +1,81 @@
-[gd_scene load_steps=4 format=3 uid="uid://bxbrpa5gr2cmh"]
+[gd_scene load_steps=7 format=3 uid="uid://67wb6vw2q3ey"]
 
 [ext_resource type="Script" uid="uid://m2bpwaj8a6c7" path="res://Scenas/ScenasEntorno/pantalla_1_island.gd" id="1_r7d07"]
+[ext_resource type="Texture2D" uid="uid://cskplqygmcre2" path="res://Sprites/PantallasCarga/Pantalla_Informativa_N1.png" id="2_28jff"]
 [ext_resource type="AudioStream" uid="uid://batcxh08c5fp8" path="res://Musica/Gameplay_PantallaCarga_Masterizada.mp3" id="2_fskht"]
-[ext_resource type="Texture2D" uid="uid://coipqaa16txn3" path="res://Sprites/PantallasCarga/PantallaCargaISLA.png" id="3_28jff"]
+[ext_resource type="Texture2D" uid="uid://ddd10tlg88qie" path="res://Sprites/Assets/Botones1.png" id="3_lxnvg"]
+[ext_resource type="PackedScene" uid="uid://cyconbj55gfqr" path="res://Scenas/ScenasEntorno/BrainEvil.tscn" id="4_nvmav"]
+[ext_resource type="PackedScene" uid="uid://dedex5juuo1uh" path="res://Scenas/ScenasEntorno/BrainNPC.tscn" id="5_u01ph"]
 
-[node name="Pantalla1Isla" type="Node2D"]
+[node name="Pantalla1Island" type="Node2D"]
 script = ExtResource("1_r7d07")
 
-[node name="MenuButton" type="MenuButton" parent="."]
-z_index = 1
-offset_left = 821.0
-offset_top = 556.0
-offset_right = 891.0
-offset_bottom = 587.0
+[node name="PantallaInformativaN1" type="Sprite2D" parent="."]
+position = Vector2(576, 325)
+scale = Vector2(2.36, 2.2)
+texture = ExtResource("2_28jff")
+
+[node name="Op1" type="MenuButton" parent="."]
+self_modulate = Color(1, 0.542667, 0.02, 1)
+top_level = true
+z_index = 2
+offset_left = 610.0
+offset_top = 476.0
+offset_right = 713.0
+offset_bottom = 507.0
 scale = Vector2(4.54898, 3.5744)
-text = "ENTRAR"
-alignment = 0
+pivot_offset = Vector2(1, 0)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "CONTINUAR"
+metadata/_edit_use_anchors_ = true
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+[node name="Botones1" type="Sprite2D" parent="."]
+position = Vector2(873, 593)
+scale = Vector2(3.29875, 1.90938)
+texture = ExtResource("3_lxnvg")
+
+[node name="Label" type="Label" parent="."]
+self_modulate = Color(0.43, 0.329667, 0, 1)
+offset_left = 82.0
+offset_top = 79.0
+offset_right = 413.0
+offset_bottom = 102.0
+scale = Vector2(2.96, 2.96)
+text = "BIENVENIDO A LA ISLA DE LOS CEREBRITOS"
+horizontal_alignment = 1
+vertical_alignment = 1
+max_lines_visible = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+self_modulate = Color(0, 0, 0, 1)
+offset_left = 167.0
+offset_top = 168.0
+offset_right = 986.0
+offset_bottom = 285.0
+theme_override_font_sizes/normal_font_size = 24
+text = "Los cerebritos Rojos para Sumar y los cerebritos Azules se restan, juega agilmente y  realiza calculos mentales para cumplir el reto.                                                                "
+horizontal_alignment = 3
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+self_modulate = Color(0, 0, 0, 1)
+offset_left = 163.0
+offset_top = 435.0
+offset_right = 711.0
+offset_bottom = 492.0
+theme_override_font_sizes/normal_font_size = 24
+text = "Al final, elige el resultado correcto para ganar"
+horizontal_alignment = 3
+
+[node name="EvilBrain" parent="." instance=ExtResource("4_nvmav")]
+z_as_relative = false
+position = Vector2(374, 336)
+scale = Vector2(6, 6)
+
+[node name="1stNPC" parent="." instance=ExtResource("5_u01ph")]
+position = Vector2(732, 333)
+scale = Vector2(5.5, 5.5)
+
+[node name="GameplayPantallaCargaMasterizada" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_fskht")
+pitch_scale = 0.8
 autoplay = true
-
-[node name="PantallaCargaIsla" type="Sprite2D" parent="."]
-position = Vector2(579, 310)
-scale = Vector2(2.452, 2.28667)
-texture = ExtResource("3_28jff")
