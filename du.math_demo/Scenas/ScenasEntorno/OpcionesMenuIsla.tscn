@@ -9,11 +9,12 @@
 script = ExtResource("1_o47pv")
 
 [node name="Op1" type="MenuButton" parent="."]
+self_modulate = Color(0.72549, 0, 0.207843, 1)
 top_level = true
 z_index = 2
-offset_left = 401.0
+offset_left = 405.0
 offset_top = 155.0
-offset_right = 478.0
+offset_right = 482.0
 offset_bottom = 186.0
 scale = Vector2(4.54898, 3.5744)
 pivot_offset = Vector2(1, 0)
@@ -22,11 +23,12 @@ text = "Opcion 1"
 metadata/_edit_use_anchors_ = true
 
 [node name="Op2" type="MenuButton" parent="."]
+self_modulate = Color(0.743701, 0, 0.039523, 1)
 top_level = true
 z_index = 2
-offset_left = 402.0
+offset_left = 405.0
 offset_top = 267.0
-offset_right = 479.0
+offset_right = 482.0
 offset_bottom = 298.0
 scale = Vector2(4.54898, 3.5744)
 pivot_offset = Vector2(1, 0)
@@ -35,12 +37,13 @@ text = "Opcion 2"
 metadata/_edit_use_anchors_ = true
 
 [node name="Op3" type="MenuButton" parent="."]
+self_modulate = Color(0.598184, 0, 0.0945337, 1)
 top_level = true
 z_index = 2
 offset_left = 405.0
-offset_top = 385.0
+offset_top = 388.0
 offset_right = 482.0
-offset_bottom = 416.0
+offset_bottom = 419.0
 scale = Vector2(4.54898, 3.5744)
 pivot_offset = Vector2(1, 0)
 theme_override_colors/font_color = Color(0, 0, 0, 1)

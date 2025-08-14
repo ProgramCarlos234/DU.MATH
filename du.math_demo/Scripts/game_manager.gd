@@ -61,6 +61,7 @@ func _recibirDaño(Daño : int) -> void:
 	
 func _CalcularValor_Nivel_Island(Cantidad : int) -> void:
 	Cantidad_Puntaje_Nivel_Island += Cantidad
+	
 	pass
 
 # ============================== #

@@ -46,7 +46,9 @@ func _on_button_pressed(indice_boton: int):
 	# Verificamos si el botón presionado es el correcto
 	if indice_boton == indice_correcto:
 		# Respuesta correcta - cambiar a pantalla de acierto
+		GameManager.Cantidad_Puntaje_Nivel_Island = 0 
 		get_tree().change_scene_to_file("res://Scenas/ScenasEntorno/PantallaAcierto.tscn")
+		
 	else:
 		# Respuesta incorrecta - aquí puedes agregar lo que quieras que pase
 		print("Respuesta incorrecta")

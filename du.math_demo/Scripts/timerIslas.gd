@@ -1,6 +1,6 @@
 extends Timer
 
-@export var tiempo_inicial: int = 60
+@export var tiempo_inicial: int = 10
 var tiempo_restante: int = 0
 
 @onready var tiempo_contador: Label = $"../TiempoContador"
@@ -34,4 +34,4 @@ func actualizar_display():
 		var segundos = tiempo_restante % 60
 		tiempo_contador.text = "Tiempo: %02d:%02d" % [minutos, segundos]
 	else:
-		print("❌ No se encontró TiempoContador")
+		print()

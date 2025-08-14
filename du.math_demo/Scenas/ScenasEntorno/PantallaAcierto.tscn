@@ -1,7 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://dryuuu4igil24"]
+[gd_scene load_steps=3 format=3 uid="uid://dryuuu4igil24"]
 
-[ext_resource type="Script" uid="uid://byf2t1frojatb" path="res://Scripts/menu.gd" id="1_abwew"]
-[ext_resource type="AudioStream" uid="uid://batcxh08c5fp8" path="res://Musica/Gameplay_PantallaCarga_Masterizada.mp3" id="2_00tpp"]
+[ext_resource type="Script" uid="uid://cffnt3yodrqni" path="res://Scripts/pantalla_acierto.gd" id="1_abwew"]
 [ext_resource type="Texture2D" uid="uid://dp68banihry35" path="res://Sprites/PantallasCarga/PanrallaDeAcierto.png" id="3_abwew"]
 
 [node name="PantallaAcierto" type="Node2D"]
@@ -16,10 +15,6 @@ offset_bottom = 587.0
 scale = Vector2(4.54898, 3.5744)
 text = "ENTRAR"
 alignment = 0
-
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("2_00tpp")
-autoplay = true
 
 [node name="PanrallaDeAcierto" type="Sprite2D" parent="."]
 position = Vector2(580.5, 330)
