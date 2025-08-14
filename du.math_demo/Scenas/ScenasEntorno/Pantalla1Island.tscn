@@ -22,6 +22,6 @@ stream = ExtResource("2_fskht")
 autoplay = true
 
 [node name="PantallaCargaIsla" type="Sprite2D" parent="."]
-position = Vector2(575.5, 310)
-scale = Vector2(2.438, 2.28667)
+position = Vector2(579, 310)
+scale = Vector2(2.452, 2.28667)
 texture = ExtResource("3_28jff")
