@@ -1,31 +1,32 @@
-[gd_scene load_steps=3 format=3 uid="uid://cjpptaf4uv58e"]
+[gd_scene load_steps=4 format=3 uid="uid://cjpptaf4uv58e"]
 
-[ext_resource type="Texture2D" uid="uid://ddd10tlg88qie" path="res://Sprites/Assets/Botones1.png" id="1_m7mtj"]
-[ext_resource type="Texture2D" uid="uid://bny0k7iie2vbx" path="res://Sprites/SpritesEntorno/WhatsApp Image 2025-08-14 at 9.13.37 PM.jpeg" id="2_nu3c4"]
+[ext_resource type="Script" uid="uid://dl6uhln767yeq" path="res://Scripts/pantalla_perdiste.gd" id="1_88fpb"]
+[ext_resource type="Texture2D" uid="uid://du5edmf76p6hj" path="res://Sprites/SpritesEntorno/WhatsApp Image 2025-08-14 at 9.13.37 PM (1).jpeg" id="1_nu3c4"]
+[ext_resource type="Texture2D" uid="uid://ddd10tlg88qie" path="res://Sprites/Assets/Botones1.png" id="2_88fpb"]
 
-[node name="Pantalla_Perdiste" type="Node2D"]
+[node name="Pantalla_perdiste" type="Node2D"]
+script = ExtResource("1_88fpb")
+
+[node name="WhatsAppImage2025-08-13At10_26_47Pm" type="Sprite2D" parent="."]
+position = Vector2(577, 309)
+scale = Vector2(0.745679, 0.690822)
+texture = ExtResource("1_nu3c4")
 
 [node name="Op1" type="MenuButton" parent="."]
 self_modulate = Color(1, 0.542667, 0.02, 1)
 top_level = true
 z_index = 2
-offset_left = 338.875
-offset_top = 523.938
-offset_right = 441.875
-offset_bottom = 554.938
+offset_left = 324.875
+offset_top = 543.938
+offset_right = 427.875
+offset_bottom = 574.938
 scale = Vector2(4.54898, 3.5744)
 pivot_offset = Vector2(1, 0)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "CONTINUAR"
+text = "REINICIAR"
 metadata/_edit_use_anchors_ = true
 
 [node name="Botones1" type="Sprite2D" parent="."]
-position = Vector2(611.875, 635.938)
+position = Vector2(597.875, 655.938)
 scale = Vector2(3.29875, 1.90938)
-texture = ExtResource("1_m7mtj")
-
-[node name="WhatsAppImage2025-08-14At9_13_37Pm" type="Sprite2D" parent="."]
-z_index = -2
-position = Vector2(580, 307)
-scale = Vector2(0.778898, 0.694213)
-texture = ExtResource("2_nu3c4")
+texture = ExtResource("2_88fpb")

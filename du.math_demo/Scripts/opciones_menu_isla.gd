@@ -52,5 +52,4 @@ func _on_button_pressed(indice_boton: int):
 	else:
 		# Respuesta incorrecta - aquí puedes agregar lo que quieras que pase
 		print("Respuesta incorrecta")
-		# Por ejemplo, cambiar a una pantalla de error:
-		# get_tree().change_scene_to_file("res://Scenas/ScenasEntorno/PantallaError.tscn")
+		get_tree().change_scene_to_file("res://Scenas/ScenasEntorno/pantalla_perdiste.tscn")

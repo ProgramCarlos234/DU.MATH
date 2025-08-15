@@ -18,10 +18,7 @@ var LLaves_Conseguidas: int = 0 #valor de la cantidad de las llaves
 #    VARIABLES LLAVES ESCENAS  #
 # ============================ #
 
-var Llave_Nivel1_Cajas = false
-var Llave_Nivel1_2_Cajas = false
-var Llave_Nivel_cerebritos = false
-var Llave_Mapa_Juego = false
+
 
 # ======================= #
 #    ESCENAS DISPONIBLES  #
@@ -40,8 +37,9 @@ const INTRODUCCION_SUB_NIVELES = preload("res://Scenas/ScenasEntorno/introduccio
 const PANTALLA_GANASTE = preload("res://Scenas/ScenasEntorno/pantalla_ganaste.tscn") #Pantalla de ganaste normal
 const MENU_PRINCIPAL = preload("res://Scenas/ScenasEntorno/menu.tscn")
 const JEFE_FINAL = preload("res://Scenas/ScenasJefe/JefeFinal.tscn")
-
-		 
+const PANTALLA_GANASTE_SUB_NIVEL = preload("res://Scenas/ScenasEntorno/pantalla_ganaste_sub_nivel.tscn")
+const VIDEO_JEFE = preload("res://Scenas/ScenasEntorno/VideoJefe.tscn")
+	
 var Scenas: Array = [
 	MAPA_JUEGO,   #0
 	ENTORNO_RPG,   #1
@@ -54,7 +52,9 @@ var Scenas: Array = [
 	INTRODUCCION_SUB_NIVELES,  #8
 	PANTALLA_GANASTE,   #9
 	MENU_PRINCIPAL,  #10
-	JEFE_FINAL  #11
+	JEFE_FINAL,  #11
+	PANTALLA_GANASTE_SUB_NIVEL, #12
+	VIDEO_JEFE  #13
 ]
 
 # ======================= #
