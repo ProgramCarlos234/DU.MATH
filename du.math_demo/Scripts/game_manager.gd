@@ -39,6 +39,7 @@ const NIVEL_1_2_DIVISORES = preload("res://Scenas/ScenasEntorno/Nivel1_2Divisore
 const INTRODUCCION_SUB_NIVELES = preload("res://Scenas/ScenasEntorno/introduccion_sub_niveles.tscn")   #Nivel Cajas
 const PANTALLA_GANASTE = preload("res://Scenas/ScenasEntorno/pantalla_ganaste.tscn") #Pantalla de ganaste normal
 const MENU_PRINCIPAL = preload("res://Scenas/ScenasEntorno/menu.tscn")
+const JEFE_FINAL = preload("res://Scenas/ScenasJefe/JefeFinal.tscn")
 
 		 
 var Scenas: Array = [
@@ -52,7 +53,8 @@ var Scenas: Array = [
 	NIVEL_1_2_DIVISORES,   #7
 	INTRODUCCION_SUB_NIVELES,  #8
 	PANTALLA_GANASTE,   #9
-	MENU_PRINCIPAL  #10
+	MENU_PRINCIPAL,  #10
+	JEFE_FINAL  #11
 ]
 
 # ======================= #

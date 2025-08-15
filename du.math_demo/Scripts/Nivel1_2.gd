@@ -3,10 +3,12 @@ extends Node2D
 @export var enemigo_escena: PackedScene
 @export var llave_escena: PackedScene
 @export var posicion_llave: NodePath
+@export var pantalla_inicio_escena: PackedScene  # Escena de CanvasLayer
 
 @onready var label: Label = $Camera2D/Label
 @onready var nodo_obstaculos = $NodoObstaculos
 @onready var nodo_llave = get_node(posicion_llave)
+@onready var camera_nivel: Camera2D = $Camera2D  # Ajusta la ruta si es distinta
 
 var numero_objetivo: int
 var Divisores: Array = [15, 27, 32, 45, 64]
@@ -17,10 +19,32 @@ var caja_a_grupo: Dictionary = {}
 var caja_correcta_por_grupo: Dictionary = {}
 
 func _ready():
+	mostrar_pantalla_inicio()
+
+# ========================
+# Mostrar pantalla de inicio y pausar juego
+# ========================
+func mostrar_pantalla_inicio():
+	if pantalla_inicio_escena:
+		var pantalla = pantalla_inicio_escena.instantiate()
+		add_child(pantalla)
+		camera_nivel.visible = false
+		pantalla.connect("pantalla_cerrada", Callable(self, "_on_pantalla_cerrada"))
+		get_tree().paused = true
+
+func _on_pantalla_cerrada():
+	camera_nivel.visible = true
+	get_tree().paused = false
+	iniciar_juego()
+
+# ========================
+# Lógica original movida aquí
+# ========================
+func iniciar_juego():
 	randomize()
 	numero_objetivo = Divisores[randi_range(0, Divisores.size() - 1)]
 	label.text = str(numero_objetivo)
-	
+
 	configurar_obstaculos()
 	conectar_cajas()
 	GameManager.iniciar_movimiento_paredes()
@@ -44,7 +68,7 @@ func configurar_obstaculos():
 			var caja = cajas[i]
 			if i == correcta_idx:
 				caja.numero = divisor_correcto
-				caja_correcta_por_grupo[obstaculo] = caja  # REGISTRAMOS la caja correcta
+				caja_correcta_por_grupo[obstaculo] = caja
 			else:
 				var numero_incorrecto = 0
 				while true:
@@ -82,7 +106,6 @@ func _on_caja_rota(numero: int, posicion: Vector2):
 			if caja != caja_correcta:
 				instanciar_enemigo(caja.global_position)
 		grupo.queue_free()
-
 
 func get_caja_desde_posicion(pos: Vector2) -> Node:
 	for grupo in nodo_obstaculos.get_children():

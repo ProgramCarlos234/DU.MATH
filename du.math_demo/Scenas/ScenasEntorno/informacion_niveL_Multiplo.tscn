@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://sebwvh3ntocm"]
+[gd_scene load_steps=7 format=3 uid="uid://sebwvh3ntocm"]
 
 [ext_resource type="Script" uid="uid://cls0xlt8evti1" path="res://Scripts/informacion_niveles.gd" id="1_co5o7"]
 [ext_resource type="Texture2D" uid="uid://cbsx8k48xdmjo" path="res://Sprites/PantallasCarga/Flecha_Roja.png" id="2_ps8ie"]
 [ext_resource type="Texture2D" uid="uid://cg8go5tktbqvc" path="res://Sprites/SpritesEntorno/Numero.png" id="3_kdn7i"]
 [ext_resource type="PackedScene" uid="uid://571umlrh7ht8" path="res://Scenas/ScenasEntorno/cajas.tscn" id="4_b4el2"]
+[ext_resource type="PackedScene" uid="uid://001w35x8xb6r" path="res://Scenas/ScenasEntorno/Pared.tscn" id="5_ps8ie"]
+[ext_resource type="PackedScene" uid="uid://b02xo6p64xa4r" path="res://Scenas/ScenasEntorno/llave.tscn" id="6_kdn7i"]
 
 [node name="Informacion_Niveles" type="CanvasLayer"]
 script = ExtResource("1_co5o7")
@@ -35,16 +37,32 @@ text = "Al comenzar el nivel aparecera un número aleatorio en esta casilla."
 horizontal_alignment = 3
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="."]
-offset_left = 305.0
-offset_top = 238.0
-offset_right = 497.0
-offset_bottom = 427.0
-text = "Frente a ti encontrarás varios obstáculos con distintos números. Solo debes destruir la caja cuyo número sea múltiplo del valor que aparece en la casilla superior."
+offset_left = 99.0
+offset_top = 357.0
+offset_right = 377.0
+offset_bottom = 546.0
+text = "Frente a ti encontrarás varios obstáculos con distintos números. Solo debes destruir la caja cuyo número sea \"MULTIPLO\" del valor que aparece en la casilla superior."
+horizontal_alignment = 3
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="."]
+offset_left = 414.0
+offset_top = 355.0
+offset_right = 746.0
+offset_bottom = 481.0
+text = "Deberas de correr, o estas columnas te elimaran, y volveras a comenzar desde el inicio."
+horizontal_alignment = 3
+
+[node name="RichTextLabel4" type="RichTextLabel" parent="."]
+offset_left = 793.0
+offset_top = 362.0
+offset_right = 1125.0
+offset_bottom = 488.0
+text = "Para Obtener la llave en este En este nivel debes responder correctamente al menos 15 preguntas. Si fallas, la llave no aparecerá y quedarás atrapado aquí para siempre."
 horizontal_alignment = 3
 
 [node name="Node2D" type="Node2D" parent="."]
-position = Vector2(229, 450)
-scale = Vector2(4.70571, 4.70571)
+position = Vector2(231, 315)
+scale = Vector2(2.94581, 2.94581)
 
 [node name="Cajas" parent="Node2D" instance=ExtResource("4_b4el2")]
 position = Vector2(0, -48)
@@ -56,3 +74,22 @@ position = Vector2(0, -32)
 position = Vector2(0, -16)
 
 [node name="Cajas4" parent="Node2D" instance=ExtResource("4_b4el2")]
+
+[node name="ParedMovediza" parent="." instance=ExtResource("5_ps8ie")]
+z_index = 1
+position = Vector2(700, 275)
+scale = Vector2(2.2, 2.2)
+
+[node name="Area2D" parent="." instance=ExtResource("6_kdn7i")]
+z_index = 1
+position = Vector2(952, 271)
+scale = Vector2(10.2124, 10.2124)
+
+[node name="Label" type="Label" parent="."]
+self_modulate = Color(0, 0.526797, 0.996918, 1)
+offset_left = 54.0
+offset_top = 528.0
+offset_right = 494.0
+offset_bottom = 551.0
+scale = Vector2(2.44, 2.44)
+text = "OPRIME EL BOTON DE \"INTERACTUAR\" PARA CONTINUAR"
