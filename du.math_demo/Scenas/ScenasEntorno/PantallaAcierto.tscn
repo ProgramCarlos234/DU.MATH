@@ -1,22 +1,53 @@
-[gd_scene load_steps=3 format=3 uid="uid://dryuuu4igil24"]
+[gd_scene load_steps=6 format=3 uid="uid://dryuuu4igil24"]
 
 [ext_resource type="Script" uid="uid://cffnt3yodrqni" path="res://Scripts/pantalla_acierto.gd" id="1_abwew"]
+[ext_resource type="Texture2D" uid="uid://bceeyas08sy5y" path="res://Sprites/SpritesEntorno/WhatsApp Image 2025-08-13 at 10.26.47 PM.jpeg" id="3_6pyog"]
 [ext_resource type="Texture2D" uid="uid://dp68banihry35" path="res://Sprites/PantallasCarga/PanrallaDeAcierto.png" id="3_abwew"]
+[ext_resource type="Texture2D" uid="uid://cdvyl33jpyrgd" path="res://Sprites/SpritesEntorno/llave.png" id="4_t0hy4"]
+[ext_resource type="Texture2D" uid="uid://ddd10tlg88qie" path="res://Sprites/Assets/Botones1.png" id="5_v3og7"]
 
 [node name="PantallaAcierto" type="Node2D"]
 script = ExtResource("1_abwew")
 
-[node name="MenuButton" type="MenuButton" parent="."]
-z_index = 1
-offset_left = 821.0
-offset_top = 556.0
-offset_right = 891.0
-offset_bottom = 587.0
-scale = Vector2(4.54898, 3.5744)
-text = "ENTRAR"
-alignment = 0
-
 [node name="PanrallaDeAcierto" type="Sprite2D" parent="."]
-position = Vector2(580.5, 330)
+visible = false
+position = Vector2(621, 362)
 scale = Vector2(2.394, 2.26667)
 texture = ExtResource("3_abwew")
+
+[node name="WhatsAppImage2025-08-13At10_26_47Pm" type="Sprite2D" parent="."]
+position = Vector2(577, 309)
+scale = Vector2(0.745679, 0.690822)
+texture = ExtResource("3_6pyog")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 181.0
+offset_top = 257.0
+offset_right = 221.0
+offset_bottom = 280.0
+scale = Vector2(8.12, 8.12)
+text = "+1"
+
+[node name="Llave" type="Sprite2D" parent="."]
+position = Vector2(138, 329)
+scale = Vector2(14.692, 14.692)
+texture = ExtResource("4_t0hy4")
+
+[node name="Op1" type="MenuButton" parent="."]
+self_modulate = Color(1, 0.542667, 0.02, 1)
+top_level = true
+z_index = 2
+offset_left = 667.0
+offset_top = 479.0
+offset_right = 770.0
+offset_bottom = 510.0
+scale = Vector2(4.54898, 3.5744)
+pivot_offset = Vector2(1, 0)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "CONTINUAR"
+metadata/_edit_use_anchors_ = true
+
+[node name="Botones1" type="Sprite2D" parent="."]
+position = Vector2(940, 591)
+scale = Vector2(3.29875, 1.90938)
+texture = ExtResource("5_v3og7")
