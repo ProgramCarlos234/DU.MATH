@@ -56,11 +56,11 @@ pitch_scale = 0.95
 autoplay = true
 
 [node name="Label" type="Label" parent="."]
-offset_left = 151.0
-offset_top = 66.0
-offset_right = 568.0
-offset_bottom = 108.0
-scale = Vector2(2, 2)
+offset_left = 57.0
+offset_top = 58.0
+offset_right = 474.0
+offset_bottom = 100.0
+scale = Vector2(2.5, 2.5)
 text = "¿CUAL ES EL RESULTADO FINAL DE LAS OPERACIONES?"
 max_lines_visible = 7
 metadata/_edit_use_anchors_ = true

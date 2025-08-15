@@ -1,0 +1,103 @@
+[gd_scene load_steps=9 format=3 uid="uid://53kxcciwafun"]
+
+[ext_resource type="Script" uid="uid://dbue6ssccji6x" path="res://Scripts/configuracion.gd" id="1_iq6hw"]
+[ext_resource type="Texture2D" uid="uid://cskplqygmcre2" path="res://Sprites/PantallasCarga/Pantalla_Informativa_N1.png" id="2_wsv7t"]
+[ext_resource type="AudioStream" uid="uid://batcxh08c5fp8" path="res://Musica/Gameplay_PantallaCarga_Masterizada.mp3" id="3_wsv7t"]
+[ext_resource type="Texture2D" uid="uid://ddd10tlg88qie" path="res://Sprites/Assets/Botones1.png" id="3_xq7c5"]
+[ext_resource type="Texture2D" uid="uid://d0vvga200shlq" path="res://Sprites/Assets/BotonesAWSD.webp" id="5_8ve8o"]
+[ext_resource type="Texture2D" uid="uid://cbsx8k48xdmjo" path="res://Sprites/PantallasCarga/Flecha_Roja.png" id="6_qfpym"]
+[ext_resource type="Texture2D" uid="uid://b6kr8j0umb3c7" path="res://Sprites/Assets/j.jpeg" id="7_jodwo"]
+[ext_resource type="Texture2D" uid="uid://c2k11trkn252e" path="res://Sprites/Assets/k.jpeg" id="8_oy1nr"]
+
+[node name="config" type="Node2D"]
+script = ExtResource("1_iq6hw")
+Indicador = 10
+
+[node name="PantallaInformativaN1" type="Sprite2D" parent="."]
+position = Vector2(571, 318)
+scale = Vector2(2.313, 2.175)
+texture = ExtResource("2_wsv7t")
+
+[node name="Op1" type="MenuButton" parent="."]
+self_modulate = Color(1, 0.542667, 0.02, 1)
+top_level = true
+z_index = 2
+offset_left = 613.875
+offset_top = 450.938
+offset_right = 755.875
+offset_bottom = 481.938
+scale = Vector2(3.08195, 3.37065)
+pivot_offset = Vector2(1, 0)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "MENU PRINCIPAL"
+metadata/_edit_use_anchors_ = true
+
+[node name="Botones1" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(863.875, 559.938)
+scale = Vector2(3.29875, 1.90938)
+texture = ExtResource("3_xq7c5")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_wsv7t")
+autoplay = true
+
+[node name="BotonesAwsd" type="Sprite2D" parent="."]
+position = Vector2(232, 178)
+scale = Vector2(0.269444, 0.254204)
+texture = ExtResource("5_8ve8o")
+
+[node name="Label" type="Label" parent="."]
+modulate = Color(0, 0.0313726, 0.14902, 1)
+offset_left = 123.0
+offset_top = 355.0
+offset_right = 295.0
+offset_bottom = 378.0
+scale = Vector2(1.78532, 2.18917)
+text = "Mover al Jugador"
+
+[node name="FlechaRoja" type="Sprite2D" parent="."]
+position = Vector2(222.789, 309.702)
+rotation = 1.56212
+scale = Vector2(0.13907, 0.133333)
+texture = ExtResource("6_qfpym")
+
+[node name="Label2" type="Label" parent="."]
+modulate = Color(0, 0.0313726, 0.14902, 1)
+offset_left = 430.0
+offset_top = 357.238
+offset_right = 602.0
+offset_bottom = 380.238
+scale = Vector2(1.78532, 2.18917)
+text = "Interactuar"
+
+[node name="FlechaRoja2" type="Sprite2D" parent="."]
+position = Vector2(499.789, 311.94)
+rotation = 1.56212
+scale = Vector2(0.13907, 0.133333)
+texture = ExtResource("6_qfpym")
+
+[node name="Label3" type="Label" parent="."]
+modulate = Color(0, 0.0313726, 0.14902, 1)
+offset_left = 671.0
+offset_top = 356.238
+offset_right = 843.0
+offset_bottom = 379.238
+scale = Vector2(1.78532, 2.18917)
+text = "Atacar"
+
+[node name="FlechaRoja3" type="Sprite2D" parent="."]
+position = Vector2(723.789, 310.94)
+rotation = 1.56212
+scale = Vector2(0.13907, 0.133333)
+texture = ExtResource("6_qfpym")
+
+[node name="J" type="Sprite2D" parent="."]
+position = Vector2(502, 191)
+scale = Vector2(0.439502, 0.44052)
+texture = ExtResource("7_jodwo")
+
+[node name="K" type="Sprite2D" parent="."]
+position = Vector2(724, 190)
+scale = Vector2(0.370253, 0.383871)
+texture = ExtResource("8_oy1nr")

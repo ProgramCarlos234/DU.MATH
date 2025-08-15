@@ -17,6 +17,7 @@ var llave_conseguida = false #variable usada para detectar que el jugador obtien
 #    ESCENAS DISPONIBLES  #
 # ======================= #
 
+
 const MAPA_JUEGO = preload("res://Scenas/ScenasEntorno/Mapa_juego.tscn")
 const ENTORNO_RPG = preload("res://Scenas/ScenasEntorno/EntornoRPG.tscn")
 const ENTORNO_PLATAFORMAS = preload("res://Scenas/ScenasEntorno/EntornoPlataformas.tscn")
@@ -27,7 +28,9 @@ const SUB_NIVELES = preload("res://Scenas/ScenasEntorno/sub_niveles.tscn")  #Sub
 const NIVEL_1_2_DIVISORES = preload("res://Scenas/ScenasEntorno/Nivel1_2Divisores.tscn")
 const INTRODUCCION_SUB_NIVELES = preload("res://Scenas/ScenasEntorno/introduccion_sub_niveles.tscn")   #Nivel Cajas
 const PANTALLA_GANASTE = preload("res://Scenas/ScenasEntorno/pantalla_ganaste.tscn") #Pantalla de ganaste normal
+const MENU_PRINCIPAL = preload("res://Scenas/ScenasEntorno/menu.tscn")
 
+		 
 var Scenas: Array = [
 	MAPA_JUEGO,   #0
 	ENTORNO_RPG,   #1
@@ -38,7 +41,9 @@ var Scenas: Array = [
 	SUB_NIVELES,    #6
 	NIVEL_1_2_DIVISORES,   #7
 	INTRODUCCION_SUB_NIVELES,  #8
-	PANTALLA_GANASTE   #9
+	PANTALLA_GANASTE,   #9
+	MENU_PRINCIPAL  #10
+	
 ]
 
 # ======================= #

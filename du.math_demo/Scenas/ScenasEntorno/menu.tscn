@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://csf4fvsoekj0y"]
+[gd_scene load_steps=5 format=3 uid="uid://csf4fvsoekj0y"]
 
 [ext_resource type="Texture2D" uid="uid://c3b74gqf51sru" path="res://Sprites/SpritesEntorno/WhatsApp Image 2025-07-17 at 10.49.31 AM.jpeg" id="1_4di8f"]
 [ext_resource type="Script" uid="uid://byf2t1frojatb" path="res://Scripts/menu.gd" id="1_ilhvm"]
 [ext_resource type="AudioStream" uid="uid://batcxh08c5fp8" path="res://Musica/Gameplay_PantallaCarga_Masterizada.mp3" id="3_7kx5r"]
+[ext_resource type="Texture2D" uid="uid://44se87ekcos2" path="res://Sprites/Assets/Botones2.png" id="4_7kx5r"]
 
 [node name="MENU" type="Node2D"]
 script = ExtResource("1_ilhvm")
@@ -16,11 +17,22 @@ scale = Vector2(4.54898, 3.5744)
 text = "ENTRAR"
 alignment = 0
 
+[node name="MenuButton3" type="MenuButton" parent="."]
+modulate = Color(0.152941, 0.101961, 0.192157, 1)
+z_index = 1
+offset_left = 799.0
+offset_top = 514.0
+offset_right = 901.0
+offset_bottom = 545.0
+scale = Vector2(2.89011, 2.8703)
+text = "CONTROLES"
+alignment = 0
+
 [node name="MenuButton2" type="MenuButton" parent="."]
-offset_left = 34.0
-offset_top = 325.0
-offset_right = 104.0
-offset_bottom = 356.0
+offset_left = 40.0
+offset_top = 273.0
+offset_right = 110.0
+offset_bottom = 304.0
 scale = Vector2(4.54898, 3.5744)
 text = "SALIR"
 alignment = 0
@@ -34,3 +46,8 @@ texture = ExtResource("1_4di8f")
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_7kx5r")
 autoplay = true
+
+[node name="Botones2" type="Sprite2D" parent="."]
+position = Vector2(969.5, 605.75)
+scale = Vector2(2.165, 1.4375)
+texture = ExtResource("4_7kx5r")
