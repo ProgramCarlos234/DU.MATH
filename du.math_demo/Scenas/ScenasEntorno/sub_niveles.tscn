@@ -31,17 +31,28 @@ tile_set = ExtResource("4_rtq36")
 
 [node name="PuertaAnimada" parent="." instance=ExtResource("6_6vy4w")]
 position = Vector2(372, 237)
+llaves_necesarias = 2
+
+[node name="LimiteArriba" type="Marker2D" parent="PuertaAnimada"]
+position = Vector2(0, -106)
+
+[node name="LimiteAbajo" type="Marker2D" parent="PuertaAnimada"]
+position = Vector2(0, 86)
 
 [node name="TileMapLayer2" type="TileMapLayer" parent="."]
 tile_map_data = PackedByteArray("AAAXABEAAAAIAAcAAAAXABIAAAAIAAcAAAAYABIAAAAIAAcAAAAZABEAAAAIAAcAAAAZABIAAAAIAAcAAAAWABIAAAAIAAcAAAAWABEAAAAIAAcAAAAWABMAAAAIAAcAAAAWABQAAAAIAAcAAAAXABMAAAAIAAcAAAAXABQAAAAIAAcAAAAYABQAAAAIAAcAAAAYABMAAAAIAAcAAAAYABEAAAAIAAcAAAAVABEAAAAIAAcAAAAVABIAAAAIAAcAAAAVABMAAAAIAAcAAAAUABMAAAAIAAcAAAAUABQAAAAIAAcAAAAUABUAAAAIAAcAAAAVABUAAAAIAAcAAAAVABYAAAAIAAcAAAAWABYAAAAIAAcAAAAXABYAAAAIAAcAAAAXABUAAAAIAAcAAAAYABUAAAAIAAcAAAAWABUAAAAIAAcAAAAUABEAAAAIAAcAAAAUABIAAAAIAAcAAAAVABQAAAAIAAcAAAAUABYAAAAIAAcAAAAYABYAAAAIAAcAAAAZABQAAAAIAAcAAAAZABMAAAAIAAcAAAAZABUAAAAIAAcAAAAZABYAAAAIAAcAAAAUABcAAAAIAAcAAAAVABcAAAAIAAcAAAAWABcAAAAIAAcAAAAXABcAAAAIAAcAAAAYABcAAAAIAAcAAAAZABcAAAAIAAcAAAAaABcAAAAIAAcAAAAaABYAAAAIAAcAAAAaABUAAAAIAAcAAAAaABQAAAAIAAcAAAAaABMAAAAIAAcAAAAaABIAAAAIAAcAAAAaABEAAAAIAAcAAAA=")
 tile_set = ExtResource("4_rtq36")
 
 [node name="Area2D" parent="." instance=ExtResource("5_bsm6o")]
-position = Vector2(135, 66)
+position = Vector2(129, 43)
 Indicador_mundo = 3
 
+[node name="Area2D" parent="Area2D" instance=ExtResource("5_bsm6o")]
+position = Vector2(379, 318)
+TipoDePortal = true
+
 [node name="Area2D2" parent="." instance=ExtResource("5_bsm6o")]
-position = Vector2(537, 66)
+position = Vector2(542, 45)
 Indicador_mundo = 7
 
 [node name="Node2D" type="Node2D" parent="."]

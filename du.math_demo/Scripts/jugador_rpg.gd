@@ -22,7 +22,11 @@ func _ready():
 
 func _process(_delta):
 	vida = GameManager.VidaJugador
-
+	
+	if GameManager.VidaJugador <= 0:
+		get_tree().change_scene_to_file("res://Scenas/ScenasEntorno/pantalla_perdiste.tscn")
+		
+		
 	# Lógica de ataque
 	if can_move and Input.is_action_just_pressed("Ataque") and not is_attack:
 		attack()

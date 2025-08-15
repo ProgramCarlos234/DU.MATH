@@ -436,6 +436,7 @@ position = Vector2(-136, 64)
 
 [node name="Timer" type="Timer" parent="NivelNodoIsla/Camera2D"]
 script = ExtResource("6_shaon")
+tiempo_inicial = 60
 
 [node name="TiempoContador" type="Label" parent="NivelNodoIsla/Camera2D"]
 offset_left = 51.0

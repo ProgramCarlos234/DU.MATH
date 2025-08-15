@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=4 uid="uid://be3usqarcnffo"]
+[gd_scene load_steps=25 format=4 uid="uid://be3usqarcnffo"]
 
 [ext_resource type="Script" uid="uid://cpiiauf48m08j" path="res://Scripts/camera_2d.gd" id="1_b3cgw"]
 [ext_resource type="PackedScene" uid="uid://b3rquvh0mg2rv" path="res://Scenas/ScenasPersonajes/JugadorRPG.tscn" id="1_b7odb"]
@@ -7,6 +7,7 @@
 [ext_resource type="Shader" uid="uid://q4dwjiglc326" path="res://Shaders/Water.gdshader" id="4_segqk"]
 [ext_resource type="Texture2D" uid="uid://cemefodhygoj7" path="res://Sprites/Assets/AguaTiles4.png" id="5_au6s8"]
 [ext_resource type="TileSet" uid="uid://0qbyio30mgda" path="res://Tiles/Mapa_juego.tres" id="5_b3cgw"]
+[ext_resource type="Script" uid="uid://xjafrsdxcahx" path="res://Scripts/tile_maps_ControlEntradas.gd" id="5_pi1mc"]
 [ext_resource type="Texture2D" uid="uid://qywbeeilqcap" path="res://Sprites/Assets/AguaTiles1.png" id="6_pi1mc"]
 [ext_resource type="AudioStream" uid="uid://fnuux12mevqd" path="res://Musica/Gameplay_Mini_Mapa_Masterizada.mp3" id="7_hgtqa"]
 [ext_resource type="Texture2D" uid="uid://difxvktv40im2" path="res://Sprites/Assets/AguaTiles3.png" id="7_lia13"]
@@ -66,7 +67,7 @@ position = Vector2(-159, 72)
 scale = Vector2(1.16, 1.16)
 
 [node name="Jugador" parent="." instance=ExtResource("1_b7odb")]
-position = Vector2(564, -251)
+position = Vector2(1329, -11)
 
 [node name="TileMaps" type="Node2D" parent="."]
 
@@ -83,10 +84,14 @@ tile_set = ExtResource("5_b3cgw")
 [node name="Entrada_desbloquear" type="TileMapLayer" parent="TileMaps"]
 tile_map_data = PackedByteArray("AAAcAPD/AgAGAAQAAAAdAPD/AgAGAAQAAAAeAPH/AgAGAAQAAAAfAPL/AgAGAAQAAAAfAPP/AgAGAAQAAAAdAPH/AgAHAAUAAAAeAPL/AgAHAAUAAAA=")
 tile_set = ExtResource("5_b3cgw")
+script = ExtResource("5_pi1mc")
+llaves_necesarias = 3
 
 [node name="Entrada_Jefe" type="TileMapLayer" parent="TileMaps"]
 tile_map_data = PackedByteArray("AAAjAP7/BAAIAAQAAAAjAP//BAAIAAUAAAAjAAAABAAIAAYAAAAkAP7/BAAIAAQAAAAkAP//BAAIAAUAAAAkAAAABAAIAAYAAAA=")
 tile_set = ExtResource("5_b3cgw")
+script = ExtResource("5_pi1mc")
+llaves_necesarias = 4
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("7_hgtqa")
@@ -95,7 +100,7 @@ autoplay = true
 [node name="Area2D2" parent="." instance=ExtResource("3_qvcje")]
 z_index = -1
 position = Vector2(497, -54)
-Indicador_mundo = 11
+Indicador_mundo = 13
 TipoDePortal = true
 
 [node name="Area2D" parent="." instance=ExtResource("3_qvcje")]

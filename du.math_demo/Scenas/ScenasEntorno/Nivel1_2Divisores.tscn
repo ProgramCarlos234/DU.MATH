@@ -286,7 +286,7 @@ tile_set = ExtResource("7_pb20p")
 
 [node name="Area2D" parent="Nivel1/TileMaps" instance=ExtResource("10_pb20p")]
 position = Vector2(669, -4)
-Indicador_mundo = 9
+Indicador_mundo = 12
 
 [node name="PuertaAnimada" parent="Nivel1/TileMaps" instance=ExtResource("11_sl0v3")]
 position = Vector2(588, -5)

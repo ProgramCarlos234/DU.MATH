@@ -10,10 +10,12 @@ config_version=5
 
 [application]
 
-config/name="DU.MATH_DEMO"
+config/name="DU.MATH_V1"
 run/main_scene="uid://dgoym2sgqwxkl"
 config/features=PackedStringArray("4.4", "Forward Plus")
-config/icon="res://icon.svg"
+boot_splash/bg_color=Color(0.165115, 0.140948, 0, 1)
+boot_splash/image="uid://dgh6lpkt5fbvr"
+boot_splash/minimum_display_time=2000
 
 [autoload]
 

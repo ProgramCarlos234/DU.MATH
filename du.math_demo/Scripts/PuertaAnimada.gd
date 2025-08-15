@@ -11,6 +11,8 @@ extends Node2D
 
 # Control de velocidad y estado
 @export var velocidad_Movimiento_puerta: float = 100.0
+@export var llaves_necesarias: int = 1  # 🔑 Cantidad mínima para abrir
+
 var movimiento_abrir := false
 var movimiento_cerrar := false
 
@@ -26,17 +28,14 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	if movimiento_abrir:
-		# Movimiento hacia arriba (abrir)
 		mover_muro(muro_entrada, Limite_movimiento_muro_arriba.position, delta)
 		mover_muro(muro_entrada_2, Limite_movimiento_muro_abajo.position, delta)
 		
-		# Si ya están en posición, detiene el movimiento
 		if muro_entrada.position.distance_to(Limite_movimiento_muro_arriba.position) < 1.0 \
 		and muro_entrada_2.position.distance_to(Limite_movimiento_muro_abajo.position) < 1.0:
 			movimiento_abrir = false
 	
 	elif movimiento_cerrar:
-		# Movimiento de vuelta a la posición original
 		mover_muro(muro_entrada, pos_original_muro_1, delta)
 		mover_muro(muro_entrada_2, pos_original_muro_2, delta)
 		
@@ -48,12 +47,18 @@ func mover_muro(muro: Sprite2D, destino: Vector2, delta: float) -> void:
 	var direccion = (destino - muro.position).normalized()
 	muro.position += direccion * velocidad_Movimiento_puerta * delta
 
+# Evento para abrir la puerta
 func _on_izquierda_movimiento_abrir_puerta(Movimiento_Activado: bool) -> void:
 	if Movimiento_Activado:
-		collision_shape_2d.disabled = true
-		movimiento_abrir = true
-		movimiento_cerrar = false
+		# ✅ Verificar llaves en GameManager antes de abrir
+		if GameManager.LLaves_Conseguidas >= llaves_necesarias:
+			collision_shape_2d.disabled = true
+			movimiento_abrir = true
+			movimiento_cerrar = false
+		else:
+			print("🔒 No tienes suficientes llaves. Necesitas ", llaves_necesarias)
 
+# Evento para cerrar la puerta
 func _on_izquierda_movimiento_cerrar_puerta(Movimiento_Activado: bool) -> void:
 	if Movimiento_Activado:
 		collision_shape_2d.disabled = false
