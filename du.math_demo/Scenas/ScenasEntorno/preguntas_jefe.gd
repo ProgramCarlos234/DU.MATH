@@ -20,24 +20,25 @@ var jugador_dentro: bool = false
 @onready var area_c: Area2D = $Opcion3
 
 func _ready():
-	# Verificar labels
-	if not label_pregunta:
-		label_pregunta = get_node_or_null("ProblemaIcono/LabelPregunta")
-	if not label_respuesta_a:
-		label_respuesta_a = get_node_or_null("Opcion2/LabelA")
-	if not label_respuesta_b:
-		label_respuesta_b = get_node_or_null("Opcion/LabelB")
-	if not label_respuesta_c:
-		label_respuesta_c = get_node_or_null("Opcion3/LabelC")
-
-	# Forzar visibilidad de labels
+	# Confirmar que los labels existen y forzar visibilidad
+	var labels_ok := true
 	for label in [label_pregunta, label_respuesta_a, label_respuesta_b, label_respuesta_c]:
-		if label:
-			label.visible = true
+		if label == null:
+			push_error("❌ Label no encontrado en la escena de Pregunta")
+			labels_ok = false
 		else:
-			push_error("❌ Label no encontrado: " + str(label))
+			label.visible = true
+			if label.get_parent():
+				label.get_parent().visible = true
 
-	# Conectar señales de áreas
+	# Texto de prueba si hay error
+	if not labels_ok:
+		if label_pregunta: label_pregunta.text = "ERROR: Falta label"
+		if label_respuesta_a: label_respuesta_a.text = "AAA"
+		if label_respuesta_b: label_respuesta_b.text = "BBB"
+		if label_respuesta_c: label_respuesta_c.text = "CCC"
+
+	# Conectar áreas
 	if area_a:
 		area_a.body_entered.connect(_on_area_a_entered)
 		area_a.body_exited.connect(_on_area_exited)
@@ -50,7 +51,7 @@ func _ready():
 
 	set_process_input(true)
 
-# Función que asigna la pregunta desde el jefe
+# Asignar la pregunta desde el jefe
 func set_pregunta(p: Dictionary):
 	if typeof(p) != TYPE_DICTIONARY:
 		push_error("❌ La pregunta recibida no es un diccionario")
@@ -61,7 +62,11 @@ func set_pregunta(p: Dictionary):
 # Mostrar pregunta y opciones
 func _mostrar_pregunta():
 	if pregunta_actual.is_empty():
-		push_error("⚠ No hay pregunta asignada")
+		push_error("⚠ No hay pregunta asignada. Mostrando texto de prueba.")
+		if label_pregunta: label_pregunta.text = "¿SE VE ESTO?"
+		if label_respuesta_a: label_respuesta_a.text = "AAA"
+		if label_respuesta_b: label_respuesta_b.text = "BBB"
+		if label_respuesta_c: label_respuesta_c.text = "CCC"
 		return
 
 	if label_pregunta:
@@ -76,7 +81,7 @@ func _mostrar_pregunta():
 	respuesta_correcta = pregunta_actual.get("correcta", "A")
 	respuesta_elegida = ""
 
-# Detectar que jugador está en el área
+# Detección de jugador en cada área
 func _on_area_a_entered(body):
 	if body.is_in_group("Jugador"):
 		jugador_dentro = true
@@ -97,7 +102,7 @@ func _on_area_exited(body):
 		jugador_dentro = false
 		respuesta_elegida = ""
 
-# Detectar interacción
+# Interacción con la pregunta
 func _input(event):
 	if jugador_dentro and event.is_action_pressed("Interactuar") and respuesta_elegida != "":
 		var correcta := (respuesta_elegida == respuesta_correcta)

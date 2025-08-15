@@ -83,7 +83,7 @@ func iniciar_fase3():
 	wave_timer.start()
 
 func _on_spawn_timer_timeout():
-	if spawn_points.size() == 0:
+	if spawn_points.is_empty():
 		return
 	var cantidad = enemigos_por_fase1 if fase == 1 else enemigos_por_fase2
 	for i in range(cantidad):
@@ -111,39 +111,40 @@ func derrotado():
 	spawn_timer.stop()
 	wave_timer.stop()
 	pregunta_timer.stop()
+	# Eliminar cualquier escena de preguntas activa
+	for nodo in get_tree().current_scene.get_children():
+		if nodo.has_method("set_pregunta"):
+			nodo.queue_free()
 	queue_free()
 
 func mostrar_pregunta():
-	if question_points.size() == 0 or preguntas_restantes.size() == 0 or pregunta_activa:
+	if question_points.is_empty() or preguntas_restantes.is_empty() or pregunta_activa:
 		return
 
 	pregunta_activa = true
 	var punto = question_points.pick_random()
-	var intermedio_scene = preload("res://Scenas/ScenasJefe/Preguntas.tscn")
-	var intermedio = intermedio_scene.instantiate()
+	var escena_pregunta = preload("res://Scenas/ScenasJefe/Preguntas.tscn").instantiate()
 
 	# Colocar en la posición del punto de pregunta
-	intermedio.global_position = punto.global_position
-	# Pasar referencia del jefe
-	if intermedio.has_method("set_boss"):
-		intermedio.set_boss(self)
-	else:
-		push_error("❌ El nodo de preguntas no tiene set_boss()")
+	escena_pregunta.global_position = punto.global_position
+
+	# Pasar referencia del jefe para avisar cuando termine
+	if escena_pregunta.has_signal("pregunta_terminada"):
+		escena_pregunta.pregunta_terminada.connect(pregunta_respondida)
 
 	# Elegir pregunta aleatoria y eliminarla de la lista
 	var idx = randi() % preguntas_restantes.size()
 	var p = preguntas_restantes[idx]
 	preguntas_restantes.remove_at(idx)
 
-	# Asignar pregunta
-	if intermedio.has_method("set_pregunta"):
-		intermedio.set_pregunta(p)
+	# Pasar la pregunta directamente
+	if escena_pregunta.has_method("set_pregunta"):
+		escena_pregunta.set_pregunta(p)
 	else:
 		push_error("❌ El nodo de preguntas no tiene set_pregunta(p)")
 
 	# Agregar al escenario
-	get_tree().current_scene.add_child(intermedio)
-
+	get_tree().current_scene.add_child(escena_pregunta)
 
 func pregunta_respondida(correcta: bool):
 	print("📩 Pregunta respondida. Correcta =", correcta)
