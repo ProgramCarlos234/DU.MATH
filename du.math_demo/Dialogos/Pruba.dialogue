@@ -1,6 +1,6 @@
 ~ start
-Carlos: [[Hi|Hello|Howdy]], this is some dialogue.
-Carlos: Here are some choices.
+Entidad: [[Hola|Bienvenido]], this is some dialogue.
+Entidad: El mundo de las matematicas esta siendo amenzado.
 - Primera opcion
 	Nathan: You picked the first one.
 	Carlos: La tuya por siacaso

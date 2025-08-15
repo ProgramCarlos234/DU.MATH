@@ -5,12 +5,14 @@ extends Node2D
 @onready var jugador_Bien: Sprite2D = $JugadorBien1
 @onready var jugador_Daño: Sprite2D = $JugadorBien2
 @onready var LabelIQ: Label = $Label3
+@onready var CantidadLLaves: Label = $Label5
 
 var mostrando_daño: bool = false
 var contador: float = 0.0
 
 func _process(delta: float) -> void:
 	# Actualiza las barras con los valores del GameManager
+	CantidadLLaves.text = str(GameManager.LLaves_Conseguidas)
 	Barra_vida.value = GameManager.VidaJugador
 	Barra_IQ.value = GameManager.IQJugador
 	

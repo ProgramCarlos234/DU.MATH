@@ -12,6 +12,16 @@ var JugadorRecibeDaño = false
 var paredes: Array = []
 var indice_actual := 0
 var llave_conseguida = false #variable usada para detectar que el jugador obtiene la llave
+var LLaves_Conseguidas: int = 0 #valor de la cantidad de las llaves
+
+# ============================ #
+#    VARIABLES LLAVES ESCENAS  #
+# ============================ #
+
+var Llave_Nivel1_Cajas = false
+var Llave_Nivel1_2_Cajas = false
+var Llave_Nivel_cerebritos = false
+var Llave_Mapa_Juego = false
 
 # ======================= #
 #    ESCENAS DISPONIBLES  #

@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://cjpptaf4uv58e"]
+[gd_scene load_steps=3 format=3 uid="uid://cjpptaf4uv58e"]
 
 [ext_resource type="Texture2D" uid="uid://ddd10tlg88qie" path="res://Sprites/Assets/Botones1.png" id="1_m7mtj"]
+[ext_resource type="Texture2D" uid="uid://bny0k7iie2vbx" path="res://Sprites/SpritesEntorno/WhatsApp Image 2025-08-14 at 9.13.37 PM.jpeg" id="2_nu3c4"]
 
 [node name="Pantalla_Perdiste" type="Node2D"]
 
@@ -22,3 +23,9 @@ metadata/_edit_use_anchors_ = true
 position = Vector2(611.875, 635.938)
 scale = Vector2(3.29875, 1.90938)
 texture = ExtResource("1_m7mtj")
+
+[node name="WhatsAppImage2025-08-14At9_13_37Pm" type="Sprite2D" parent="."]
+z_index = -2
+position = Vector2(580, 307)
+scale = Vector2(0.778898, 0.694213)
+texture = ExtResource("2_nu3c4")
