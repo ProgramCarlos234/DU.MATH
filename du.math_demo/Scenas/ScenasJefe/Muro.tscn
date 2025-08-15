@@ -1,0 +1,59 @@
+[gd_scene load_steps=9 format=3 uid="uid://c5rxmbhtecds0"]
+
+[ext_resource type="Script" uid="uid://hwu8i6c128hp" path="res://Scenas/ScenasJefe/muro.gd" id="1_6u1fr"]
+[ext_resource type="Texture2D" uid="uid://ckqeqqrsaayoj" path="res://Scenas/ScenasPersonajes/SpritesJefe/FuegoAtaque.png" id="2_paqh7"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_itcer"]
+radius = 20.0075
+height = 40.0151
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ii62x"]
+atlas = ExtResource("2_paqh7")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3k5tn"]
+atlas = ExtResource("2_paqh7")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ip3uf"]
+atlas = ExtResource("2_paqh7")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xqymf"]
+atlas = ExtResource("2_paqh7")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_66ubs"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ii62x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3k5tn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ip3uf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xqymf")
+}],
+"loop": true,
+"name": &"muro",
+"speed": 5.0
+}]
+
+[node name="Muro" type="Area2D"]
+scale = Vector2(3.32603, 0.911209)
+script = ExtResource("1_6u1fr")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(-1.20224e-11, 2.93161e-09)
+rotation = 0.0163949
+shape = SubResource("CapsuleShape2D_itcer")
+
+[node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="."]
+scale = Vector2(2.64063, 2.64063)
+sprite_frames = SubResource("SpriteFrames_66ubs")
+animation = &"muro"
+autoplay = "muro"
