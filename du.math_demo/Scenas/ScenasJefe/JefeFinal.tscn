@@ -212,6 +212,7 @@ size = Vector2(27, 48)
 [node name="JefeFinal" type="Node2D"]
 
 [node name="Jugador" parent="." instance=ExtResource("5_w3llp")]
+z_index = 3
 position = Vector2(18, -6)
 
 [node name="Jefe" parent="." instance=ExtResource("2_rhonx")]

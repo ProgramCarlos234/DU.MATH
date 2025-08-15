@@ -15,15 +15,13 @@ position = Vector2(0, -19)
 scale = Vector2(2.48, 1.2)
 texture = ExtResource("1_vy2pl")
 
-[node name="Opcion" type="Area2D" parent="."]
-position = Vector2(0, 26)
-
-[node name="Sprite2D" type="Sprite2D" parent="Opcion"]
-scale = Vector2(0.759999, 1.32)
-texture = ExtResource("2_kn3xh")
-
-[node name="Respuesta2" type="CollisionShape2D" parent="Opcion"]
-shape = SubResource("RectangleShape2D_mj6h2")
+[node name="LabelPregunta" type="Label" parent="ProblemaIcono"]
+self_modulate = Color(0, 0, 0, 1)
+offset_left = -20.9677
+offset_top = -21.6667
+offset_right = 19.0323
+offset_bottom = 1.33333
+scale = Vector2(0.490575, 0.325812)
 
 [node name="Opcion2" type="Area2D" parent="."]
 position = Vector2(-38, 26)
@@ -35,7 +33,34 @@ texture = ExtResource("2_kn3xh")
 [node name="Respuesta1" type="CollisionShape2D" parent="Opcion2"]
 shape = SubResource("RectangleShape2D_mj6h2")
 
+[node name="LabelA" type="Label" parent="Opcion2"]
+self_modulate = Color(0, 0, 0, 1)
+offset_left = -17.0
+offset_top = -10.0
+offset_right = 23.0
+offset_bottom = 13.0
+scale = Vector2(0.830355, 0.541884)
+
+[node name="Opcion" type="Area2D" parent="."]
+position = Vector2(0, 26)
+
+[node name="Sprite2D" type="Sprite2D" parent="Opcion"]
+scale = Vector2(0.759999, 1.32)
+texture = ExtResource("2_kn3xh")
+
+[node name="Respuesta2" type="CollisionShape2D" parent="Opcion"]
+shape = SubResource("RectangleShape2D_mj6h2")
+
+[node name="LabelB" type="Label" parent="Opcion"]
+self_modulate = Color(0, 0, 0, 1)
+offset_left = -18.0
+offset_top = -10.0
+offset_right = 40.0
+offset_bottom = 23.0
+scale = Vector2(0.631829, 0.553002)
+
 [node name="Opcion3" type="Area2D" parent="."]
+self_modulate = Color(0, 0, 0, 1)
 position = Vector2(38, 26)
 
 [node name="Sprite2D" type="Sprite2D" parent="Opcion3"]
@@ -44,3 +69,11 @@ texture = ExtResource("2_kn3xh")
 
 [node name="Respuesta3" type="CollisionShape2D" parent="Opcion3"]
 shape = SubResource("RectangleShape2D_mj6h2")
+
+[node name="LabelC" type="Label" parent="Opcion3"]
+self_modulate = Color(0, 0, 0, 1)
+offset_left = -18.0
+offset_top = -10.0
+offset_right = 18.0
+offset_bottom = 13.0
+scale = Vector2(0.644764, 0.466833)

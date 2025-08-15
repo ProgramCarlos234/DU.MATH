@@ -22,16 +22,28 @@ var question_points: Array = []
 var vida_actual: int
 var fase: int = 1
 var jugador_activo: bool = false
-var pregunta_activa: bool = false  # 🔹 Nuevo control de estado
+var pregunta_activa: bool = false
+
+# Lista de preguntas
+var preguntas = [
+	{"texto":"90 ÷ 15 =", "opciones":["5","6","7"], "correcta":"A"},
+	{"texto":"3/4 de 20 =", "opciones":["10","15","12"], "correcta":"B"},
+	{"texto":"25% de 80 =", "opciones":["15","20","25"], "correcta":"B"}
+]
+var preguntas_restantes: Array = []
 
 func _ready():
+	randomize()
+	preguntas_restantes = preguntas.duplicate()
+
+	# Guardar spawn points y puntos de preguntas
 	var spawns = get_parent().get_node_or_null("SpawnPoints")
 	if spawns:
 		spawn_points = spawns.get_children()
 
-	var preguntas = get_parent().get_node_or_null("QuestionPoints")
-	if preguntas:
-		question_points = preguntas.get_children()
+	var preguntas_nodes = get_parent().get_node_or_null("QuestionPoints")
+	if preguntas_nodes:
+		question_points = preguntas_nodes.get_children()
 
 	vida_actual = vida_max
 
@@ -47,14 +59,8 @@ func _ready():
 func iniciar():
 	jugador_activo = true
 	show()
-	print("✅ Jefe activado en posición:", global_position)
-
-	if sprite and sprite.sprite_frames.has_animation("Walk"):
-		sprite.play("Walk")
-
 	iniciar_fase1()
-
-	# Primera pregunta en 15 seg
+	# Primera pregunta
 	pregunta_timer.wait_time = primera_pregunta_delay
 	pregunta_timer.start()
 
@@ -77,9 +83,8 @@ func iniciar_fase3():
 	wave_timer.start()
 
 func _on_spawn_timer_timeout():
-	if spawn_points.is_empty():
+	if spawn_points.size() == 0:
 		return
-
 	var cantidad = enemigos_por_fase1 if fase == 1 else enemigos_por_fase2
 	for i in range(cantidad):
 		var punto = spawn_points.pick_random()
@@ -90,17 +95,14 @@ func _on_spawn_timer_timeout():
 func _on_wave_timer_timeout():
 	print("🌊 Lanzando onda de ataque")
 
-func recibir_danio(cantidad):
+func recibir_danio(cantidad: int):
 	if not jugador_activo:
 		return
-
 	vida_actual -= cantidad
-
 	if vida_actual <= vida_fase3 and fase < 3:
 		iniciar_fase3()
 	elif vida_actual <= vida_fase2 and fase < 2:
 		iniciar_fase2()
-
 	if vida_actual <= 0:
 		derrotado()
 
@@ -112,21 +114,41 @@ func derrotado():
 	queue_free()
 
 func mostrar_pregunta():
-	if question_points.is_empty() or pregunta_activa:
+	if question_points.size() == 0 or preguntas_restantes.size() == 0 or pregunta_activa:
 		return
 
-	pregunta_activa = true  # 🔹 Marca como activa
-
+	pregunta_activa = true
 	var punto = question_points.pick_random()
-	var pregunta = preload("res://Scenas/ScenasJefe/Preguntas.tscn").instantiate()
-	get_tree().current_scene.add_child(pregunta)
-	pregunta.global_position = punto.global_position
+	var intermedio_scene = preload("res://Scenas/ScenasJefe/Preguntas.tscn")
+	var intermedio = intermedio_scene.instantiate()
 
-	if pregunta.has_method("set_boss"):
-		pregunta.set_boss(self)
+	# Colocar en la posición del punto de pregunta
+	intermedio.global_position = punto.global_position
+	# Pasar referencia del jefe
+	if intermedio.has_method("set_boss"):
+		intermedio.set_boss(self)
+	else:
+		push_error("❌ El nodo de preguntas no tiene set_boss()")
 
-func pregunta_respondida():
-	print("✅ Pregunta respondida, esperando", pregunta_interval, "segundos para la próxima.")
+	# Elegir pregunta aleatoria y eliminarla de la lista
+	var idx = randi() % preguntas_restantes.size()
+	var p = preguntas_restantes[idx]
+	preguntas_restantes.remove_at(idx)
+
+	# Asignar pregunta
+	if intermedio.has_method("set_pregunta"):
+		intermedio.set_pregunta(p)
+	else:
+		push_error("❌ El nodo de preguntas no tiene set_pregunta(p)")
+
+	# Agregar al escenario
+	get_tree().current_scene.add_child(intermedio)
+
+
+func pregunta_respondida(correcta: bool):
+	print("📩 Pregunta respondida. Correcta =", correcta)
+	if correcta:
+		recibir_danio(10)
 	pregunta_activa = false
 	pregunta_timer.wait_time = pregunta_interval
 	pregunta_timer.start()
