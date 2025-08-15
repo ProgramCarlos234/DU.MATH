@@ -19,9 +19,15 @@ texture = ExtResource("1_vy2pl")
 self_modulate = Color(0, 0, 0, 1)
 offset_left = -21.0
 offset_top = -22.0
+<<<<<<< HEAD
 offset_right = 19.0
 offset_bottom = 40.0
 scale = Vector2(1.03896, 0.69002)
+=======
+offset_right = 68.0
+offset_bottom = 111.0
+scale = Vector2(0.490575, 0.325812)
+>>>>>>> 4a32b74daf603613b945a580250e6a85e13977c0
 
 [node name="Opcion2" type="Area2D" parent="."]
 position = Vector2(-38, 26)
@@ -37,8 +43,8 @@ shape = SubResource("RectangleShape2D_mj6h2")
 self_modulate = Color(0, 0, 0, 1)
 offset_left = -17.0
 offset_top = -10.0
-offset_right = 23.0
-offset_bottom = 13.0
+offset_right = 26.0
+offset_bottom = 23.0
 scale = Vector2(0.830355, 0.541884)
 
 [node name="Opcion" type="Area2D" parent="."]
@@ -74,6 +80,12 @@ shape = SubResource("RectangleShape2D_mj6h2")
 self_modulate = Color(0, 0, 0, 1)
 offset_left = -18.0
 offset_top = -10.0
+<<<<<<< HEAD
 offset_right = 18.0
 offset_bottom = 13.0
 scale = Vector2(1.04477, 0.756449)
+=======
+offset_right = 35.0
+offset_bottom = 33.0
+scale = Vector2(0.644764, 0.466833)
+>>>>>>> 4a32b74daf603613b945a580250e6a85e13977c0

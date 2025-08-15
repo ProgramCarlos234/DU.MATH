@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://b3l1lj6ooag4t"
+path="res://.godot/imported/Dialogo_SubNivel.dialogue-99fa21a97e19ae0051f27984e227e566.tres"
+
+[deps]
+
+source_file="res://Dialogos/Dialogo_SubNivel.dialogue"
+dest_files=["res://.godot/imported/Dialogo_SubNivel.dialogue-99fa21a97e19ae0051f27984e227e566.tres"]
+
+[params]
+
+defaults=true

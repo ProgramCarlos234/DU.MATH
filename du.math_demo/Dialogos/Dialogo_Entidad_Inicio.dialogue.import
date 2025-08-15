@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://bdxfoa2lpg5cy"
+path="res://.godot/imported/Dialogo_Entidad_Inicio.dialogue-020a08d658772b398507eeaaf4fc117f.tres"
+
+[deps]
+
+source_file="res://Dialogos/Dialogo_Entidad_Inicio.dialogue"
+dest_files=["res://.godot/imported/Dialogo_Entidad_Inicio.dialogue-020a08d658772b398507eeaaf4fc117f.tres"]
+
+[params]
+
+defaults=true

@@ -1,155 +1,71 @@
-extends CharacterBody2D
+extends Node2D
 
-@export var vida_max: int = 100
-@export var spawn_interval_fase1: float = 10.0
-@export var spawn_interval_fase2: float = 30.0
-@export var enemigos_por_fase1: int = 2
-@export var enemigos_por_fase2: int = 4
-@export var vida_fase2: int = 50
-@export var vida_fase3: int = 20
+var boss_ref = null
+var jugador_dentro = false
+var pregunta_activa = false
+var pregunta_actual = {}
 
-@export var primera_pregunta_delay: float = 15.0
-@export var pregunta_interval: float = 20.0
-
-@onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
-@onready var spawn_timer: Timer = $SpawnTimer
-@onready var wave_timer: Timer = $WaveTimer
-@onready var pregunta_timer: Timer = $PreguntaTimer
-
-var spawn_points: Array = []
-var question_points: Array = []
-
-var vida_actual: int
-var fase: int = 1
-var jugador_activo: bool = false
-var pregunta_activa: bool = false
-
-# Lista de preguntas
-var preguntas = [
-	{"texto":"90 ÷ 15 =", "opciones":["5","6","7"], "correcta":"A"},
-	{"texto":"3/4 de 20 =", "opciones":["10","15","12"], "correcta":"B"},
-	{"texto":"25% de 80 =", "opciones":["15","20","25"], "correcta":"B"}
-]
-var preguntas_restantes: Array = []
+@onready var sprite: AnimatedSprite2D = $Area2D/AnimatedSprite2D
 
 func _ready():
-	randomize()
-	preguntas_restantes = preguntas.duplicate()
+	set_process_input(true)
 
-	# Guardar spawn points y puntos de preguntas
-	var spawns = get_parent().get_node_or_null("SpawnPoints")
-	if spawns:
-		spawn_points = spawns.get_children()
+	# Asegurar que el jugador esté en el grupo
+	var jugador = get_tree().get_first_node_in_group("Jugador")
+	if not jugador:
+		var posible_jugador = get_tree().root.find_child("Jugador", true, false)
+		if posible_jugador:
+			posible_jugador.add_to_group("Jugador")
+			print("✅ Jugador agregado al grupo 'Jugador'.")
 
-	var preguntas_nodes = get_parent().get_node_or_null("QuestionPoints")
-	if preguntas_nodes:
-		question_points = preguntas_nodes.get_children()
+	if sprite and sprite.sprite_frames.has_animation("Interrogacion"):
+		sprite.play("Interrogacion")
 
-	vida_actual = vida_max
+	$Area2D.body_entered.connect(_on_body_entered)
+	$Area2D.body_exited.connect(_on_body_exited)
 
-	spawn_timer.timeout.connect(_on_spawn_timer_timeout)
-	wave_timer.timeout.connect(_on_wave_timer_timeout)
-	pregunta_timer.timeout.connect(mostrar_pregunta)
+func set_boss(boss):
+	boss_ref = boss
 
-	if sprite and sprite.sprite_frames.has_animation("Walk"):
-		sprite.play("Walk")
+func set_pregunta(p):
+	pregunta_actual = p
+	_mostrar_pregunta()
 
-	hide()
+func _on_body_entered(body):
+	if body.is_in_group("Jugador"):
+		jugador_dentro = true
 
-func iniciar():
-	jugador_activo = true
-	show()
-	iniciar_fase1()
-	# Primera pregunta
-	pregunta_timer.wait_time = primera_pregunta_delay
-	pregunta_timer.start()
+func _on_body_exited(body):
+	if body.is_in_group("Jugador"):
+		jugador_dentro = false
 
-func iniciar_fase1():
-	fase = 1
-	spawn_timer.wait_time = spawn_interval_fase1
-	spawn_timer.start()
+func _input(event):
+	if jugador_dentro and not pregunta_activa and event.is_action_pressed("Interactuar"):
+		abrir_pregunta()
 
-func iniciar_fase2():
-	fase = 2
-	spawn_timer.stop()
-	spawn_timer.wait_time = spawn_interval_fase2
-	spawn_timer.start()
-
-func iniciar_fase3():
-	fase = 3
-	spawn_timer.stop()
-	spawn_timer.wait_time = spawn_interval_fase2
-	spawn_timer.start()
-	wave_timer.start()
-
-func _on_spawn_timer_timeout():
-	if spawn_points.is_empty():
-		return
-	var cantidad = enemigos_por_fase1 if fase == 1 else enemigos_por_fase2
-	for i in range(cantidad):
-		var punto = spawn_points.pick_random()
-		var enemigo = preload("res://Scenas/ScenasJefe/Enemigos.tscn").instantiate()
-		get_tree().current_scene.add_child(enemigo)
-		enemigo.global_position = punto.global_position
-
-func _on_wave_timer_timeout():
-	print("🌊 Lanzando onda de ataque")
-
-func recibir_danio(cantidad: int):
-	if not jugador_activo:
-		return
-	vida_actual -= cantidad
-	if vida_actual <= vida_fase3 and fase < 3:
-		iniciar_fase3()
-	elif vida_actual <= vida_fase2 and fase < 2:
-		iniciar_fase2()
-	if vida_actual <= 0:
-		derrotado()
-
-func derrotado():
-	print("🏆 ¡Jefe derrotado! 🚫")
-	spawn_timer.stop()
-	wave_timer.stop()
-	pregunta_timer.stop()
-	# Eliminar cualquier escena de preguntas activa
-	for nodo in get_tree().current_scene.get_children():
-		if nodo.has_method("set_pregunta"):
-			nodo.queue_free()
-	queue_free()
-
-func mostrar_pregunta():
-	if question_points.is_empty() or preguntas_restantes.is_empty() or pregunta_activa:
+func abrir_pregunta():
+	if pregunta_activa or pregunta_actual.size() == 0:
 		return
 
 	pregunta_activa = true
-	var punto = question_points.pick_random()
-	var escena_pregunta = preload("res://Scenas/ScenasJefe/Preguntas.tscn").instantiate()
 
-	# Colocar en la posición del punto de pregunta
-	escena_pregunta.global_position = punto.global_position
+	var preguntas_jefe = load("res://Scenas/ScenasEntorno/preguntas_jefe.tscn").instantiate()
+	preguntas_jefe.global_position = global_position
+	preguntas_jefe.connect("pregunta_terminada", Callable(self, "_on_pregunta_terminada"))
+	get_tree().current_scene.add_child(preguntas_jefe)
 
-	# Pasar referencia del jefe para avisar cuando termine
-	if escena_pregunta.has_signal("pregunta_terminada"):
-		escena_pregunta.pregunta_terminada.connect(pregunta_respondida)
+	if sprite:
+		sprite.visible = false
 
-	# Elegir pregunta aleatoria y eliminarla de la lista
-	var idx = randi() % preguntas_restantes.size()
-	var p = preguntas_restantes[idx]
-	preguntas_restantes.remove_at(idx)
+func _mostrar_pregunta():
+	if pregunta_actual.size() == 0:
+		return
+	# Aquí podrías actualizar el texto del intermedio si quieres mostrarlo
 
-	# Pasar la pregunta directamente
-	if escena_pregunta.has_method("set_pregunta"):
-		escena_pregunta.set_pregunta(p)
-	else:
-		push_error("❌ El nodo de preguntas no tiene set_pregunta(p)")
-
-	# Agregar al escenario
-	get_tree().current_scene.add_child(escena_pregunta)
-
-func pregunta_respondida(correcta: bool):
-	print("📩 Pregunta respondida. Correcta =", correcta)
-	if correcta:
-		recibir_danio(10)
+func _on_pregunta_terminada(correcta: bool):
+	if boss_ref and boss_ref.has_method("pregunta_respondida"):
+		boss_ref.pregunta_respondida(correcta)
 	pregunta_activa = false
-	pregunta_timer.wait_time = pregunta_interval
-	pregunta_timer.start()
+	if sprite:
+		sprite.visible = true
+	queue_free()

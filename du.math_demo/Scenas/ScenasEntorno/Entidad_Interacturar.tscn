@@ -1,6 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://cvf1opvtrhfkp"]
+[gd_scene load_steps=8 format=3 uid="uid://cvf1opvtrhfkp"]
 
 [ext_resource type="Texture2D" uid="uid://d0dulpbebld26" path="res://Sprites/SpritesEntorno/Ente-Mago-XD-Sheet.png" id="1_8crxd"]
+[ext_resource type="Script" uid="uid://cxqisn2whvl1o" path="res://Scripts/Entidad_Script.gd" id="2_clcoo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rehb7"]
+size = Vector2(33, 26)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_clcoo"]
 atlas = ExtResource("1_8crxd")
@@ -26,21 +30,21 @@ animations = [{
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_egbch"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_rehb7"]
-size = Vector2(33, 26)
+[node name="Interactuar" type="Area2D"]
+script = ExtResource("2_clcoo")
 
-[node name="CharacterBody2D" type="CharacterBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 11)
+shape = SubResource("RectangleShape2D_rehb7")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
 sprite_frames = SubResource("SpriteFrames_aetan")
 autoplay = "default"
 frame_progress = 0.989346
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
 shape = SubResource("CapsuleShape2D_egbch")
 
-[node name="Interactuar" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactuar"]
-position = Vector2(0, 11)
-shape = SubResource("RectangleShape2D_rehb7")
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

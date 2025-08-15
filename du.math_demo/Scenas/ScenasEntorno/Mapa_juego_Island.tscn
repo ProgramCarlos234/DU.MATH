@@ -309,41 +309,41 @@ sources/0 = SubResource("TileSetAtlasSource_shaon")
 frequency = 0.0097
 offset = Vector3(0, 579.64, 0)
 
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_8xtyn"]
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_fi5gn"]
 seamless = true
 seamless_blend_skirt = 1.0
 noise = SubResource("FastNoiseLite_fgsla")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ya1fr"]
 shader = ExtResource("9_ysj4p")
-shader_parameter/noise_texture = SubResource("NoiseTexture2D_8xtyn")
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_fi5gn")
 shader_parameter/speed = Vector2(0.3, 0.1)
 shader_parameter/wave_strength = 0.1
 shader_parameter/distortion = 0.01
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rv6w5"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_q6md8"]
 texture = ExtResource("10_t6jfb")
 0:0/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_li4vo"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fgsla"]
 texture = ExtResource("11_fi5gn")
 0:0/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_1evlq"]
-sources/0 = SubResource("TileSetAtlasSource_rv6w5")
-sources/1 = SubResource("TileSetAtlasSource_li4vo")
+sources/0 = SubResource("TileSetAtlasSource_q6md8")
+sources/1 = SubResource("TileSetAtlasSource_fgsla")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tuatn"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8xtyn"]
 texture = ExtResource("10_t6jfb")
 0:0/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_go1uo"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ya1fr"]
 texture = ExtResource("12_q6md8")
 0:0/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_0ub8x"]
-sources/0 = SubResource("TileSetAtlasSource_tuatn")
-sources/1 = SubResource("TileSetAtlasSource_go1uo")
+sources/0 = SubResource("TileSetAtlasSource_8xtyn")
+sources/1 = SubResource("TileSetAtlasSource_ya1fr")
 
 [node name="MapaJuegoIsland" type="NavigationRegion2D"]
 z_index = 1
