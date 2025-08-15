@@ -21,7 +21,7 @@ offset_left = -21.0
 offset_top = -22.0
 offset_right = 68.0
 offset_bottom = 111.0
-scale = Vector2(0.490575, 0.325812)
+scale = Vector2(0.1967, 0.309379)
 
 [node name="Opcion2" type="Area2D" parent="."]
 position = Vector2(-38, 26)
