@@ -1,0 +1,96 @@
+[gd_scene load_steps=7 format=3 uid="uid://5ko28ijjl1of"]
+
+[ext_resource type="Script" uid="uid://cls0xlt8evti1" path="res://Scripts/informacion_niveles.gd" id="1_6roav"]
+[ext_resource type="Texture2D" uid="uid://cbsx8k48xdmjo" path="res://Sprites/PantallasCarga/Flecha_Roja.png" id="1_pvihj"]
+[ext_resource type="Texture2D" uid="uid://cg8go5tktbqvc" path="res://Sprites/SpritesEntorno/Numero.png" id="2_xs0ti"]
+[ext_resource type="PackedScene" uid="uid://571umlrh7ht8" path="res://Scenas/ScenasEntorno/cajas.tscn" id="3_vtlqf"]
+[ext_resource type="PackedScene" uid="uid://001w35x8xb6r" path="res://Scenas/ScenasEntorno/Pared.tscn" id="4_vtlqf"]
+[ext_resource type="PackedScene" uid="uid://b02xo6p64xa4r" path="res://Scenas/ScenasEntorno/llave.tscn" id="5_6roav"]
+
+[node name="Informacion_Nivel_Divisores" type="CanvasLayer"]
+script = ExtResource("1_6roav")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.08, 0.08, 0.08, 0.423529)
+
+[node name="FlechaRoja" type="Sprite2D" parent="."]
+position = Vector2(776, 75)
+rotation = 3.14159
+scale = Vector2(0.400001, 0.400001)
+texture = ExtResource("1_pvihj")
+
+[node name="Numero" type="Sprite2D" parent="."]
+position = Vector2(567, 70)
+scale = Vector2(6.57087, 6.57087)
+texture = ExtResource("2_xs0ti")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 877.0
+offset_top = 33.0
+offset_right = 1053.0
+offset_bottom = 125.0
+text = "Al comenzar el nivel aparecera un número aleatorio en esta casilla."
+horizontal_alignment = 3
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+offset_left = 832.0
+offset_top = 362.0
+offset_right = 1110.0
+offset_bottom = 551.0
+text = "Frente a ti encontrarás varios obstáculos con distintos números. Solo debes destruir la caja cuyo número sea \"MULTIPLO\" del valor que aparece en la casilla superior."
+horizontal_alignment = 3
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="."]
+offset_left = 36.0
+offset_top = 362.0
+offset_right = 368.0
+offset_bottom = 488.0
+text = "Deberas de correr, o estas columnas te elimaran, y volveras a comenzar desde el inicio."
+horizontal_alignment = 3
+
+[node name="RichTextLabel4" type="RichTextLabel" parent="."]
+offset_left = 415.0
+offset_top = 362.0
+offset_right = 747.0
+offset_bottom = 488.0
+text = "Para Obtener la llave en este En este nivel debes responder correctamente al menos 15 preguntas. Si fallas, la llave no aparecerá y quedarás atrapado aquí para siempre."
+horizontal_alignment = 3
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(957, 317)
+scale = Vector2(2.94581, 2.94581)
+
+[node name="Cajas" parent="Node2D" instance=ExtResource("3_vtlqf")]
+position = Vector2(0, -48)
+
+[node name="Cajas2" parent="Node2D" instance=ExtResource("3_vtlqf")]
+position = Vector2(0, -32)
+
+[node name="Cajas3" parent="Node2D" instance=ExtResource("3_vtlqf")]
+position = Vector2(0, -16)
+
+[node name="Cajas4" parent="Node2D" instance=ExtResource("3_vtlqf")]
+
+[node name="ParedMovediza" parent="." instance=ExtResource("4_vtlqf")]
+z_index = 1
+position = Vector2(322, 275)
+scale = Vector2(2.2, 2.2)
+
+[node name="Area2D" parent="." instance=ExtResource("5_6roav")]
+z_index = 1
+position = Vector2(574, 271)
+scale = Vector2(10.2124, 10.2124)
+
+[node name="Label" type="Label" parent="."]
+self_modulate = Color(0, 0.526797, 0.996918, 1)
+offset_left = 54.0
+offset_top = 528.0
+offset_right = 494.0
+offset_bottom = 551.0
+scale = Vector2(2.44, 2.44)
+text = "OPRIME EL BOTON DE \"INTERACTUAR\" PARA CONTINUAR"
