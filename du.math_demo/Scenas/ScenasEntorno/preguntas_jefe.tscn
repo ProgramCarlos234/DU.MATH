@@ -17,10 +17,10 @@ texture = ExtResource("1_vy2pl")
 
 [node name="LabelPregunta" type="Label" parent="ProblemaIcono"]
 self_modulate = Color(0, 0, 0, 1)
-offset_left = -20.9677
-offset_top = -21.6667
-offset_right = 19.0323
-offset_bottom = 1.33333
+offset_left = -21.0
+offset_top = -22.0
+offset_right = 68.0
+offset_bottom = 111.0
 scale = Vector2(0.490575, 0.325812)
 
 [node name="Opcion2" type="Area2D" parent="."]
@@ -37,8 +37,8 @@ shape = SubResource("RectangleShape2D_mj6h2")
 self_modulate = Color(0, 0, 0, 1)
 offset_left = -17.0
 offset_top = -10.0
-offset_right = 23.0
-offset_bottom = 13.0
+offset_right = 26.0
+offset_bottom = 23.0
 scale = Vector2(0.830355, 0.541884)
 
 [node name="Opcion" type="Area2D" parent="."]
@@ -74,6 +74,6 @@ shape = SubResource("RectangleShape2D_mj6h2")
 self_modulate = Color(0, 0, 0, 1)
 offset_left = -18.0
 offset_top = -10.0
-offset_right = 18.0
-offset_bottom = 13.0
+offset_right = 35.0
+offset_bottom = 33.0
 scale = Vector2(0.644764, 0.466833)

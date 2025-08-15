@@ -24,7 +24,7 @@ var fase: int = 1
 var jugador_activo: bool = false
 var pregunta_activa: bool = false
 
-# Lista de preguntas
+# Lista de preguntas del jefe
 var preguntas = [
 	{"texto":"90 ÷ 15 =", "opciones":["5","6","7"], "correcta":"A"},
 	{"texto":"3/4 de 20 =", "opciones":["10","15","12"], "correcta":"B"},
@@ -60,6 +60,7 @@ func iniciar():
 	jugador_activo = true
 	show()
 	iniciar_fase1()
+
 	# Primera pregunta
 	pregunta_timer.wait_time = primera_pregunta_delay
 	pregunta_timer.start()
@@ -83,7 +84,7 @@ func iniciar_fase3():
 	wave_timer.start()
 
 func _on_spawn_timer_timeout():
-	if spawn_points.size() == 0:
+	if spawn_points.is_empty():
 		return
 	var cantidad = enemigos_por_fase1 if fase == 1 else enemigos_por_fase2
 	for i in range(cantidad):
@@ -114,34 +115,19 @@ func derrotado():
 	queue_free()
 
 func mostrar_pregunta():
-	if question_points.size() == 0 or preguntas_restantes.size() == 0 or pregunta_activa:
+	if question_points.is_empty() or preguntas_restantes.is_empty():
 		return
 
-	pregunta_activa = true
 	var punto = question_points.pick_random()
-	var intermedio_scene = preload("res://Scenas/ScenasJefe/Preguntas.tscn")
-	var intermedio = intermedio_scene.instantiate()
-
-	# Colocar en la posición del punto de pregunta
+	var intermedio = preload("res://Scenas/ScenasJefe/Preguntas.tscn").instantiate()
 	intermedio.global_position = punto.global_position
-	# Pasar referencia del jefe
-	if intermedio.has_method("set_boss"):
-		intermedio.set_boss(self)
-	else:
-		push_error("❌ El nodo de preguntas no tiene set_boss()")
+	intermedio.set_boss(self)
 
-	# Elegir pregunta aleatoria y eliminarla de la lista
 	var idx = randi() % preguntas_restantes.size()
 	var p = preguntas_restantes[idx]
 	preguntas_restantes.remove_at(idx)
+	intermedio.set_pregunta(p)
 
-	# Asignar pregunta
-	if intermedio.has_method("set_pregunta"):
-		intermedio.set_pregunta(p)
-	else:
-		push_error("❌ El nodo de preguntas no tiene set_pregunta(p)")
-
-	# Agregar al escenario
 	get_tree().current_scene.add_child(intermedio)
 
 
