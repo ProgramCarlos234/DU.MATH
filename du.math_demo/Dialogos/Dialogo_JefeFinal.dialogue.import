@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://cyapidm1h6saf"
+path="res://.godot/imported/Dialogo_JefeFinal.dialogue-4525644ae13cf16e486c165c4f9d05b1.tres"
+
+[deps]
+
+source_file="res://Dialogos/Dialogo_JefeFinal.dialogue"
+dest_files=["res://.godot/imported/Dialogo_JefeFinal.dialogue-4525644ae13cf16e486c165c4f9d05b1.tres"]
+
+[params]
+
+defaults=true
