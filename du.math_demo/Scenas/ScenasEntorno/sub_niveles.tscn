@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=4 uid="uid://cog6lenuil2gs"]
+[gd_scene load_steps=9 format=4 uid="uid://cog6lenuil2gs"]
 
 [ext_resource type="Script" uid="uid://cpiiauf48m08j" path="res://Scripts/camera_2d.gd" id="1_rnr14"]
 [ext_resource type="PackedScene" uid="uid://r5urwg3eshph" path="res://Scenas/ScenasEntorno/barra_vida.tscn" id="2_rtq36"]
@@ -6,6 +6,8 @@
 [ext_resource type="TileSet" uid="uid://0qbyio30mgda" path="res://Tiles/Mapa_juego.tres" id="4_rtq36"]
 [ext_resource type="PackedScene" uid="uid://slsrphlw2jq8" path="res://Scenas/ScenasEntorno/Puerta.tscn" id="5_bsm6o"]
 [ext_resource type="PackedScene" uid="uid://cnjwvko1of8k0" path="res://Scenas/ScenasEntorno/puerta_animada.tscn" id="6_6vy4w"]
+[ext_resource type="PackedScene" uid="uid://cvf1opvtrhfkp" path="res://Scenas/ScenasEntorno/Entidad_Interacturar.tscn" id="7_xbmbh"]
+[ext_resource type="Resource" uid="uid://b3l1lj6ooag4t" path="res://Dialogos/Dialogo_SubNivel.dialogue" id="8_gxu0y"]
 
 [node name="SubNiveles" type="Node2D"]
 
@@ -39,3 +41,7 @@ Indicador_mundo = 7
 position = Vector2(372, 237)
 
 [node name="Node2D" type="Node2D" parent="."]
+
+[node name="Interactuar" parent="." instance=ExtResource("7_xbmbh")]
+position = Vector2(335, 114)
+dialogo = ExtResource("8_gxu0y")

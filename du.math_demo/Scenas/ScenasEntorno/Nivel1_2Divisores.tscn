@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=4 uid="uid://l2a7scguj8od"]
+[gd_scene load_steps=25 format=4 uid="uid://l2a7scguj8od"]
 
 [ext_resource type="Script" uid="uid://coieenjdrdthd" path="res://Scripts/Nivel1_2.gd" id="1_t4asn"]
 [ext_resource type="PackedScene" uid="uid://b8wjoy8cfcnxq" path="res://Scenas/ScenasEntorno/EnemigoCajas.tscn" id="2_qjp26"]
@@ -9,11 +9,13 @@
 [ext_resource type="PackedScene" uid="uid://b3rquvh0mg2rv" path="res://Scenas/ScenasPersonajes/JugadorRPG.tscn" id="5_foj67"]
 [ext_resource type="Texture2D" uid="uid://bqdmf135l8ti2" path="res://Sprites/SpritesEntorno/Dungeon_Tileset.png" id="6_c5f0w"]
 [ext_resource type="TileSet" uid="uid://0qbyio30mgda" path="res://Tiles/Mapa_juego.tres" id="7_pb20p"]
+[ext_resource type="AudioStream" uid="uid://ce1wb7g0y6k88" path="res://Musica/Gameplay_Combat_2_Masterizada.mp3" id="7_pyygv"]
 [ext_resource type="PackedScene" uid="uid://slsrphlw2jq8" path="res://Scenas/ScenasEntorno/Puerta.tscn" id="10_pb20p"]
 [ext_resource type="PackedScene" uid="uid://571umlrh7ht8" path="res://Scenas/ScenasEntorno/cajas.tscn" id="10_tgndp"]
 [ext_resource type="PackedScene" uid="uid://001w35x8xb6r" path="res://Scenas/ScenasEntorno/Pared.tscn" id="11_foj67"]
 [ext_resource type="PackedScene" uid="uid://cnjwvko1of8k0" path="res://Scenas/ScenasEntorno/puerta_animada.tscn" id="11_sl0v3"]
 [ext_resource type="PackedScene" uid="uid://cdojcetevalkf" path="res://Scenas/ScenasEntorno/pausa.tscn" id="14_sl0v3"]
+[ext_resource type="PackedScene" uid="uid://5ko28ijjl1of" path="res://Scenas/ScenasEntorno/informacion_nivel_divisores.tscn" id="15_4ihku"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_pb20p"]
 vertices = PackedVector2Array(817, 783, 908, 783, 908, 827, 773, 827, 773, 683, 817, 639, 772, 639, 772, 683, 1221, 827, 1050, 827, 1050, 783, 1221, 783, 1409, 399, 1409, 827, 1363, 827, 1365, 783, 1363, 783, 1365, 399, 593, 639, 665, 639, 665, 683, 549, 683, 549, 399, 593, 399, 802, 443, 694, 443, 694, 399, 802, 399, 881, 223, 881, 443, 838, 443, 838, 379, 837, 379, 837, 286, 838, 286, 838, 223, 1305.4, 223, 1305.4, 267, 1201, 267, 1157, 223, 1157, 443, 1201, 399, 1202, 443, 1202, 399, 1294, 443, 1274, 443, 1274, 399, 1294, 399, 1473, 191, 1473, 299, 1333, 299, 1333, 267, 1332.6, 267, 1332.6, 223, 1333, 223, 1333, 191, 802, 267, 613, 267, 613, 223, 802, 223)
@@ -222,6 +224,7 @@ script = ExtResource("1_t4asn")
 enemigo_escena = ExtResource("2_qjp26")
 llave_escena = ExtResource("3_tgndp")
 posicion_llave = NodePath("PosicionLlave")
+pantalla_inicio_escena = ExtResource("15_4ihku")
 metadata/_edit_vertical_guides_ = [437.0]
 
 [node name="Camera2D" type="Camera2D" parent="Nivel1"]
@@ -255,6 +258,10 @@ position = Vector2(0, 7)
 z_index = 2
 position = Vector2(-159, 72)
 scale = Vector2(1.16, 1.16)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Nivel1/Camera2D"]
+stream = ExtResource("7_pyygv")
+autoplay = true
 
 [node name="Jugador" parent="Nivel1" instance=ExtResource("5_foj67")]
 z_index = 1
@@ -725,3 +732,5 @@ Velocidad = 40
 position = Vector2(257, 0.998333)
 
 [node name="Pausa" parent="." instance=ExtResource("14_sl0v3")]
+
+[node name="Informacion_Nivel_Divisores" parent="." instance=ExtResource("15_4ihku")]

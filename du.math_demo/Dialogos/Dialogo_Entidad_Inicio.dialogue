@@ -1,0 +1,19 @@
+~ start
+Entidad: [[Hola|Bienvenido]], El mundo de las matematicas esta siendo amenzado.
+Entidad: Y tu eres la unica esperanza que tiene para salvarse
+Pedrito: Y yo porque!?
+Entidad: Por tu bajo IQ muchacho, la materia oscura no se fijaria en alguien con un IQ de 40
+Pedrito: ...Tal vez tienes razon...Pero al menos dime que tengo que hacer
+Entidad: Buena pregunta, Debes derrotar a un Pitagoras corrompido por la oscuridad
+Entidad: Cada prueba que termines te hara mas Inteligente
+Entidad: Cuando llegues al mismo IQ que pitagoras podras derrotarlo
+Pedrito: ¿Pitagoras?...
+Pedrito: Ni idea de quien sera pero vale, hare lo que me pides
+Entidad: No te preocupes, te acompañare en..."Casi"...todo momento
+- Continuar Viaje => END
+- Preguntar a la entidad
+	Pedrito: ¿Algun consejo?...
+	Entidad: Cual consejo oe, Estudia!! pa no terminar aqui
+	Pedrito: Yo termine la primaria, ¡A lo mejor ni secundaria tienes!!
+	Entidad: Ya ve a salvar el mundo
+=> END

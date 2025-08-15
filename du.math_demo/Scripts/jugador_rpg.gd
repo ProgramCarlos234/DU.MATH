@@ -10,6 +10,7 @@ signal attack_finished
 var is_attack: bool = false
 var vida: int
 var valor: int # ← aquí guardaremos el índice del nivel que envía el portal
+var can_move: bool = true # ← control de movimiento habilitado/deshabilitado
 
 func _ready():
 	attack_area.monitoring = false
@@ -23,11 +24,11 @@ func _process(_delta):
 	vida = GameManager.VidaJugador
 
 	# Lógica de ataque
-	if Input.is_action_just_pressed("Ataque") and not is_attack:
+	if can_move and Input.is_action_just_pressed("Ataque") and not is_attack:
 		attack()
 
 	# Lógica de interacción con portal
-	if GameManager.DentroArea and Input.is_action_just_pressed("Interactuar") and valor >= 0:
+	if can_move and GameManager.DentroArea and Input.is_action_just_pressed("Interactuar") and valor >= 0:
 		GameManager._AbrirEscenas(valor)
 		
 	if vida <= 0:
@@ -35,6 +36,11 @@ func _process(_delta):
 		pass
 
 func _physics_process(_delta):
+	if not can_move:
+		velocity = Vector2.ZERO
+		move_and_slide()
+		return
+
 	var direccion := Input.get_vector("Izquierda", "Derecha", "Arriba", "Abajo")
 
 	if is_attack:

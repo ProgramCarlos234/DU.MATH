@@ -1,0 +1,11 @@
+~ start
+Entidad: Hola de Vuelta, Para que al menos puedas entrar al palacio de Pitagoras corrompido
+Entidad: Debes de primero Conseguir 4 llaves que se encuentra en todo este mundo
+Entidad: Cada portal te llevara a un reto diferente y debes completarlo para obtener las llaves
+Pedrito: Vale, gracias por la info
+- Preguntar
+	Pedrito: Sabes si hay alguna llave cercana
+	Entidad: Si, a lo largo de este mundo hay una, es probable que sea la ultima que debas conseguir
+	Entidad: Solo la obtendras con las primeras 3 llaves
+	Entidad: Nos vemos...
+- Continuar => END!
