@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://bhodn1o82rcxt"
+path="res://.godot/imported/Dialogo_LlaveOculta.dialogue-caefa81c7accf14c96d0d280549fc528.tres"
+
+[deps]
+
+source_file="res://Dialogos/Dialogo_LlaveOculta.dialogue"
+dest_files=["res://.godot/imported/Dialogo_LlaveOculta.dialogue-caefa81c7accf14c96d0d280549fc528.tres"]
+
+[params]
+
+defaults=true

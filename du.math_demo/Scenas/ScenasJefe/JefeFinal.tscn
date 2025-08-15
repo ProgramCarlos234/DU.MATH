@@ -283,4 +283,10 @@ position = Vector2(-84, -54)
 [node name="Q4" type="Marker2D" parent="QuestionPoints"]
 position = Vector2(-94, 71)
 
+[node name="WallPoints" type="Node2D" parent="."]
+position = Vector2(979, -1)
+
+[node name="Wall1" type="Marker2D" parent="WallPoints"]
+position = Vector2(0, 3)
+
 [connection signal="body_entered" from="BossTriggerArea" to="BossTriggerArea" method="_on_body_entered"]
