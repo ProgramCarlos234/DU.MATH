@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="DU.MATH_DEMO"
-run/main_scene="uid://csf4fvsoekj0y"
+run/main_scene="uid://dgoym2sgqwxkl"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 

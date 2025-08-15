@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://vuiyi550axrw"]
+
+[ext_resource type="VideoStream" uid="uid://ddwlp03wf0ufa" path="res://Videos/Comic.ogv" id="1_8s5i6"]
+[ext_resource type="Script" uid="uid://ma36awwd4dqr" path="res://Scripts/introduccion_comic.gd" id="1_pw20k"]
+[ext_resource type="PackedScene" uid="uid://cbydru7571klx" path="res://Scenas/ScenasEntorno/EntornoRPG.tscn" id="2_v6u86"]
+
+[node name="Node2D" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_pw20k")
+siguiente_escena = ExtResource("2_v6u86")
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stream = ExtResource("1_8s5i6")
+autoplay = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.9, 0.9)
+
+[connection signal="finished" from="VideoStreamPlayer" to="." method="_on_video_stream_player_finished"]

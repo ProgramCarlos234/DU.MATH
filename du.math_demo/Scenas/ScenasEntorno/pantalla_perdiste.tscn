@@ -1,0 +1,24 @@
+[gd_scene load_steps=2 format=3 uid="uid://cjpptaf4uv58e"]
+
+[ext_resource type="Texture2D" uid="uid://ddd10tlg88qie" path="res://Sprites/Assets/Botones1.png" id="1_m7mtj"]
+
+[node name="Pantalla_Perdiste" type="Node2D"]
+
+[node name="Op1" type="MenuButton" parent="."]
+self_modulate = Color(1, 0.542667, 0.02, 1)
+top_level = true
+z_index = 2
+offset_left = 338.875
+offset_top = 523.938
+offset_right = 441.875
+offset_bottom = 554.938
+scale = Vector2(4.54898, 3.5744)
+pivot_offset = Vector2(1, 0)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "CONTINUAR"
+metadata/_edit_use_anchors_ = true
+
+[node name="Botones1" type="Sprite2D" parent="."]
+position = Vector2(611.875, 635.938)
+scale = Vector2(3.29875, 1.90938)
+texture = ExtResource("1_m7mtj")

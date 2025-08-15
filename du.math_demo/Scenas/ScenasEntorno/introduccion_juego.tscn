@@ -1,0 +1,35 @@
+[gd_scene load_steps=4 format=3 uid="uid://dgoym2sgqwxkl"]
+
+[ext_resource type="Script" uid="uid://v5fxbgjymwp8" path="res://Scripts/introduccion_juego.gd" id="1_a8ssc"]
+[ext_resource type="VideoStream" uid="uid://b005dc8qkrxhx" path="res://Videos/INTRO-DUMATH.ogv" id="1_f4sqq"]
+[ext_resource type="PackedScene" uid="uid://csf4fvsoekj0y" path="res://Scenas/ScenasEntorno/menu.tscn" id="2_fcmw4"]
+
+[node name="Introduccion_Juego" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_a8ssc")
+siguiente_escena = ExtResource("2_fcmw4")
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -640.0
+offset_top = -360.0
+offset_right = 128.0
+offset_bottom = 72.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.668407, 0.668407)
+stream = ExtResource("1_f4sqq")
+autoplay = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.9, 0.9)
+
+[connection signal="finished" from="VideoStreamPlayer" to="." method="_on_video_stream_player_finished"]

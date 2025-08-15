@@ -43,7 +43,6 @@ var Scenas: Array = [
 	INTRODUCCION_SUB_NIVELES,  #8
 	PANTALLA_GANASTE,   #9
 	MENU_PRINCIPAL  #10
-	
 ]
 
 # ======================= #
