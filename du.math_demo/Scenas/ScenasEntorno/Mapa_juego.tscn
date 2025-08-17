@@ -67,7 +67,7 @@ position = Vector2(-159, 72)
 scale = Vector2(1.16, 1.16)
 
 [node name="Jugador" parent="." instance=ExtResource("1_b7odb")]
-position = Vector2(1329, -11)
+position = Vector2(33, -5)
 
 [node name="TileMaps" type="Node2D" parent="."]
 
