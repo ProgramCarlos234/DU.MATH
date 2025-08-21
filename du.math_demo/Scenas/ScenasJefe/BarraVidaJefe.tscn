@@ -1,0 +1,42 @@
+[gd_scene load_steps=5 format=3 uid="uid://b23la2ogt7d4t"]
+
+[ext_resource type="Script" uid="uid://bnx1su1yioatq" path="res://Scenas/ScenasJefe/BarraVidaJefe.gd" id="1_2igv4"]
+[ext_resource type="Texture2D" uid="uid://binyotb68nn8" path="res://Sprites/SpritesEntorno/FondoBarra.png" id="2_g20uj"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r0l8p"]
+bg_color = Color(0.693704, 0.126369, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kxyvd"]
+bg_color = Color(0, 0.65, 0, 1)
+
+[node name="BarraVidaJefe" type="Node2D"]
+scale = Vector2(0.696902, 1.09245)
+script = ExtResource("1_2igv4")
+
+[node name="FondoBarra" type="Sprite2D" parent="."]
+position = Vector2(65.5, 2)
+scale = Vector2(2.5375, 1.125)
+texture = ExtResource("2_g20uj")
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+custom_minimum_size = Vector2(100, 0)
+offset_left = -28.0
+offset_top = -4.0
+offset_right = 186.0
+offset_bottom = 28.0
+scale = Vector2(0.802621, 0.3677)
+theme_override_styles/background = SubResource("StyleBoxFlat_r0l8p")
+theme_override_styles/fill = SubResource("StyleBoxFlat_kxyvd")
+max_value = 10.0
+value = 10.0
+show_percentage = false
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="."]
+offset_left = 146.0
+offset_top = -7.0
+offset_right = 180.0
+offset_bottom = 16.0
+scale = Vector2(0.69766, 0.723195)
+text = "HP"
+metadata/_edit_use_anchors_ = true

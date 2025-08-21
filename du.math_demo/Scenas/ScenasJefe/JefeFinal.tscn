@@ -1,8 +1,9 @@
-[gd_scene load_steps=14 format=4 uid="uid://cnp4d7uv773m2"]
+[gd_scene load_steps=15 format=4 uid="uid://cnp4d7uv773m2"]
 
 [ext_resource type="Texture2D" uid="uid://bqdmf135l8ti2" path="res://Sprites/SpritesEntorno/Dungeon_Tileset.png" id="2_36870"]
 [ext_resource type="PackedScene" uid="uid://cc052y6027hpc" path="res://Scenas/ScenasJefe/Jefe.tscn" id="2_rhonx"]
 [ext_resource type="Script" uid="uid://c2n53fapk2wab" path="res://Scenas/ScenasJefe/boss_trigger_area.gd" id="3_36870"]
+[ext_resource type="PackedScene" uid="uid://b23la2ogt7d4t" path="res://Scenas/ScenasJefe/BarraVidaJefe.tscn" id="3_uxgi6"]
 [ext_resource type="Texture2D" uid="uid://dti7e0uaol6c3" path="res://Sprites/SpritesEntorno/TILESET-LastLevel.png" id="4_sinan"]
 [ext_resource type="Script" uid="uid://cpiiauf48m08j" path="res://Scripts/camera_2d.gd" id="5_sinan"]
 [ext_resource type="PackedScene" uid="uid://b3rquvh0mg2rv" path="res://Scenas/ScenasPersonajes/JugadorRPG.tscn" id="5_w3llp"]
@@ -262,6 +263,9 @@ script = ExtResource("5_sinan")
 [node name="BarraVida" parent="Camera2D" instance=ExtResource("7_utvd6")]
 position = Vector2(-159, 72)
 scale = Vector2(1.16, 1.16)
+
+[node name="BarraVidaJefe" parent="Camera2D" instance=ExtResource("3_uxgi6")]
+position = Vector2(44, 69)
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Camera2D"]
 position = Vector2(-6, 1)

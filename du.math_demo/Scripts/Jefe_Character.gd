@@ -6,7 +6,7 @@ extends CharacterBody2D
 @export var spawn_interval_fase2: float = 10.0
 @export var enemigos_por_fase1: int = 2
 @export var enemigos_por_fase2: int = 4
-@export var muros_por_fase: int = 1  # cantidad de muros por oleada
+@export var muros_por_fase: int = 1
 @export var primera_pregunta_delay: float = 20.0
 @export var pregunta_interval: float = 20.0
 
@@ -15,6 +15,10 @@ extends CharacterBody2D
 @onready var spawn_timer: Timer = $SpawnTimer
 @onready var wave_timer: Timer = $WaveTimer
 @onready var pregunta_timer: Timer = $PreguntaTimer
+
+# ⚠️ Ajusta esta ruta según la ubicación real de tu barra de vida
+@onready var barra_vida = get_node("../Camera2D/BarraVidaJefe")
+
 
 # --- Listas de posiciones ---
 var spawn_points: Array = []
@@ -25,6 +29,7 @@ var question_points: Array = []
 var fase: int = 1
 var jugador_activo: bool = false
 var pregunta_activa: bool = false
+var vida_actual: int
 
 # --- Preguntas ---
 var preguntas = [
@@ -59,7 +64,10 @@ func _ready():
 	randomize()
 	preguntas_restantes = preguntas.duplicate()
 
-	# Guardar spawn points, puntos de muros y de preguntas
+	vida_actual = vida_max
+	barra_vida.hide()
+	barra_vida.configurar_vida(vida_max)
+
 	var spawns = get_parent().get_node_or_null("SpawnPoints")
 	if spawns:
 		spawn_points = spawns.get_children()
@@ -76,7 +84,6 @@ func _ready():
 	wave_timer.timeout.connect(_on_wave_timer_timeout)
 	pregunta_timer.timeout.connect(mostrar_pregunta)
 
-	# Configurar timer de muros (15s activo + 10s espera)
 	wave_timer.wait_time = 25.0
 	wave_timer.start()
 
@@ -89,11 +96,11 @@ func _ready():
 func iniciar():
 	jugador_activo = true
 	show()
+	barra_vida.show()
+	barra_vida.actualizar_vida(vida_actual)
 	iniciar_fase1()
-	# Primera pregunta
 	pregunta_timer.wait_time = primera_pregunta_delay
 	pregunta_timer.start()
-# Lanza un ataque inmediato
 
 func iniciar_fase1():
 	fase = 1
@@ -118,7 +125,6 @@ func iniciar_fase3():
 	wave_timer.start()
 	print("🔴 Fase 3 iniciada (vida 1/3)")
 
-	# Instanciar muros rotatorios centrados en el jefe
 	var muros_rotatorios = load("res://Scenas/ScenasJefe/MurosRotatorios.tscn").instantiate()
 	muros_rotatorios.global_position = global_position
 	get_parent().add_child(muros_rotatorios)
@@ -129,7 +135,6 @@ func _on_spawn_timer_timeout():
 	if spawn_points.size() == 0:
 		return
 
-	# Spawnear enemigos según la fase
 	var cantidad = enemigos_por_fase1 if fase == 1 else enemigos_por_fase2
 	for i in range(cantidad):
 		var punto = spawn_points.pick_random()
@@ -137,7 +142,6 @@ func _on_spawn_timer_timeout():
 		get_tree().current_scene.add_child(enemigo)
 		enemigo.global_position = punto.global_position
 
-	# Solo instanciar muros en fase 3
 	if fase == 3 and wall_points.size() > 0:
 		for i in range(muros_por_fase):
 			var punto_muro = wall_points.pick_random()
@@ -152,7 +156,6 @@ func _on_wave_timer_timeout():
 		return
 
 	var muros_activados = []
-
 	for i in range(muros_por_fase):
 		var punto_muro = wall_points.pick_random()
 		var muros_rotatorios = load("res://Scenas/ScenasJefe/MurosRotatorios.tscn").instantiate()
@@ -161,10 +164,8 @@ func _on_wave_timer_timeout():
 		muros_activados.append(muros_rotatorios)
 		print("Muros rotatorios instanciados en:", punto_muro.global_position)
 
-	# Llamar a la función asincrónica para eliminar muros
 	eliminar_muros_despues(muros_activados, 15.0)
 
-# Función asincrónica para eliminar muros después de cierto tiempo
 func eliminar_muros_despues(muros, tiempo: float) -> void:
 	await get_tree().create_timer(tiempo).timeout
 	for muro in muros:
@@ -172,15 +173,34 @@ func eliminar_muros_despues(muros, tiempo: float) -> void:
 			muro.queue_free()
 
 # --- Daño y derrota ---
+# --- Daño y derrota ---
 func recibir_danio(cantidad: int):
-	pass
+	if not jugador_activo:
+		return
+
+	# Reducir vida
+	vida_actual -= cantidad
+	vida_actual = clamp(vida_actual, 0, vida_max)
+
+	# Actualizar la barra de vida
+	if barra_vida:
+		barra_vida.actualizar_vida(vida_actual)
+	else:
+		print("❌ Barra de vida no encontrada")
+
+	if vida_actual <= 0:
+		derrotado()
+
 
 func derrotado():
 	print("🏆 ¡Jefe derrotado! 🚫")
 	spawn_timer.stop()
 	wave_timer.stop()
 	pregunta_timer.stop()
+	if barra_vida:
+		barra_vida.hide()
 	queue_free()
+
 
 # --- Preguntas ---
 func mostrar_pregunta():
@@ -198,20 +218,33 @@ func mostrar_pregunta():
 	intermedio.set_pregunta(p)
 
 	get_tree().current_scene.add_child(intermedio)
+	
+
 
 func pregunta_respondida(correcta: bool):
 	print("📩 Pregunta respondida. Correcta =", correcta)
 	pregunta_activa = false
 
 	if correcta:
+		# Reducir vida cada vez que se responde bien
+		var danio = 10  # Ajusta cuánto daño quieres por respuesta correcta
+		vida_actual -= danio
+		vida_actual = clamp(vida_actual, 0, vida_max)
+
+		if barra_vida:
+			barra_vida.actualizar_vida(vida_actual)
+		else:
+			print("❌ Barra de vida no encontrada")
+
 		correctas_contador += 1
 		print("✅ Preguntas correctas acumuladas: ", correctas_contador)
 
+		# Cambiar fases según preguntas correctas
 		if correctas_contador == 4:
 			iniciar_fase2()
 		elif correctas_contador == 8:
 			iniciar_fase3()
-		elif correctas_contador >= 12:
+		elif correctas_contador >= 12 or vida_actual <= 0:
 			derrotado()
 
 	pregunta_timer.wait_time = pregunta_interval
