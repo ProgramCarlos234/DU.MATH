@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://cbxx3nwqrb1p4"]
+
+[ext_resource type="Texture2D" uid="uid://4jmap5k5qw11" path="res://Sprites/SpritesEntorno/vitoriaFinal.png" id="1_74k5e"]
+
+[node name="VictoriaFinal" type="Node2D"]
+
+[node name="VitoriaFinal" type="Sprite2D" parent="."]
+position = Vector2(577.5, 313.5)
+scale = Vector2(1.11816, 0.610352)
+texture = ExtResource("1_74k5e")

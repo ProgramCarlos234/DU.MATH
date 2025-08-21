@@ -197,8 +197,14 @@ func derrotado():
 	spawn_timer.stop()
 	wave_timer.stop()
 	pregunta_timer.stop()
-	if barra_vida:
-		barra_vida.hide()
+	barra_vida.hide()
+	
+	# Mostrar pantalla de victoria
+	var pantalla_victoria = load("res://Scenas/ScenasJefe/VictoriaFinal.tscn").instantiate()
+	get_tree().current_scene.add_child(pantalla_victoria)
+	pantalla_victoria.global_position = get_viewport().get_visible_rect().size / 2
+	
+	# Eliminar el jefe
 	queue_free()
 
 
