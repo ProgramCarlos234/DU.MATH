@@ -66,9 +66,18 @@ func _ready() -> void:
 #  GENERACIÓN DE NÚMERO OBJETIVO #
 # ============================== #
 func _AbrirEscenas(valor: int) ->void:
+	print("Ejecutando")
 	if valor >= 0 and valor < Scenas.size():
-		get_tree().change_scene_to_packed(Scenas[valor])
-	pass
+		var escena: PackedScene = Scenas[valor]
+		if OS.has_feature("web"):
+			var path := escena.resource_path
+			print("🌐 Cambio a escena (web): ", path)
+			get_tree().change_scene_to_file(path)
+		else:
+			print("🖥️ Cambio a escena (desktop): ", escena.resource_path)
+			get_tree().change_scene_to_packed(escena)
+	else:
+		push_warning("⚠️ Valor de escena inválido: " + str(valor))
 
 func _recibirDaño(Daño : int) -> void:
 	VidaJugador -= Daño

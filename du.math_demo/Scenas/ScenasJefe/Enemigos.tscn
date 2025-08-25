@@ -189,8 +189,6 @@ autoplay = "Walk"
 sprite_frames = SubResource("SpriteFrames_bl3av")
 animation = &"Mordida"
 autoplay = "Mordida"
-frame = 9
-frame_progress = 1.0
 
 [node name="AreaAtaque" type="Area2D" parent="Mordida"]
 script = ExtResource("3_t16i2")

@@ -28,7 +28,6 @@ tile_map_data = PackedByteArray("AAD6//z/AwAHABcAAAD6////AwAHABcAAAD6/wIAAwAHABc
 tile_set = ExtResource("2_p5rrs")
 
 [node name="Area2D" parent="." instance=ExtResource("3_ltbff")]
-visible = false
 z_index = -1
 position = Vector2(2, -67)
 

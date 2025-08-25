@@ -7,10 +7,10 @@ uniform vec2 speed = vec2(0.9 , 0.5);
 uniform float wave_strength =0.1;
 
 uniform float distortion = 0.05;
-	
+
 void vertex() {
 	// Called for every vertex the material is visible on.
-	
+
 }
 
 void fragment() {
@@ -18,9 +18,9 @@ void fragment() {
 	vec2 uv = UV + speed * TIME;
 	vec2 noise = 2.0 *texture(noise_texture, uv).rg - vec2(1.0);
 	COLOR = texture(TEXTURE,UV + noise *wave_strength);
-	
+
 	COLOR *= texture(screen_texture,SCREEN_UV);
-	 
+
 }
 
 //void light() {

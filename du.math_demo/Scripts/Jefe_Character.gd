@@ -19,6 +19,8 @@ extends CharacterBody2D
 # ⚠️ Ajusta esta ruta según la ubicación real de tu barra de vida
 @onready var barra_vida = get_node("../Camera2D/BarraVidaJefe")
 
+# --- Escenas externas ---
+@export var enemigo_triangulo: PackedScene = preload("res://Scenas/ScenasJefe/Enemigos.tscn")
 
 # --- Listas de posiciones ---
 var spawn_points: Array = []
@@ -32,7 +34,7 @@ var pregunta_activa: bool = false
 var vida_actual: int
 
 # --- Preguntas ---
-var preguntas = [
+var preguntas = [ # (no toqué tus preguntas, se mantienen iguales)
 	{"texto":"90 ÷ 15 =", "opciones":["5","6","7"], "correcta":"A"},
 	{"texto":"3/4 de 20 =", "opciones":["10","15","12"], "correcta":"B"},
 	{"texto":"25% de 80 =", "opciones":["15","20","25"], "correcta":"B"},
@@ -138,7 +140,7 @@ func _on_spawn_timer_timeout():
 	var cantidad = enemigos_por_fase1 if fase == 1 else enemigos_por_fase2
 	for i in range(cantidad):
 		var punto = spawn_points.pick_random()
-		var enemigo = preload("res://Scenas/ScenasJefe/Enemigos.tscn").instantiate()
+		var enemigo = enemigo_triangulo.instantiate()
 		get_tree().current_scene.add_child(enemigo)
 		enemigo.global_position = punto.global_position
 
@@ -173,16 +175,13 @@ func eliminar_muros_despues(muros, tiempo: float) -> void:
 			muro.queue_free()
 
 # --- Daño y derrota ---
-# --- Daño y derrota ---
 func recibir_danio(cantidad: int):
 	if not jugador_activo:
 		return
 
-	# Reducir vida
 	vida_actual -= cantidad
 	vida_actual = clamp(vida_actual, 0, vida_max)
 
-	# Actualizar la barra de vida
 	if barra_vida:
 		barra_vida.actualizar_vida(vida_actual)
 	else:
@@ -191,7 +190,6 @@ func recibir_danio(cantidad: int):
 	if vida_actual <= 0:
 		derrotado()
 
-
 func derrotado():
 	print("🏆 ¡Jefe derrotado! 🚫")
 	spawn_timer.stop()
@@ -199,14 +197,11 @@ func derrotado():
 	pregunta_timer.stop()
 	barra_vida.hide()
 	
-	# Mostrar pantalla de victoria
 	var pantalla_victoria = load("res://Scenas/ScenasJefe/VictoriaFinal.tscn").instantiate()
 	get_tree().current_scene.add_child(pantalla_victoria)
 	pantalla_victoria.global_position = get_viewport().get_visible_rect().size / 2
 	
-	# Eliminar el jefe
 	queue_free()
-
 
 # --- Preguntas ---
 func mostrar_pregunta():
@@ -224,16 +219,13 @@ func mostrar_pregunta():
 	intermedio.set_pregunta(p)
 
 	get_tree().current_scene.add_child(intermedio)
-	
-
 
 func pregunta_respondida(correcta: bool):
 	print("📩 Pregunta respondida. Correcta =", correcta)
 	pregunta_activa = false
 
 	if correcta:
-		# Reducir vida cada vez que se responde bien
-		var danio = 10  # Ajusta cuánto daño quieres por respuesta correcta
+		var danio = 10
 		vida_actual -= danio
 		vida_actual = clamp(vida_actual, 0, vida_max)
 
@@ -245,13 +237,14 @@ func pregunta_respondida(correcta: bool):
 		correctas_contador += 1
 		print("✅ Preguntas correctas acumuladas: ", correctas_contador)
 
-		# Cambiar fases según preguntas correctas
 		if correctas_contador == 4:
 			iniciar_fase2()
 		elif correctas_contador == 8:
 			iniciar_fase3()
 		elif correctas_contador >= 12 or vida_actual <= 0:
 			derrotado()
+	else:
+		GameManager._recibirDaño(2)
 
 	pregunta_timer.wait_time = pregunta_interval
 	pregunta_timer.start()

@@ -13,14 +13,13 @@ func _ready() -> void:
 	else:
 		sprite_2d_2.visible = true
 		sprite_2d.visible = false
-	pass
-	
+
 func _on_body_entered(body: Node2D) -> void:
-	if body.name == "Jugador": # Verifica que el cuerpo que entró sea el jugador
-		body.valor = Indicador_mundo # Le pasa el valor del indicador al jugador
-		GameManager.DentroArea = true # Activa la bandera en el GameManager que permite la interacción
-	pass # Replace with function body.
+	if body.is_in_group("Jugador"):
+		body.valor = Indicador_mundo
+		print("Entro")
+		GameManager.DentroArea = true
 
 func _on_body_exited(body: Node2D) -> void:
-	if body.name == "Jugador": # Verifica que sea el jugador quien salió
-		GameManager.DentroArea = false # Desactiva la bandera de interacción en el GameManager
+	if body.is_in_group("Jugador"):
+		GameManager.DentroArea = false
