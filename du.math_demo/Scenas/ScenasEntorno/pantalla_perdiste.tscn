@@ -9,7 +9,7 @@ script = ExtResource("1_88fpb")
 
 [node name="WhatsAppImage2025-08-13At10_26_47Pm" type="Sprite2D" parent="."]
 position = Vector2(577, 309)
-scale = Vector2(0.745679, 0.690822)
+scale = Vector2(0.785679, 0.690822)
 texture = ExtResource("1_nu3c4")
 
 [node name="Op1" type="MenuButton" parent="."]

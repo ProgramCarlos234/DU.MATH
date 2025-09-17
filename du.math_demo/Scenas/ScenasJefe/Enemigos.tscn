@@ -1,9 +1,9 @@
 [gd_scene load_steps=29 format=3 uid="uid://dqveeptoh80a3"]
 
-[ext_resource type="Script" uid="uid://b18iduo3qx00f" path="res://Scenas/ScenasJefe/Enemigos.gd" id="1_seng0"]
+[ext_resource type="Script" uid="uid://b18iduo3qx00f" path="res://Scripts/Enemigos.gd" id="1_seng0"]
 [ext_resource type="Texture2D" uid="uid://c4ijdenex04p5" path="res://Sprites/Npcs/Animacion_Enemigo_triangulo.png" id="2_jwlfs"]
 [ext_resource type="Texture2D" uid="uid://hp2kxgathrxd" path="res://Sprites/Npcs/Enemigos_Triangulos_MuertesAgregadas.png" id="2_xjvop"]
-[ext_resource type="Script" uid="uid://c4jnxuxbhjmeo" path="res://Scenas/ScenasJefe/area_ataque.gd" id="3_t16i2"]
+[ext_resource type="Script" uid="uid://c4jnxuxbhjmeo" path="res://Scripts/area_ataque.gd" id="3_t16i2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jwlfs"]
 size = Vector2(14.8395, 20)

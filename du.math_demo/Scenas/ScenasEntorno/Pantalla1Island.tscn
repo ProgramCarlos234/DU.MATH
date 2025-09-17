@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://67wb6vw2q3ey"]
 
-[ext_resource type="Script" uid="uid://m2bpwaj8a6c7" path="res://Scenas/ScenasEntorno/pantalla_1_island.gd" id="1_r7d07"]
+[ext_resource type="Script" uid="uid://m2bpwaj8a6c7" path="res://Scripts/pantalla_1_island.gd" id="1_r7d07"]
 [ext_resource type="Texture2D" uid="uid://cskplqygmcre2" path="res://Sprites/PantallasCarga/Pantalla_Informativa_N1.png" id="2_28jff"]
 [ext_resource type="AudioStream" uid="uid://batcxh08c5fp8" path="res://Musica/Gameplay_PantallaCarga_Masterizada.mp3" id="2_fskht"]
 [ext_resource type="Texture2D" uid="uid://ddd10tlg88qie" path="res://Sprites/Assets/Botones1.png" id="3_lxnvg"]

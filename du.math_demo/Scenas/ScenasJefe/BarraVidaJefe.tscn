@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://b23la2ogt7d4t"]
 
-[ext_resource type="Script" uid="uid://bnx1su1yioatq" path="res://Scenas/ScenasJefe/BarraVidaJefe.gd" id="1_2igv4"]
+[ext_resource type="Script" uid="uid://bnx1su1yioatq" path="res://Scripts/BarraVidaJefe.gd" id="1_2igv4"]
 [ext_resource type="Texture2D" uid="uid://binyotb68nn8" path="res://Sprites/SpritesEntorno/FondoBarra.png" id="2_g20uj"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r0l8p"]

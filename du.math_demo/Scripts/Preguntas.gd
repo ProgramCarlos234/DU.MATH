@@ -49,7 +49,7 @@ func abrir_pregunta():
 
 	pregunta_activa = true
 
-	var preguntas_jefe = load("res://Scenas/ScenasEntorno/preguntas_jefe.tscn").instantiate()
+	var preguntas_jefe = load("res://Scenas/ScenasJefe/preguntas_jefe.tscn").instantiate()
 	preguntas_jefe.global_position = global_position
 	preguntas_jefe.connect("pregunta_terminada", Callable(self, "_on_pregunta_terminada"))
 	get_tree().current_scene.add_child(preguntas_jefe)

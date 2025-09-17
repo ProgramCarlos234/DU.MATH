@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://c5rxmbhtecds0"]
 
-[ext_resource type="Script" uid="uid://hwu8i6c128hp" path="res://Scenas/ScenasJefe/muro.gd" id="1_6u1fr"]
+[ext_resource type="Script" uid="uid://hwu8i6c128hp" path="res://Scripts/muro.gd" id="1_6u1fr"]
 [ext_resource type="Texture2D" uid="uid://ckqeqqrsaayoj" path="res://Scenas/ScenasPersonajes/SpritesJefe/FuegoAtaque.png" id="2_paqh7"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_itcer"]

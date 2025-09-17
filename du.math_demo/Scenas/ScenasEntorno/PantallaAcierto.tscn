@@ -1,19 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://dryuuu4igil24"]
+[gd_scene load_steps=5 format=3 uid="uid://dryuuu4igil24"]
 
 [ext_resource type="Script" uid="uid://cffnt3yodrqni" path="res://Scripts/pantalla_acierto.gd" id="1_abwew"]
 [ext_resource type="Texture2D" uid="uid://bceeyas08sy5y" path="res://Sprites/SpritesEntorno/WhatsApp Image 2025-08-13 at 10.26.47 PM.jpeg" id="3_6pyog"]
-[ext_resource type="Texture2D" uid="uid://dp68banihry35" path="res://Sprites/PantallasCarga/PanrallaDeAcierto.png" id="3_abwew"]
 [ext_resource type="Texture2D" uid="uid://cdvyl33jpyrgd" path="res://Sprites/SpritesEntorno/llave.png" id="4_t0hy4"]
 [ext_resource type="Texture2D" uid="uid://ddd10tlg88qie" path="res://Sprites/Assets/Botones1.png" id="5_v3og7"]
 
 [node name="PantallaAcierto" type="Node2D"]
 script = ExtResource("1_abwew")
-
-[node name="PanrallaDeAcierto" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(621, 362)
-scale = Vector2(2.394, 2.26667)
-texture = ExtResource("3_abwew")
 
 [node name="WhatsAppImage2025-08-13At10_26_47Pm" type="Sprite2D" parent="."]
 position = Vector2(577, 309)

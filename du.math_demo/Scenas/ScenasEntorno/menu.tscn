@@ -8,35 +8,6 @@
 [node name="MENU" type="Node2D"]
 script = ExtResource("1_ilhvm")
 
-[node name="MenuButton" type="MenuButton" parent="."]
-offset_left = 34.0
-offset_top = 196.0
-offset_right = 104.0
-offset_bottom = 227.0
-scale = Vector2(4.54898, 3.5744)
-text = "ENTRAR"
-alignment = 0
-
-[node name="MenuButton3" type="MenuButton" parent="."]
-modulate = Color(0.152941, 0.101961, 0.192157, 1)
-z_index = 1
-offset_left = 799.0
-offset_top = 514.0
-offset_right = 901.0
-offset_bottom = 545.0
-scale = Vector2(2.89011, 2.8703)
-text = "CONTROLES"
-alignment = 0
-
-[node name="MenuButton2" type="MenuButton" parent="."]
-offset_left = 40.0
-offset_top = 273.0
-offset_right = 110.0
-offset_bottom = 304.0
-scale = Vector2(4.54898, 3.5744)
-text = "SALIR"
-alignment = 0
-
 [node name="MainMenu" type="Sprite2D" parent="."]
 z_index = -1
 position = Vector2(578, 326)
@@ -47,7 +18,61 @@ texture = ExtResource("1_4di8f")
 stream = ExtResource("3_7kx5r")
 autoplay = true
 
+[node name="CONTROLES_BUTTON" type="MenuButton" parent="."]
+self_modulate = Color(1, 0.542667, 0.02, 1)
+top_level = true
+z_index = 2
+anchors_preset = -1
+anchor_left = -0.0355903
+anchor_right = -0.0355903
+offset_left = 826.0
+offset_top = 536.0
+offset_right = 968.0
+offset_bottom = 567.0
+scale = Vector2(2.57028, 2.81105)
+pivot_offset = Vector2(1, 0)
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "CONTROLES"
+metadata/_edit_use_anchors_ = true
+
 [node name="Botones2" type="Sprite2D" parent="."]
-position = Vector2(969.5, 605.75)
+position = Vector2(984.5, 624.75)
 scale = Vector2(2.165, 1.4375)
 texture = ExtResource("4_7kx5r")
+
+[node name="JUGAR_BUTTON" type="MenuButton" parent="."]
+self_modulate = Color(1, 0.542667, 0.02, 1)
+top_level = true
+z_index = 2
+offset_left = 88.0
+offset_top = 180.0
+offset_right = 159.0
+offset_bottom = 211.0
+scale = Vector2(3.08195, 3.37065)
+pivot_offset = Vector2(1, 0)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "JUGAR"
+
+[node name="Botones3" type="Sprite2D" parent="."]
+position = Vector2(218.727, 287.15)
+scale = Vector2(2.03727, 1.5915)
+texture = ExtResource("4_7kx5r")
+
+[node name="Botones4" type="Sprite2D" parent="."]
+position = Vector2(642.887, 626.555)
+scale = Vector2(2.39887, 1.57555)
+texture = ExtResource("4_7kx5r")
+
+[node name="SALIR_BUTTON" type="MenuButton" parent="."]
+self_modulate = Color(1, 0.542667, 0.02, 1)
+top_level = true
+z_index = 2
+offset_left = 494.99997
+offset_top = 525.00006
+offset_right = 566.0
+offset_bottom = 556.00006
+scale = Vector2(3.08195, 3.37065)
+pivot_offset = Vector2(1, 0)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "SALIR"

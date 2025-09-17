@@ -59,14 +59,20 @@ sources/1 = SubResource("TileSetAtlasSource_aa3gu")
 [node name="Node2D" type="Node2D"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(3, 3)
+zoom = Vector2(2.5, 2.5)
 script = ExtResource("1_b3cgw")
 
 [node name="BarraVida" parent="Camera2D" instance=ExtResource("2_qvcje")]
-position = Vector2(-159, 72)
+position = Vector2(-200, 100)
 scale = Vector2(1.16, 1.16)
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Camera2D"]
+position = Vector2(-41, 28)
+stream = ExtResource("7_hgtqa")
+autoplay = true
+
 [node name="Jugador" parent="." instance=ExtResource("1_b7odb")]
+z_index = 3
 position = Vector2(33, -5)
 
 [node name="TileMaps" type="Node2D" parent="."]
@@ -93,10 +99,6 @@ tile_set = ExtResource("5_b3cgw")
 script = ExtResource("5_pi1mc")
 llaves_necesarias = 4
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("7_hgtqa")
-autoplay = true
-
 [node name="Area2D2" parent="." instance=ExtResource("3_qvcje")]
 z_index = -1
 position = Vector2(497, -54)
@@ -109,8 +111,7 @@ position = Vector2(79, -584)
 Indicador_mundo = 8
 
 [node name="Area2D3" parent="." instance=ExtResource("3_qvcje")]
-z_index = -1
-position = Vector2(1376, -55)
+position = Vector2(1375, -51)
 Indicador_mundo = 5
 TipoDePortal = true
 

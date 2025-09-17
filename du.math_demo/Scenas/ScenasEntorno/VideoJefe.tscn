@@ -2,7 +2,7 @@
 
 [ext_resource type="VideoStream" uid="uid://dc0iux856qon2" path="res://Videos/Jefe_Video.ogv" id="1_nspvx"]
 [ext_resource type="Script" uid="uid://b64c65ttj2sm8" path="res://Scripts/video_jefe_Script.gd" id="1_ulnkk"]
-[ext_resource type="PackedScene" uid="uid://cnp4d7uv773m2" path="res://Scenas/ScenasJefe/JefeFinal.tscn" id="2_vcb1s"]
+[ext_resource type="PackedScene" uid="uid://cnp4d7uv773m2" path="res://Scenas/ScenasJefe/JefeFinal_Escenario.tscn" id="2_vcb1s"]
 
 [node name="Control" type="Control"]
 layout_mode = 3

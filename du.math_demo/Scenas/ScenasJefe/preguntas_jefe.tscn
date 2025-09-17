@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://wld3tv8nlybf"]
 
-[ext_resource type="Script" uid="uid://bvp68rwhgu6lj" path="res://Scenas/ScenasEntorno/preguntas_jefe.gd" id="1_kn3xh"]
+[ext_resource type="Script" uid="uid://bvp68rwhgu6lj" path="res://Scripts/preguntas_jefe.gd" id="1_kn3xh"]
 [ext_resource type="Texture2D" uid="uid://dj1alur5xg2w8" path="res://Sprites/SpritesEntorno/Problema_Icono.png" id="1_vy2pl"]
 [ext_resource type="Texture2D" uid="uid://caqqncipsmpw" path="res://Sprites/SpritesEntorno/Boton Seleccion.png" id="2_kn3xh"]
 

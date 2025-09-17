@@ -70,7 +70,7 @@ script = ExtResource("1_g5bmv")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_gko61")
-animation = &"Attack"
+animation = &"Movement"
 autoplay = "Movement"
 
 [node name="Ataque" type="Area2D" parent="AnimatedSprite2D"]

@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://crnq4bv4sn8g1"]
 
 [ext_resource type="Texture2D" uid="uid://duui1ci6tby4r" path="res://Sprites/SpritesEntorno/SignoInterrogacion.png" id="1_40hff"]
-[ext_resource type="Script" uid="uid://c7vtr8e6ohur4" path="res://Scenas/ScenasJefe/Preguntas.gd" id="1_xd1p8"]
+[ext_resource type="Script" uid="uid://c7vtr8e6ohur4" path="res://Scripts/Preguntas.gd" id="1_xd1p8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xd1p8"]
 size = Vector2(26, 29)

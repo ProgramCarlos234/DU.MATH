@@ -17,19 +17,19 @@ color = Color(0.08, 0.08, 0.08, 0.423529)
 
 [node name="Label" type="Label" parent="ColorRect"]
 layout_mode = 0
-offset_left = 268.0
-offset_top = 25.0
-offset_right = 320.0
-offset_bottom = 48.0
-scale = Vector2(11.76, 11.76)
+offset_left = 435.0
+offset_top = 4.0
+offset_right = 487.0
+offset_bottom = 27.0
+scale = Vector2(4.76, 4.76)
 text = "PAUSA"
 
 [node name="Label2" type="Label" parent="ColorRect"]
 layout_mode = 0
 offset_left = 43.0
-offset_top = 368.0
+offset_top = 133.0
 offset_right = 456.0
-offset_bottom = 417.0
+offset_bottom = 182.0
 scale = Vector2(2.6054, 2.6054)
 text = "Para Salir de la pantalla de PAUSA vuelve 
 a oprimir \"Esc\" o \"Start\" "
