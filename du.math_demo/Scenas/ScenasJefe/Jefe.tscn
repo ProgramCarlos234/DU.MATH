@@ -47,3 +47,5 @@ animation = &"Walk"
 [node name="WaveTimer" type="Timer" parent="."]
 
 [node name="PreguntaTimer" type="Timer" parent="."]
+
+[node name="GroundAttackTimer" type="Timer" parent="."]

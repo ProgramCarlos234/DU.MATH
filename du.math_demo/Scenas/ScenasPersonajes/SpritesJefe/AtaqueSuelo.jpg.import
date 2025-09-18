@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cyg0oo65e5t4v"
-path="res://.godot/imported/Controles del juego.png-24e806f3c5d49ebe9fdf24fff94f97b3.ctex"
+uid="uid://ct0awkeqqwxso"
+path="res://.godot/imported/AtaqueSuelo.jpg-d9155f0e70e0337dd754bd8388d8f1d6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Assets/Controles del juego.png"
-dest_files=["res://.godot/imported/Controles del juego.png-24e806f3c5d49ebe9fdf24fff94f97b3.ctex"]
+source_file="res://Scenas/ScenasPersonajes/SpritesJefe/AtaqueSuelo.jpg"
+dest_files=["res://.godot/imported/AtaqueSuelo.jpg-d9155f0e70e0337dd754bd8388d8f1d6.ctex"]
 
 [params]
 

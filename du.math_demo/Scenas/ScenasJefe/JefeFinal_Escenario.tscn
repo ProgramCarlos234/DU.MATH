@@ -212,6 +212,84 @@ size = Vector2(27, 48)
 
 [node name="JefeFinal" type="Node2D"]
 
+[node name="GroundPoints" type="Node2D" parent="."]
+position = Vector2(980, -1)
+
+[node name="Aqt1" type="Marker2D" parent="GroundPoints"]
+position = Vector2(-94, -23)
+
+[node name="Aqt2" type="Marker2D" parent="GroundPoints"]
+position = Vector2(-197, 84)
+
+[node name="Aqt3" type="Marker2D" parent="GroundPoints"]
+position = Vector2(-104, 138)
+
+[node name="Aqt4" type="Marker2D" parent="GroundPoints"]
+position = Vector2(-68, 64)
+
+[node name="Aqt5" type="Marker2D" parent="GroundPoints"]
+position = Vector2(30, 129)
+
+[node name="Aqt6" type="Marker2D" parent="GroundPoints"]
+position = Vector2(95, -89)
+
+[node name="Aqt7" type="Marker2D" parent="GroundPoints"]
+position = Vector2(191, -7)
+
+[node name="Aqt8" type="Marker2D" parent="GroundPoints"]
+position = Vector2(100, -10)
+
+[node name="Aqt9" type="Marker2D" parent="GroundPoints"]
+position = Vector2(135, 59)
+
+[node name="Aqt10" type="Marker2D" parent="GroundPoints"]
+position = Vector2(49, 55)
+
+[node name="Aqt11" type="Marker2D" parent="GroundPoints"]
+position = Vector2(256, 51)
+
+[node name="Aqt12" type="Marker2D" parent="GroundPoints"]
+position = Vector2(225, 102)
+
+[node name="Aqt13" type="Marker2D" parent="GroundPoints"]
+position = Vector2(129, 150)
+
+[node name="Aqt14" type="Marker2D" parent="GroundPoints"]
+position = Vector2(-93, -147)
+
+[node name="Aqt15" type="Marker2D" parent="GroundPoints"]
+position = Vector2(205, -114)
+
+[node name="Aqt16" type="Marker2D" parent="GroundPoints"]
+position = Vector2(-16, -59)
+
+[node name="Aqt17" type="Marker2D" parent="GroundPoints"]
+position = Vector2(59, -151)
+
+[node name="Aqt18" type="Marker2D" parent="GroundPoints"]
+position = Vector2(-15, -133)
+
+[node name="Aqt19" type="Marker2D" parent="GroundPoints"]
+position = Vector2(-178, -91)
+
+[node name="Aqt20" type="Marker2D" parent="GroundPoints"]
+position = Vector2(-211, -2)
+
+[node name="Aqt21" type="Marker2D" parent="GroundPoints"]
+position = Vector2(140, -143)
+
+[node name="Aqt22" type="Marker2D" parent="GroundPoints"]
+position = Vector2(276, -35)
+
+[node name="Aqt23" type="Marker2D" parent="GroundPoints"]
+position = Vector2(-135, 40)
+
+[node name="Aqt24" type="Marker2D" parent="GroundPoints"]
+position = Vector2(66, 184)
+
+[node name="Aqt25" type="Marker2D" parent="GroundPoints"]
+position = Vector2(-31, 188)
+
 [node name="Jugador" parent="." instance=ExtResource("1_71oey")]
 z_index = 3
 position = Vector2(18, -6)

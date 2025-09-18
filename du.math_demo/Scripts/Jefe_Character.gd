@@ -15,17 +15,20 @@ extends CharacterBody2D
 @onready var spawn_timer: Timer = $SpawnTimer
 @onready var wave_timer: Timer = $WaveTimer
 @onready var pregunta_timer: Timer = $PreguntaTimer
+@onready var ground_attack_timer: Timer = $GroundAttackTimer   # ⬅️ nuevo
 
 # ⚠️ Ajusta esta ruta según la ubicación real de tu barra de vida
 @onready var barra_vida = get_node("../Camera2D/BarraVidaJefe")
 
 # --- Escenas externas ---
 @export var enemigo_triangulo: PackedScene = preload("res://Scenas/ScenasJefe/Enemigos.tscn")
+@export var ataque_suelo: PackedScene = preload("res://Scenas/ScenasJefe/AtaqueSuelo.tscn")   # ⬅️ nuevo
 
 # --- Listas de posiciones ---
 var spawn_points: Array = []
 var wall_points: Array = []
 var question_points: Array = []
+var ground_points: Array = []   # ⬅️ nuevo
 
 # --- Estados ---
 var fase: int = 1
@@ -34,7 +37,7 @@ var pregunta_activa: bool = false
 var vida_actual: int
 
 # --- Preguntas ---
-var preguntas = [ # (no toqué tus preguntas, se mantienen iguales)
+var preguntas = [ 
 	{"texto":"90 ÷ 15 =", "opciones":["5","6","7"], "correcta":"A"},
 	{"texto":"3/4 de 20 =", "opciones":["10","15","12"], "correcta":"B"},
 	{"texto":"25% de 80 =", "opciones":["15","20","25"], "correcta":"B"},
@@ -82,9 +85,14 @@ func _ready():
 	if preguntas_nodes:
 		question_points = preguntas_nodes.get_children()
 
+	var ground_nodes = get_parent().get_node_or_null("GroundPoints")   # ⬅️ nuevo
+	if ground_nodes:
+		ground_points = ground_nodes.get_children()
+
 	spawn_timer.timeout.connect(_on_spawn_timer_timeout)
 	wave_timer.timeout.connect(_on_wave_timer_timeout)
 	pregunta_timer.timeout.connect(mostrar_pregunta)
+	ground_attack_timer.timeout.connect(_on_ground_attack_timer_timeout)   # ⬅️ nuevo
 
 	wave_timer.wait_time = 25.0
 	wave_timer.start()
@@ -108,6 +116,8 @@ func iniciar_fase1():
 	fase = 1
 	spawn_timer.wait_time = spawn_interval_fase1
 	spawn_timer.start()
+	ground_attack_timer.wait_time = 10.0   # ⬅️ nuevo
+	ground_attack_timer.start()            # ⬅️ nuevo
 	wave_timer.stop()
 	print("🟢 Fase 1 iniciada")
 
@@ -116,6 +126,8 @@ func iniciar_fase2():
 	spawn_timer.stop()
 	spawn_timer.wait_time = spawn_interval_fase2
 	spawn_timer.start()
+	ground_attack_timer.wait_time = 18.0   # ⬅️ nuevo
+	ground_attack_timer.start()            # ⬅️ nuevo
 	wave_timer.stop()
 	print("🟡 Fase 2 iniciada (vida 2/3)")
 
@@ -124,6 +136,8 @@ func iniciar_fase3():
 	spawn_timer.stop()
 	spawn_timer.wait_time = spawn_interval_fase2
 	spawn_timer.start()
+	ground_attack_timer.wait_time = 12.0   # ⬅️ nuevo
+	ground_attack_timer.start()            # ⬅️ nuevo
 	wave_timer.start()
 	print("🔴 Fase 3 iniciada (vida 1/3)")
 
@@ -174,6 +188,23 @@ func eliminar_muros_despues(muros, tiempo: float) -> void:
 		if muro.is_inside_tree():
 			muro.queue_free()
 
+# --- Ataque del suelo ---
+func _on_ground_attack_timer_timeout():   # ⬅️ nuevo
+	if ground_points.size() == 0:
+		return
+	
+	var cantidad = 2 if fase == 1 else 3 if fase == 2 else 4
+	var puntos_seleccionados = ground_points.duplicate()
+	puntos_seleccionados.shuffle()
+
+	for i in range(cantidad):
+		if i < puntos_seleccionados.size():
+			var punto = puntos_seleccionados[i]
+			var ataque = ataque_suelo.instantiate()
+			get_tree().current_scene.add_child(ataque)
+			ataque.global_position = punto.global_position
+			print("💥 Ataque del suelo en:", punto.global_position)
+
 # --- Daño y derrota ---
 func recibir_danio(cantidad: int):
 	if not jugador_activo:
@@ -194,6 +225,7 @@ func derrotado():
 	print("🏆 ¡Jefe derrotado! 🚫")
 	spawn_timer.stop()
 	wave_timer.stop()
+	ground_attack_timer.stop()   # ⬅️ nuevo
 	pregunta_timer.stop()
 	barra_vida.hide()
 	

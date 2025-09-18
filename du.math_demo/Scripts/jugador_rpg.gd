@@ -26,6 +26,7 @@ func _ready():
 	# Detectar conexión de mando
 	Input.joy_connection_changed.connect(_on_joy_connection_changed)
 	_check_for_gamepads()
+	print("❤️ Vida inicial del jugador:", GameManager.VidaJugador)
 
 func _process(delta):
 	vida = GameManager.VidaJugador
@@ -156,3 +157,16 @@ func _detect_input_method():
 			using_gamepad = true
 		elif has_keyboard_input and not has_gamepad_input:
 			using_gamepad = false
+
+# 🚨 Nueva función para recibir daño
+func recibir_danio(cantidad: int) -> void:
+	GameManager.VidaJugador -= cantidad
+	GameManager.JugadorRecibeDaño = true  # activa la animación de daño en el HUD
+	print("💔 Jugador recibió ", cantidad, " de daño. Vida actual: ", GameManager.VidaJugador)
+
+	if GameManager.VidaJugador <= 0:
+		morir()
+
+func morir() -> void:
+	print("☠️ El jugador ha muerto")
+	get_tree().change_scene_to_file("res://Scenas/ScenasEntorno/pantalla_perdiste.tscn")
