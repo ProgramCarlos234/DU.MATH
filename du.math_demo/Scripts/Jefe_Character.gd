@@ -118,7 +118,8 @@ func iniciar_fase1():
 	spawn_timer.start()
 	ground_attack_timer.wait_time = 10.0   # ⬅️ nuevo
 	ground_attack_timer.start()            # ⬅️ nuevo
-	wave_timer.stop()
+	wave_timer.wait_time = 10.0
+	wave_timer.start()
 	print("🟢 Fase 1 iniciada")
 
 func iniciar_fase2():
