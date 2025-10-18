@@ -116,7 +116,7 @@ func iniciar_fase1():
 	fase = 1
 	spawn_timer.wait_time = spawn_interval_fase1
 	spawn_timer.start()
-	ground_attack_timer.wait_time = 10.0   # ⬅️ nuevo
+	ground_attack_timer.wait_time = 15.0   # ⬅️ nuevo
 	ground_attack_timer.start()            # ⬅️ nuevo
 	wave_timer.wait_time = 20.0
 	wave_timer.start()
@@ -127,9 +127,10 @@ func iniciar_fase2():
 	spawn_timer.stop()
 	spawn_timer.wait_time = spawn_interval_fase2
 	spawn_timer.start()
-	ground_attack_timer.wait_time = 18.0   # ⬅️ nuevo
+	ground_attack_timer.wait_time = 10.0   # ⬅️ nuevo
 	ground_attack_timer.start()            # ⬅️ nuevo
-	wave_timer.stop()
+	wave_timer.wait_time = 15
+	wave_timer.start()
 	print("🟡 Fase 2 iniciada (vida 2/3)")
 
 func iniciar_fase3():
@@ -137,8 +138,9 @@ func iniciar_fase3():
 	spawn_timer.stop()
 	spawn_timer.wait_time = spawn_interval_fase2
 	spawn_timer.start()
-	ground_attack_timer.wait_time = 12.0   # ⬅️ nuevo
+	ground_attack_timer.wait_time = 8.0   # ⬅️ nuevo
 	ground_attack_timer.start()            # ⬅️ nuevo
+	wave_timer.wait_time = 10
 	wave_timer.start()
 	print("🔴 Fase 3 iniciada (vida 1/3)")
 

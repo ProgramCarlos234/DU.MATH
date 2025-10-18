@@ -120,13 +120,13 @@ height = 48.0
 script = ExtResource("1_qxeq3")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, 19.999998)
-scale = Vector2(0.5755208, 0.28385416)
+position = Vector2(0, -0.09375)
+scale = Vector2(0.5755208, 1.1210936)
 sprite_frames = SubResource("SpriteFrames_tso0f")
 animation = &"aviso"
 autoplay = "ataque"
-frame = 3
-frame_progress = 0.7482399
+frame = 6
+frame_progress = 0.24709232
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_r7vo4")
