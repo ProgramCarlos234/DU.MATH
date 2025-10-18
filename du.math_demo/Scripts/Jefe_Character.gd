@@ -118,7 +118,7 @@ func iniciar_fase1():
 	spawn_timer.start()
 	ground_attack_timer.wait_time = 10.0   # ⬅️ nuevo
 	ground_attack_timer.start()            # ⬅️ nuevo
-	wave_timer.wait_time = 10.0
+	wave_timer.wait_time = 20.0
 	wave_timer.start()
 	print("🟢 Fase 1 iniciada")
 
@@ -168,7 +168,17 @@ func _on_spawn_timer_timeout():
 
 # --- Ataque de muros ---
 func _on_wave_timer_timeout():
-	print("🌊 Lanzando ataque de muros")
+	if not sprite or not sprite.sprite_frames.has_animation("atqsuelo"):
+		return
+
+	print("🎬 El jefe inicia animación de ataque (atqsuelo)")
+	sprite.play("atqsuelo")
+
+	# Esperar a que empiece la animación antes de lanzar los muros
+	await get_tree().create_timer(2.5).timeout  # Pequeño delay opcional
+
+	print("🌊 Lanzando ataque de muros mientras dura la animación")
+
 	if wall_points.size() == 0:
 		return
 
@@ -179,9 +189,21 @@ func _on_wave_timer_timeout():
 		muros_rotatorios.global_position = punto_muro.global_position
 		get_parent().add_child(muros_rotatorios)
 		muros_activados.append(muros_rotatorios)
-		print("Muros rotatorios instanciados en:", punto_muro.global_position)
+		print("🧱 Muro instanciado en:", punto_muro.global_position)
 
-	eliminar_muros_despues(muros_activados, 15.0)
+	# Esperar hasta que termine la animación "atqsuelo"
+	await sprite.animation_finished
+
+	# Cuando la animación termina, eliminar los muros
+	for muro in muros_activados:
+		if muro and muro.is_inside_tree():
+			muro.queue_free()
+	print("🛑 Animación terminada, muros eliminados y ataque finalizado")
+	
+	if sprite.sprite_frames.has_animation("Walk"):
+		print("🚶‍♂️ Volviendo a animación 'walk'")
+		sprite.play("Walk")
+
 
 func eliminar_muros_despues(muros, tiempo: float) -> void:
 	await get_tree().create_timer(tiempo).timeout
