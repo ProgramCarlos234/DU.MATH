@@ -90,9 +90,9 @@ position = Vector2(136, 0)
 scale = Vector2(1.18876, 1.18876)
 
 [node name="Label4" type="Label" parent="."]
-offset_left = 135.0
-offset_top = -5.0
-offset_right = 175.0
+offset_left = 140.0
+offset_top = -5.0000005
+offset_right = 180.0
 offset_bottom = 18.0
 scale = Vector2(0.410361, 0.410361)
 text = "x"
@@ -100,9 +100,9 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Label5" type="Label" parent="."]
-offset_left = 139.0
+offset_left = 152.0
 offset_top = -5.0
-offset_right = 179.0
+offset_right = 192.0
 offset_bottom = 18.0
 scale = Vector2(0.410361, 0.410361)
 text = "0"

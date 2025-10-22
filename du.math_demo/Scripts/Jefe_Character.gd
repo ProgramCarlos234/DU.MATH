@@ -253,9 +253,8 @@ func derrotado():
 	ground_attack_timer.stop()   # ⬅️ nuevo
 	pregunta_timer.stop()
 	barra_vida.hide()
-	
 	get_tree().change_scene_to_file("res://Scenas/ScenasJefe/VictoriaFinal.tscn")
-	
+
 
 # --- Preguntas ---
 func mostrar_pregunta():
