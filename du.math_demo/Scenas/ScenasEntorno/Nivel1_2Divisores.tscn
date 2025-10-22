@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=4 uid="uid://l2a7scguj8od"]
+[gd_scene load_steps=26 format=4 uid="uid://l2a7scguj8od"]
 
 [ext_resource type="Script" uid="uid://coieenjdrdthd" path="res://Scripts/Nivel1_2.gd" id="1_t4asn"]
 [ext_resource type="PackedScene" uid="uid://b8wjoy8cfcnxq" path="res://Scenas/ScenasEntorno/EnemigoCajas.tscn" id="2_qjp26"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://bqdmf135l8ti2" path="res://Sprites/SpritesEntorno/Dungeon_Tileset.png" id="6_c5f0w"]
 [ext_resource type="TileSet" uid="uid://0qbyio30mgda" path="res://Tiles/Mapa_juego.tres" id="7_pb20p"]
 [ext_resource type="AudioStream" uid="uid://ce1wb7g0y6k88" path="res://Musica/Gameplay_Combat_2_Masterizada.mp3" id="7_pyygv"]
+[ext_resource type="PackedScene" uid="uid://c3cl1esmmijtm" path="res://Scenas/GUI movil/controles.tscn" id="9_32i7c"]
 [ext_resource type="PackedScene" uid="uid://slsrphlw2jq8" path="res://Scenas/ScenasEntorno/Puerta.tscn" id="10_pb20p"]
 [ext_resource type="PackedScene" uid="uid://571umlrh7ht8" path="res://Scenas/ScenasEntorno/cajas.tscn" id="10_tgndp"]
 [ext_resource type="PackedScene" uid="uid://001w35x8xb6r" path="res://Scenas/ScenasEntorno/Pared.tscn" id="11_foj67"]
@@ -235,17 +236,17 @@ script = ExtResource("2_ymn4f")
 
 [node name="Sprite2D" type="Sprite2D" parent="Nivel1/Camera2D"]
 z_index = 2
-position = Vector2(0, -87)
+position = Vector2(56.000008, -87)
 scale = Vector2(2.04175, 2.04175)
 texture = ExtResource("3_qjp26")
 
 [node name="Label" type="Label" parent="Nivel1/Camera2D"]
 modulate = Color(0, 0, 0, 1)
 z_index = 2
-offset_left = -30.0
-offset_top = -106.0
-offset_right = 7.0
-offset_bottom = -83.0
+offset_left = 25.999996
+offset_top = -108.0
+offset_right = 62.999996
+offset_bottom = -85.0
 scale = Vector2(1.6, 1.6)
 text = "x"
 horizontal_alignment = 1
@@ -256,12 +257,14 @@ position = Vector2(0, 7)
 
 [node name="BarraVida" parent="Nivel1/Camera2D" instance=ExtResource("4_tgndp")]
 z_index = 2
-position = Vector2(-159, 72)
+position = Vector2(-159, -84.000015)
 scale = Vector2(1.16, 1.16)
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Nivel1/Camera2D"]
 stream = ExtResource("7_pyygv")
 autoplay = true
+
+[node name="Control" parent="Nivel1/Camera2D" instance=ExtResource("9_32i7c")]
 
 [node name="Jugador" parent="Nivel1" instance=ExtResource("5_foj67")]
 z_index = 1

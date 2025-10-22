@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=4 uid="uid://cnp4d7uv773m2"]
+[gd_scene load_steps=16 format=4 uid="uid://cnp4d7uv773m2"]
 
 [ext_resource type="PackedScene" uid="uid://b3rquvh0mg2rv" path="res://Scenas/ScenasPersonajes/JugadorRPG.tscn" id="1_71oey"]
 [ext_resource type="PackedScene" uid="uid://cc052y6027hpc" path="res://Scenas/ScenasJefe/Jefe.tscn" id="2_edcom"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://r5urwg3eshph" path="res://Scenas/ScenasEntorno/barra_vida.tscn" id="7_vgpab"]
 [ext_resource type="PackedScene" uid="uid://b23la2ogt7d4t" path="res://Scenas/ScenasJefe/BarraVidaJefe.tscn" id="8_6mex8"]
 [ext_resource type="AudioStream" uid="uid://ce1wb7g0y6k88" path="res://Musica/Gameplay_Combat_2_Masterizada.mp3" id="9_1mq7a"]
+[ext_resource type="PackedScene" uid="uid://c3cl1esmmijtm" path="res://Scenas/GUI movil/controles.tscn" id="10_edcom"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rhonx"]
 texture = ExtResource("3_pawoh")
@@ -341,16 +342,18 @@ zoom = Vector2(3, 3)
 script = ExtResource("6_afxlf")
 
 [node name="BarraVida" parent="Camera2D" instance=ExtResource("7_vgpab")]
-position = Vector2(-159, 72)
+position = Vector2(-75.99999, 88.000015)
 scale = Vector2(1.16, 1.16)
 
 [node name="BarraVidaJefe" parent="Camera2D" instance=ExtResource("8_6mex8")]
-position = Vector2(44, 69)
+position = Vector2(-12, -84.00001)
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Camera2D"]
 position = Vector2(-6, 1)
 stream = ExtResource("9_1mq7a")
 autoplay = true
+
+[node name="Control" parent="Camera2D" instance=ExtResource("10_edcom")]
 
 [node name="QuestionPoints" type="Node2D" parent="."]
 position = Vector2(981, -5)

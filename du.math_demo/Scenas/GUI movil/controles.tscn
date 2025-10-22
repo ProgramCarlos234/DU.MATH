@@ -1,0 +1,58 @@
+[gd_scene load_steps=11 format=3 uid="uid://c3cl1esmmijtm"]
+
+[ext_resource type="PackedScene" uid="uid://btf0iccai10qr" path="res://addons/versatile-mobile-joystick/joystick.tscn" id="1_jex7o"]
+[ext_resource type="Texture2D" uid="uid://bnww12ols325k" path="res://Scenas/GUI movil/joystick1.png" id="2_uugqt"]
+[ext_resource type="Texture2D" uid="uid://lb5eu6pa1ldo" path="res://Scenas/GUI movil/joystick2.png" id="3_8aoxn"]
+[ext_resource type="Texture2D" uid="uid://dbsw6itf0dt15" path="res://Scenas/GUI movil/atacar.png" id="4_8aoxn"]
+[ext_resource type="Texture2D" uid="uid://co0r5yjt51o77" path="res://Scenas/GUI movil/pausa.png" id="5_0kyy3"]
+[ext_resource type="Texture2D" uid="uid://60kslbhuvaic" path="res://Scenas/GUI movil/accionprovicional.png" id="6_0kyy3"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jex7o"]
+radius = 0.01
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_uugqt"]
+radius = 68.28
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8aoxn"]
+size = Vector2(400, 300)
+
+[sub_resource type="Curve" id="Curve_0kyy3"]
+_data = [Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 1
+
+[node name="Control" type="CanvasLayer"]
+
+[node name="JoystickController" parent="." instance=ExtResource("1_jex7o")]
+position = Vector2(190, 414.00003)
+scale = Vector2(2.5, 2.5)
+base_texture = ExtResource("2_uugqt")
+tip_texture = ExtResource("3_8aoxn")
+deadzone_circle = SubResource("CircleShape2D_jex7o")
+tip_limit_circle = SubResource("CircleShape2D_uugqt")
+touch_detection_region = SubResource("RectangleShape2D_8aoxn")
+strength_curve = SubResource("Curve_0kyy3")
+left_movement = "Izquierda"
+right_movement = "Derecha"
+up_movement = "Arriba"
+down_movement = "Abajo"
+
+[node name="atacar" type="TouchScreenButton" parent="."]
+position = Vector2(819, 369)
+scale = Vector2(2, 2)
+texture_normal = ExtResource("4_8aoxn")
+texture_pressed = ExtResource("4_8aoxn")
+action = "Ataque"
+
+[node name="pausa" type="TouchScreenButton" parent="."]
+visible = false
+position = Vector2(1078, 9)
+texture_normal = ExtResource("5_0kyy3")
+texture_pressed = ExtResource("5_0kyy3")
+action = "Pausar"
+
+[node name="interactuar" type="TouchScreenButton" parent="."]
+position = Vector2(972, 313)
+scale = Vector2(2, 2)
+texture_normal = ExtResource("6_0kyy3")
+texture_pressed = ExtResource("6_0kyy3")
+action = "Interactuar"

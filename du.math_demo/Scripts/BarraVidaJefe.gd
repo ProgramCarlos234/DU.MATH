@@ -1,6 +1,6 @@
 extends Node2D
 
-@onready var barra: ProgressBar = get_node_or_null("ProgressBar")
+@onready var barra: TextureProgressBar = get_node_or_null("TextureProgressBar")
 @onready var label: Label = get_node_or_null("Label")
 
 var vida_max: int = 100

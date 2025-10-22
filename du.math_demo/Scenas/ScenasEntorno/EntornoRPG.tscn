@@ -1,5 +1,6 @@
-[gd_scene load_steps=7 format=4 uid="uid://cbydru7571klx"]
+[gd_scene load_steps=8 format=4 uid="uid://cbydru7571klx"]
 
+[ext_resource type="PackedScene" uid="uid://c3cl1esmmijtm" path="res://Scenas/GUI movil/controles.tscn" id="1_mdg18"]
 [ext_resource type="PackedScene" uid="uid://b3rquvh0mg2rv" path="res://Scenas/ScenasPersonajes/JugadorRPG.tscn" id="1_pt56k"]
 [ext_resource type="TileSet" uid="uid://0qbyio30mgda" path="res://Tiles/Mapa_juego.tres" id="2_p5rrs"]
 [ext_resource type="PackedScene" uid="uid://slsrphlw2jq8" path="res://Scenas/ScenasEntorno/Puerta.tscn" id="3_ltbff"]
@@ -11,6 +12,8 @@
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(3, 3)
+
+[node name="Control" parent="Camera2D" instance=ExtResource("1_mdg18")]
 
 [node name="Jugador" parent="." instance=ExtResource("1_pt56k")]
 z_index = 1

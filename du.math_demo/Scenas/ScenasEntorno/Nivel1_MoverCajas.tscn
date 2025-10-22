@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=4 uid="uid://b3ii1hs6wykix"]
+[gd_scene load_steps=26 format=4 uid="uid://b3ii1hs6wykix"]
 
 [ext_resource type="PackedScene" uid="uid://b3rquvh0mg2rv" path="res://Scenas/ScenasPersonajes/JugadorRPG.tscn" id="1_0c4c4"]
 [ext_resource type="Script" uid="uid://cpiiauf48m08j" path="res://Scripts/camera_2d.gd" id="1_7rp54"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://001w35x8xb6r" path="res://Scenas/ScenasEntorno/Pared.tscn" id="11_0dkpv"]
 [ext_resource type="AudioStream" uid="uid://ce1wb7g0y6k88" path="res://Musica/Gameplay_Combat_2_Masterizada.mp3" id="11_2r6pi"]
 [ext_resource type="PackedScene" uid="uid://cnjwvko1of8k0" path="res://Scenas/ScenasEntorno/puerta_animada.tscn" id="13_5wgtm"]
+[ext_resource type="PackedScene" uid="uid://c3cl1esmmijtm" path="res://Scenas/GUI movil/controles.tscn" id="13_47rke"]
 [ext_resource type="PackedScene" uid="uid://slsrphlw2jq8" path="res://Scenas/ScenasEntorno/Puerta.tscn" id="14_l2snx"]
 [ext_resource type="PackedScene" uid="uid://cdojcetevalkf" path="res://Scenas/ScenasEntorno/pausa.tscn" id="15_mvksm"]
 [ext_resource type="PackedScene" uid="uid://sebwvh3ntocm" path="res://Scenas/ScenasEntorno/informacion_niveL_Multiplo.tscn" id="16_v12w2"]
@@ -416,15 +417,15 @@ zoom = Vector2(2.5, 2.5)
 script = ExtResource("1_7rp54")
 
 [node name="Sprite2D" type="Sprite2D" parent="Nivel1/Camera2D"]
-position = Vector2(0, -104)
+position = Vector2(50.988, -104)
 scale = Vector2(2.56175, 2.56175)
 texture = ExtResource("2_6ci3s")
 
 [node name="Label" type="Label" parent="Nivel1/Camera2D"]
 modulate = Color(0, 0, 0, 1)
-offset_left = -36.0
+offset_left = 14.987999
 offset_top = -131.0
-offset_right = 1.0
+offset_right = 51.988
 offset_bottom = -108.0
 scale = Vector2(2.00749, 2.00749)
 text = "x"
@@ -432,12 +433,14 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="BarraVida" parent="Nivel1/Camera2D" instance=ExtResource("6_2r6pi")]
-position = Vector2(-187, 96)
+position = Vector2(-183, -102.00003)
 scale = Vector2(1.16, 1.16)
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Nivel1/Camera2D"]
 stream = ExtResource("11_2r6pi")
 autoplay = true
+
+[node name="Control" parent="Nivel1/Camera2D" instance=ExtResource("13_47rke")]
 
 [node name="PosicionLlave" type="Node2D" parent="Nivel1"]
 position = Vector2(745, 432)

@@ -86,11 +86,12 @@ z_index = 1
 position = Vector2(574, 271)
 scale = Vector2(10.2124, 10.2124)
 
-[node name="Label" type="Label" parent="."]
-self_modulate = Color(0, 0.526797, 0.996918, 1)
-offset_left = 54.0
-offset_top = 528.0
-offset_right = 494.0
-offset_bottom = 551.0
-scale = Vector2(2.44, 2.44)
-text = "OPRIME EL BOTON DE \"INTERACTUAR\" PARA CONTINUAR"
+[node name="Button" type="Button" parent="."]
+offset_left = 430.0
+offset_top = 522.0
+offset_right = 692.0
+offset_bottom = 589.0
+theme_override_font_sizes/font_size = 43
+text = "CONTINUAR"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

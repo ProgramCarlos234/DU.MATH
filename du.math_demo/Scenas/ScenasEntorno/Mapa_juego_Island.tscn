@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=4 uid="uid://chw48vuv5cjm5"]
+[gd_scene load_steps=43 format=4 uid="uid://chw48vuv5cjm5"]
 
 [ext_resource type="Script" uid="uid://bmxhhjfkn0txy" path="res://Scripts/juego_island.gd" id="1_gealf"]
 [ext_resource type="Script" uid="uid://l8da3q7w8yh1" path="res://Scripts/Camera_2dIsland.gd" id="2_cp385"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://b1x6v4wegn02o" path="res://Scripts/timerIslas.gd" id="6_shaon"]
 [ext_resource type="Texture2D" uid="uid://dqsh82dvfber5" path="res://Sprites/SpritesEntorno/TILESET_ISLA_REMASTER.png" id="7_cp385"]
 [ext_resource type="Script" uid="uid://dhvycbbvhb0tn" path="res://Scripts/spawner_isla.gd" id="8_shaon"]
+[ext_resource type="PackedScene" uid="uid://c3cl1esmmijtm" path="res://Scenas/GUI movil/controles.tscn" id="9_q6md8"]
 [ext_resource type="Shader" uid="uid://q4dwjiglc326" path="res://Shaders/Water.gdshader" id="9_ysj4p"]
 [ext_resource type="Texture2D" uid="uid://cemefodhygoj7" path="res://Sprites/Assets/AguaTiles4.png" id="10_t6jfb"]
 [ext_resource type="Texture2D" uid="uid://qywbeeilqcap" path="res://Sprites/Assets/AguaTiles1.png" id="11_fi5gn"]
@@ -398,52 +399,54 @@ jugador_path = NodePath("../Jugador")
 
 [node name="Label" type="Label" parent="NivelNodoIsla/Camera2D"]
 z_index = 1
-offset_left = 101.0
-offset_top = 35.0
-offset_right = 209.0
-offset_bottom = 58.0
+offset_left = 106.42269
+offset_top = -67.65988
+offset_right = 214.4227
+offset_bottom = -44.65988
 scale = Vector2(0.4, 0.4)
 text = "Valor anterior"
 justification_flags = 33
 
 [node name="TextoOperacion" type="Label" parent="NivelNodoIsla/Camera2D"]
 z_index = 3
-offset_left = 53.0
-offset_top = 44.0
-offset_right = 85.0
-offset_bottom = 71.0
+offset_left = 58.42269
+offset_top = -58.65988
+offset_right = 90.42269
+offset_bottom = -31.659882
 
 [node name="TextoOperacion2" type="Label" parent="NivelNodoIsla/Camera2D"]
 z_index = 3
-offset_left = 106.0
-offset_top = 44.0
-offset_right = 138.0
-offset_bottom = 71.0
+offset_left = 111.42269
+offset_top = -58.65988
+offset_right = 143.4227
+offset_bottom = -31.659882
 
 [node name="PizarraIsla" type="Sprite2D" parent="NivelNodoIsla/Camera2D"]
-position = Vector2(124, 48.625)
+position = Vector2(129.42268, -54.034866)
 scale = Vector2(1.8125, 2.16406)
 texture = ExtResource("4_shaon")
 
 [node name="PizarraIsla2" type="Sprite2D" parent="NivelNodoIsla/Camera2D"]
-position = Vector2(68, 48.625)
+position = Vector2(73.42269, -54.03488)
 scale = Vector2(1.625, 2.16406)
 texture = ExtResource("4_shaon")
 
 [node name="BarraVida" parent="NivelNodoIsla/Camera2D" instance=ExtResource("5_cp385")]
 z_index = 1
-position = Vector2(-136, 64)
+position = Vector2(-136.08247, -70.10312)
 
 [node name="Timer" type="Timer" parent="NivelNodoIsla/Camera2D"]
 script = ExtResource("6_shaon")
 tiempo_inicial = 60
 
 [node name="TiempoContador" type="Label" parent="NivelNodoIsla/Camera2D"]
-offset_left = 51.0
-offset_top = -81.0
-offset_right = 81.0
-offset_bottom = -58.0
+offset_left = 7.2164907
+offset_top = 68.04126
+offset_right = 37.216488
+offset_bottom = 91.04126
 text = "1"
+
+[node name="Control" parent="NivelNodoIsla/Camera2D" instance=ExtResource("9_q6md8")]
 
 [node name="shaderAgua" type="TileMapLayer" parent="."]
 z_index = -1
