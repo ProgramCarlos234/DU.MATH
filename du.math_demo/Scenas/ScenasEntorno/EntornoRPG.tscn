@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://slsrphlw2jq8" path="res://Scenas/ScenasEntorno/Puerta.tscn" id="3_ltbff"]
 [ext_resource type="PackedScene" uid="uid://cvf1opvtrhfkp" path="res://Scenas/ScenasEntorno/Entidad_Interacturar.tscn" id="5_p5rrs"]
 [ext_resource type="AudioStream" uid="uid://bm2fkvfedst8q" path="res://Musica/Comic_Cinematic_Part_1.mp3" id="5_vq1ka"]
-[ext_resource type="Resource" uid="uid://bdxfoa2lpg5cy" path="res://Dialogos/Dialogo_Entidad_Inicio.dialogue" id="6_p5rrs"]
+[ext_resource type="Resource" uid="uid://qinvbonf0tlf" path="res://Dialogos/DialogoIntroduccion.dialogue" id="6_p5rrs"]
 
 [node name="Node2D" type="Node2D"]
 

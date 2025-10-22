@@ -1,0 +1,79 @@
+[gd_scene load_steps=5 format=3 uid="uid://wld3tv8nlybf"]
+
+[ext_resource type="Script" uid="uid://bvp68rwhgu6lj" path="res://Scenas/ScenasEntorno/preguntas_jefe.gd" id="1_kn3xh"]
+[ext_resource type="Texture2D" uid="uid://dj1alur5xg2w8" path="res://Sprites/SpritesEntorno/Problema_Icono.png" id="1_vy2pl"]
+[ext_resource type="Texture2D" uid="uid://caqqncipsmpw" path="res://Sprites/SpritesEntorno/Boton Seleccion.png" id="2_kn3xh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mj6h2"]
+size = Vector2(36, 20)
+
+[node name="Preguntas_Jefe" type="Node2D"]
+script = ExtResource("1_kn3xh")
+
+[node name="ProblemaIcono" type="Sprite2D" parent="."]
+position = Vector2(0, -19)
+scale = Vector2(2.48, 1.2)
+texture = ExtResource("1_vy2pl")
+
+[node name="LabelPregunta" type="Label" parent="ProblemaIcono"]
+self_modulate = Color(0, 0, 0, 1)
+offset_left = -21.0
+offset_top = -22.0
+offset_right = 68.0
+offset_bottom = 111.0
+scale = Vector2(0.1967, 0.309379)
+
+[node name="Opcion2" type="Area2D" parent="."]
+position = Vector2(-38, 26)
+
+[node name="Sprite2D" type="Sprite2D" parent="Opcion2"]
+scale = Vector2(0.759999, 1.32)
+texture = ExtResource("2_kn3xh")
+
+[node name="Respuesta1" type="CollisionShape2D" parent="Opcion2"]
+shape = SubResource("RectangleShape2D_mj6h2")
+
+[node name="LabelA" type="Label" parent="Opcion2"]
+self_modulate = Color(0, 0, 0, 1)
+offset_left = -17.0
+offset_top = -10.0
+offset_right = 26.0
+offset_bottom = 23.0
+scale = Vector2(0.830355, 0.541884)
+
+[node name="Opcion" type="Area2D" parent="."]
+position = Vector2(0, 26)
+
+[node name="Sprite2D" type="Sprite2D" parent="Opcion"]
+scale = Vector2(0.759999, 1.32)
+texture = ExtResource("2_kn3xh")
+
+[node name="Respuesta2" type="CollisionShape2D" parent="Opcion"]
+shape = SubResource("RectangleShape2D_mj6h2")
+
+[node name="LabelB" type="Label" parent="Opcion"]
+self_modulate = Color(0, 0, 0, 1)
+offset_left = -18.0
+offset_top = -10.0
+offset_right = 40.0
+offset_bottom = 23.0
+scale = Vector2(0.631829, 0.553002)
+
+[node name="Opcion3" type="Area2D" parent="."]
+self_modulate = Color(0, 0, 0, 1)
+position = Vector2(38, 26)
+
+[node name="Sprite2D" type="Sprite2D" parent="Opcion3"]
+scale = Vector2(0.759999, 1.32)
+texture = ExtResource("2_kn3xh")
+
+[node name="Respuesta3" type="CollisionShape2D" parent="Opcion3"]
+shape = SubResource("RectangleShape2D_mj6h2")
+
+[node name="LabelC" type="Label" parent="Opcion3"]
+self_modulate = Color(0, 0, 0, 1)
+offset_left = -18.0
+offset_top = -10.0
+offset_right = 35.0
+offset_bottom = 33.0
+scale = Vector2(0.644764, 0.466833)

@@ -317,6 +317,7 @@ position = Vector2(624, 7)
 script = ExtResource("5_tclnn")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BossTriggerArea"]
+position = Vector2(0, 15)
 shape = SubResource("RectangleShape2D_rhonx")
 
 [node name="SpawnPoints" type="Node2D" parent="."]
@@ -353,6 +354,7 @@ stream = ExtResource("9_1mq7a")
 autoplay = true
 
 [node name="Control" parent="Camera2D" instance=ExtResource("10_edcom")]
+visible = false
 
 [node name="QuestionPoints" type="Node2D" parent="."]
 position = Vector2(981, -5)

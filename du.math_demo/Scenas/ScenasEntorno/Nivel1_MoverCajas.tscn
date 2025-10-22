@@ -441,6 +441,7 @@ stream = ExtResource("11_2r6pi")
 autoplay = true
 
 [node name="Control" parent="Nivel1/Camera2D" instance=ExtResource("13_47rke")]
+visible = false
 
 [node name="PosicionLlave" type="Node2D" parent="Nivel1"]
 position = Vector2(745, 432)
