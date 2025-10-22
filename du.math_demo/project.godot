@@ -27,9 +27,11 @@ runtime/state_autoload_shortcuts=["GameManager", "DialogueManager"]
 
 [display]
 
-window/size/initial_position_type=0
+window/size/mode=2
+window/size/initial_position_type=4
 window/size/borderless=true
 window/stretch/mode="canvas_items"
+window/vsync/vsync_mode=0
 
 [editor]
 
@@ -128,6 +130,11 @@ Interactuar={
 , Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":90,"key_label":0,"unicode":122,"location":0,"echo":false,"script":null)
 ]
 }
+Emote={
+"deadzone": 0.2,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":84,"key_label":0,"unicode":116,"location":0,"echo":false,"script":null)
+]
+}
 
 [input_devices]
 
@@ -135,7 +142,7 @@ compatibility/legacy_just_pressed_behavior=true
 
 [internationalization]
 
-locale/translations_pot_files=PackedStringArray("res://untitled.dialogue", "res://Dialogos/Dialogo_Entidad_Inicio.dialogue", "res://Dialogos/Dialogo_Introductorio.dialogue", "res://Dialogos/Dialogo_SubNivel.dialogue", "res://Dialogos/Dialogo_LlaveOculta.dialogue", "res://Dialogos/Dialogo_JefeFinal.dialogue")
+locale/translations_pot_files=PackedStringArray("res://untitled.dialogue", "res://Dialogos/Dialogo_Entidad_Inicio.dialogue", "res://Dialogos/Dialogo_Introductorio.dialogue", "res://Dialogos/Dialogo_SubNivel.dialogue", "res://Dialogos/Dialogo_LlaveOculta.dialogue", "res://Dialogos/Dialogo_JefeFinal.dialogue", "res://Dialogos/DialogoIntroduccion.dialogue", "res://Dialogos/Pruba.dialogue")
 
 [layer_names]
 
