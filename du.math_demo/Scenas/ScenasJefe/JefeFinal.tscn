@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://cnp4d7uv773m2"]
+[gd_scene load_steps=14 format=4 uid="uid://dgvtg7oyu8f3b"]
 
 [ext_resource type="Texture2D" uid="uid://bqdmf135l8ti2" path="res://Sprites/SpritesEntorno/Dungeon_Tileset.png" id="2_36870"]
 [ext_resource type="PackedScene" uid="uid://cc052y6027hpc" path="res://Scenas/ScenasJefe/Jefe.tscn" id="2_rhonx"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://wld3tv8nlybf"]
+[gd_scene load_steps=5 format=3 uid="uid://cx2gcst55eehk"]
 
 [ext_resource type="Script" uid="uid://bvp68rwhgu6lj" path="res://Scenas/ScenasEntorno/preguntas_jefe.gd" id="1_kn3xh"]
 [ext_resource type="Texture2D" uid="uid://dj1alur5xg2w8" path="res://Sprites/SpritesEntorno/Problema_Icono.png" id="1_vy2pl"]
