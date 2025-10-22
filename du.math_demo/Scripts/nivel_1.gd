@@ -10,6 +10,7 @@ extends Node2D
 @onready var nodo_llave = get_node(posicion_llave)
 @onready var camera_nivel: Camera2D = $Camera2D  # NUEVO
 
+var Mobil:bool = false
 var juego_iniciado := false  # NUEVO
 var numero_objetivo: int
 var cajas_correctas_rotas := 0
@@ -35,8 +36,6 @@ func _on_pantalla_cerrada():
 	camera_nivel.visible = true
 	get_tree().paused = false
 	iniciar_juego()
-	$Camera2D/Control.visible = true
-
 # ========================
 # Lo que antes estaba en _ready() ahora está aquí
 # ========================

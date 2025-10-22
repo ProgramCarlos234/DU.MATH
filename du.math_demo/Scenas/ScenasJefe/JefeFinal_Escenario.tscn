@@ -354,6 +354,7 @@ stream = ExtResource("9_1mq7a")
 autoplay = true
 
 [node name="Control" parent="Camera2D" instance=ExtResource("10_edcom")]
+visible = false
 
 [node name="QuestionPoints" type="Node2D" parent="."]
 position = Vector2(981, -5)
