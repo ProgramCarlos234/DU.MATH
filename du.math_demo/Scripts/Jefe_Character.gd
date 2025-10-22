@@ -254,11 +254,8 @@ func derrotado():
 	pregunta_timer.stop()
 	barra_vida.hide()
 	
-	var pantalla_victoria = load("res://Scenas/ScenasJefe/VictoriaFinal.tscn").instantiate()
-	get_tree().current_scene.add_child(pantalla_victoria)
-	pantalla_victoria.global_position = get_viewport().get_visible_rect().size / 2
+	get_tree().change_scene_to_file("res://Scenas/ScenasJefe/VictoriaFinal.tscn")
 	
-	queue_free()
 
 # --- Preguntas ---
 func mostrar_pregunta():

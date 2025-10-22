@@ -29,10 +29,10 @@ var preguntas_restantes: Array = []
 var respuesta_correcta: String = ""
 var respuesta_elegida: String = ""
 
-@onready var label_pregunta    = $ProblemaIcono/LabelPregunta
-@onready var label_respuesta_a = $Opcion2/LabelA
-@onready var label_respuesta_b = $Opcion/LabelB
-@onready var label_respuesta_c = $Opcion3/LabelC
+@onready var label_pregunta: Label = $ProblemaIcono/LabelPregunta
+@onready var label_respuesta_a: Label = $Opcion2/LabelA
+@onready var label_respuesta_b: Label = $Opcion/LabelB
+@onready var label_respuesta_c: Label = $Opcion3/LabelC
 
 @onready var area_a: Area2D = $Opcion2
 @onready var area_b: Area2D = $Opcion
@@ -61,12 +61,12 @@ func _mostrar_pregunta():
 	var p = preguntas_restantes[idx]
 	preguntas_restantes.remove_at(idx)
 
-	label_pregunta.text    = p["texto"]
+	label_pregunta.text = p["texto"]
 	label_respuesta_a.text = "A) " + p["opciones"][0]
 	label_respuesta_b.text = "B) " + p["opciones"][1]
 	label_respuesta_c.text = "C) " + p["opciones"][2]
-	respuesta_correcta     = p["correcta"]
-	respuesta_elegida      = ""
+	respuesta_correcta = p["correcta"]
+	respuesta_elegida = ""
 
 func _input(event):
 	if event.is_action_pressed("Interactuar") and respuesta_elegida != "":
