@@ -29,11 +29,13 @@ func mostrar_pantalla_inicio():
 		camera_nivel.visible = false
 		pantalla.connect("pantalla_cerrada", Callable(self, "_on_pantalla_cerrada"))
 		get_tree().paused = true
+		$Camera2D/Control.visible = false
 
 func _on_pantalla_cerrada():
 	camera_nivel.visible = true
 	get_tree().paused = false
 	iniciar_juego()
+	$Camera2D/Control.visible = true
 
 # ========================
 # Lo que antes estaba en _ready() ahora está aquí

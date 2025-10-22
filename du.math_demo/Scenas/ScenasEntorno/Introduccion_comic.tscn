@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://vuiyi550axrw"]
+[gd_scene load_steps=5 format=3 uid="uid://vuiyi550axrw"]
 
 [ext_resource type="VideoStream" uid="uid://ddwlp03wf0ufa" path="res://Videos/Comic.ogv" id="1_8s5i6"]
 [ext_resource type="Script" uid="uid://ma36awwd4dqr" path="res://Scripts/introduccion_comic.gd" id="1_pw20k"]
 [ext_resource type="PackedScene" uid="uid://cbydru7571klx" path="res://Scenas/ScenasEntorno/EntornoRPG.tscn" id="2_v6u86"]
+[ext_resource type="Texture2D" uid="uid://ds37peifksgna" path="res://Scenas/GUI movil/OMITIR.png" id="4_15sr4"]
 
 [node name="Node2D" type="Control"]
 layout_mode = 3
@@ -22,5 +23,11 @@ autoplay = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(0.9, 0.9)
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="Camera2D"]
+position = Vector2(498, 285)
+texture_normal = ExtResource("4_15sr4")
+texture_pressed = ExtResource("4_15sr4")
+action = "Interactuar"
 
 [connection signal="finished" from="VideoStreamPlayer" to="." method="_on_video_stream_player_finished"]

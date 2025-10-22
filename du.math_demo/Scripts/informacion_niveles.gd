@@ -9,3 +9,9 @@ func _process(_delta):
 	if Input.is_action_just_pressed("Interactuar"):
 		emit_signal("pantalla_cerrada")
 		queue_free()
+
+
+func _on_button_pressed() -> void:
+	emit_signal("pantalla_cerrada")
+	queue_free()
+	

@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=4 uid="uid://cog6lenuil2gs"]
+[gd_scene load_steps=10 format=4 uid="uid://cog6lenuil2gs"]
 
 [ext_resource type="Script" uid="uid://cpiiauf48m08j" path="res://Scripts/camera_2d.gd" id="1_rnr14"]
 [ext_resource type="PackedScene" uid="uid://r5urwg3eshph" path="res://Scenas/ScenasEntorno/barra_vida.tscn" id="2_rtq36"]
 [ext_resource type="PackedScene" uid="uid://b3rquvh0mg2rv" path="res://Scenas/ScenasPersonajes/JugadorRPG.tscn" id="3_bsm6o"]
+[ext_resource type="PackedScene" uid="uid://c3cl1esmmijtm" path="res://Scenas/GUI movil/controles.tscn" id="3_ga7c5"]
 [ext_resource type="TileSet" uid="uid://0qbyio30mgda" path="res://Tiles/Mapa_juego.tres" id="4_rtq36"]
 [ext_resource type="PackedScene" uid="uid://slsrphlw2jq8" path="res://Scenas/ScenasEntorno/Puerta.tscn" id="5_bsm6o"]
 [ext_resource type="PackedScene" uid="uid://cnjwvko1of8k0" path="res://Scenas/ScenasEntorno/puerta_animada.tscn" id="6_6vy4w"]
@@ -18,8 +19,10 @@ script = ExtResource("1_rnr14")
 
 [node name="BarraVida" parent="Camera2D" instance=ExtResource("2_rtq36")]
 z_index = 2
-position = Vector2(-159, 72)
+position = Vector2(-159, -78.000015)
 scale = Vector2(1.16, 1.16)
+
+[node name="Control" parent="Camera2D" instance=ExtResource("3_ga7c5")]
 
 [node name="Jugador" parent="." instance=ExtResource("3_bsm6o")]
 z_index = 1

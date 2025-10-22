@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://dgoym2sgqwxkl"]
+[gd_scene load_steps=5 format=3 uid="uid://dgoym2sgqwxkl"]
 
 [ext_resource type="Script" uid="uid://v5fxbgjymwp8" path="res://Scripts/introduccion_juego.gd" id="1_a8ssc"]
 [ext_resource type="VideoStream" uid="uid://b005dc8qkrxhx" path="res://Videos/INTRO-DUMATH.ogv" id="1_f4sqq"]
 [ext_resource type="PackedScene" uid="uid://csf4fvsoekj0y" path="res://Scenas/ScenasEntorno/menu.tscn" id="2_fcmw4"]
+[ext_resource type="Texture2D" uid="uid://ds37peifksgna" path="res://Scenas/GUI movil/OMITIR.png" id="4_lilrn"]
 
 [node name="Introduccion_Juego" type="Control"]
 layout_mode = 3
@@ -31,5 +32,11 @@ autoplay = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(0.9, 0.9)
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="Camera2D"]
+position = Vector2(498, 285)
+texture_normal = ExtResource("4_lilrn")
+texture_pressed = ExtResource("4_lilrn")
+action = "Interactuar"
 
 [connection signal="finished" from="VideoStreamPlayer" to="." method="_on_video_stream_player_finished"]

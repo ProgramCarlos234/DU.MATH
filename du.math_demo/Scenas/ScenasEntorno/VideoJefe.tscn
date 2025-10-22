@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://cqt2b3rql0a08"]
+[gd_scene load_steps=5 format=3 uid="uid://cqt2b3rql0a08"]
 
 [ext_resource type="VideoStream" uid="uid://dc0iux856qon2" path="res://Videos/Jefe_Video.ogv" id="1_nspvx"]
 [ext_resource type="Script" uid="uid://b64c65ttj2sm8" path="res://Scripts/video_jefe_Script.gd" id="1_ulnkk"]
 [ext_resource type="PackedScene" uid="uid://cnp4d7uv773m2" path="res://Scenas/ScenasJefe/JefeFinal_Escenario.tscn" id="2_vcb1s"]
+[ext_resource type="Texture2D" uid="uid://ds37peifksgna" path="res://Scenas/GUI movil/OMITIR.png" id="4_3qson"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -30,5 +31,11 @@ autoplay = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(0.9, 0.9)
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="Camera2D"]
+position = Vector2(498, 285)
+texture_normal = ExtResource("4_3qson")
+texture_pressed = ExtResource("4_3qson")
+action = "Interactuar"
 
 [connection signal="finished" from="VideoStreamPlayer" to="." method="_on_video_stream_player_finished"]
